@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qu'est-ce qu'un retcon ? — Dragonballologie</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Share+Tech+Mono&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c1:#c2410c;--c2:#1d4ed8;--c3:#15803d;
+  --gold:#b45309;--goldb:#d97706;
+  --bg:#faf7f2;--parchment:#f5ede0;
+  --ink:#1c1917;--ink2:#44403c;--ink3:#78716c;
+  --rule:rgba(0,0,0,.1);--max:800px;
+}
+body{background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.78}
+.topnav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:16px}
+.logo{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:#fff;letter-spacing:2px;text-decoration:none}
+.logo em{color:#f97316;font-style:normal}
+.nav-back{font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(255,255,255,.4);letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;margin-left:auto}
+.nav-back:hover{color:rgba(255,255,255,.7)}
+.banner{width:100%;max-height:560px;object-fit:cover;object-position:center 30%;display:block;background:var(--parchment)}
+.wrap{max-width:var(--max);margin:0 auto;padding:52px 24px 96px}
+.meta{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--ink3);text-transform:uppercase;display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.meta .cat{color:var(--goldb);font-weight:700}
+h1{font-family:'Oswald',sans-serif;font-size:clamp(30px,5vw,50px);font-weight:700;letter-spacing:1px;line-height:1.12;color:var(--ink);margin-bottom:10px}
+.subtitle{font-family:'Oswald',sans-serif;font-size:clamp(16px,2.2vw,20px);font-weight:400;font-style:italic;color:var(--ink3);margin-bottom:28px}
+.lead{font-size:20px;line-height:1.68;color:var(--ink2);font-style:italic;border-left:4px solid var(--goldb);padding-left:18px;margin-bottom:40px}
+h2{font-family:'Oswald',sans-serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;letter-spacing:.5px;margin:56px 0 18px;padding-bottom:10px;border-bottom:2px solid}
+h2.c1{color:var(--c1);border-color:rgba(194,65,12,.25)}
+h2.c2{color:var(--c2);border-color:rgba(29,78,216,.2)}
+h2.c3{color:var(--c3);border-color:rgba(21,128,61,.2)}
+h2.dark{color:var(--ink);border-color:var(--rule)}
+h3{font-family:'Oswald',sans-serif;font-size:clamp(19px,2.8vw,25px);font-weight:600;margin:38px 0 14px;color:var(--ink)}
+p{margin-bottom:20px;color:var(--ink2)}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+em{font-style:italic}
+blockquote{font-family:'Oswald',sans-serif;font-size:clamp(18px,2.6vw,23px);font-weight:600;font-style:italic;color:var(--ink);border-left:4px solid var(--c1);padding:4px 0 4px 20px;margin:32px 0}
+
+/* Images */
+.img-full{width:100%;border-radius:10px;display:block;margin:34px 0;box-shadow:0 4px 28px rgba(0,0,0,.1);background:var(--parchment)}
+.img-sep{width:100%;max-width:700px;display:block;margin:52px auto;border-radius:14px;box-shadow:0 8px 40px rgba(0,0,0,.14);background:var(--parchment)}
+.img-caption{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--ink3);letter-spacing:1px;text-align:center;text-transform:uppercase;margin-top:-24px;margin-bottom:34px}
+
+/* Manga grid (diptyques et planches) */
+.manga-grid{display:grid;gap:10px;margin:24px 0}
+.manga-grid.cols2{grid-template-columns:1fr 1fr}
+.manga-grid.cols3{grid-template-columns:1fr 1fr 1fr}
+.manga-grid img{width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.15);display:block;background:var(--parchment);aspect-ratio:3/4;object-fit:cover}
+.manga-grid + .img-caption{margin-top:-14px}
+@media(max-width:580px){.manga-grid.cols2,.manga-grid.cols3{grid-template-columns:1fr}}
+
+/* Cadre méthodologique (3 niveaux de certitude) */
+.pillars{display:flex;flex-direction:column;gap:10px;margin:20px 0 28px}
+.pillar{background:var(--parchment);border-radius:8px;padding:14px 18px;border-left:4px solid}
+.pillar.c1{border-color:var(--c1)}.pillar.c2{border-color:var(--c2)}.pillar.c3{border-color:var(--c3)}
+.pillar strong{display:block;margin-bottom:3px;font-size:15.5px;color:var(--ink)}
+.pillar p{margin:0;font-size:15px;color:var(--ink2)}
+
+/* Liste flèche */
+ul.arrow{list-style:none;padding:0;margin:0 0 20px}
+ul.arrow li{padding:6px 0 6px 24px;position:relative;color:var(--ink2);font-size:17px}
+ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);font-weight:700}
+
+/* Étapes numérotées (tissage progressif, conditions du retcon parfait) */
+.hierarchy{background:var(--parchment);border:1.5px solid var(--rule);border-radius:10px;padding:24px;margin:28px 0 36px}
+.h-row{display:flex;gap:18px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--rule)}
+.h-row:last-child{border:none;padding-bottom:0}
+.h-num{font-family:'Oswald',sans-serif;font-size:32px;font-weight:700;line-height:1;flex-shrink:0;width:38px}
+.h-num.c1{color:var(--c1)}.h-num.c2{color:var(--c2)}.h-num.c3{color:var(--c3)}
+.h-body strong{display:block;font-size:16px;margin-bottom:4px}
+.h-body p{margin:0;font-size:15px;color:var(--ink2)}
+
+/* Blocs d'exemple / analyse (retcon fonctionnel, fils abandonnés) */
+.example{background:var(--parchment);border:1.5px solid var(--rule);border-radius:12px;padding:30px 30px 26px;margin:40px 0}
+.ex-num{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--ink3);text-transform:uppercase;margin-bottom:4px}
+.ex-title{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:var(--ink);margin-bottom:22px;padding-bottom:14px;border-bottom:2px solid var(--rule)}
+.level{margin-bottom:22px;padding-left:16px;border-left:3px solid}
+.level.c1{border-color:var(--c1)}.level.c2{border-color:var(--c2)}.level.c3{border-color:var(--c3)}
+.level-tag{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.level-tag.c1{color:var(--c1)}.level-tag.c2{color:var(--c2)}.level-tag.c3{color:var(--c3)}
+.concl{background:var(--ink);color:rgba(255,255,255,.82);border-radius:9px;padding:18px 22px;margin-top:22px;font-size:15.5px;line-height:1.65}
+.concl strong{color:#fff}
+.verdict{display:inline-block;font-family:'Oswald',sans-serif;font-size:19px;font-weight:700;color:var(--c1);background:rgba(194,65,12,.1);padding:6px 18px;border-radius:6px;margin-top:10px}
+
+/* Placeholders d'infographies interactives */
+.infographic{max-width:700px;margin:52px auto;border:2px dashed var(--rule);border-radius:14px;padding:40px 24px;text-align:center;background:rgba(0,0,0,.015)}
+.infographic .tag{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--goldb);text-transform:uppercase;margin-bottom:10px}
+.infographic .name{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.infographic .file{font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--ink3)}
+
+.foot{margin-top:72px;padding-top:24px;border-top:2px solid var(--rule);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--ink3);text-align:center;text-transform:uppercase}
+.teaser{margin-top:56px;padding:24px 26px;background:var(--parchment);border-radius:10px;font-style:italic;color:var(--ink2);font-size:16px;line-height:1.7}
+@media(max-width:600px){.wrap{padding:32px 16px 64px}.example{padding:20px 16px 18px}}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="logo" href="index.html"><em>Dragon</em>ballologie</a>
+  <a class="nav-back" href="index.html">← Accueil</a>
+</nav>
+
+<!-- BANNIÈRE : remplacer par une image de couverture (ex. le Nyoibō, la tour Karine, ou un montage "tisserand") -->
+<img class="banner" src="images/banner_retcon.jpg" alt="Qu'est-ce qu'un retcon ? — Dragon Ball"/>
+
+<main class="wrap">
+
+  <div class="meta">
+    <span class="cat">Dragonballologie</span>
+    <span>Théorie narrative</span>
+    <span>Tomes 1 à 17</span>
+  </div>
+
+  <h1>Qu'est-ce qu'un retcon ?</h1>
+  <p class="subtitle">Dragon Ball et l'art de construire un univers en marchant</p>
+
+  <p class="lead">Il y a deux façons de lire Dragon Ball. La première ne voit qu'un plan. La seconde voit le tisserand au travail.</p>
+
+  <p>Il y a deux façons de lire Dragon Ball.</p>
+  <p>La première est celle de l'enfance — ou de la première lecture, quel que soit l'âge. C'est le <strong>premier cercle</strong>. Celui où tout coule de source, où chaque révélation semble avoir été prévue depuis le début, où l'univers se déploie comme un plan qui était là, caché, attendant son heure. Goku est un Saiyan ? Bien sûr — sa queue, sa force, sa transformation en singe géant, tout était <em>là</em>. On n'avait pas vu, c'est tout.</p>
+  <p>La deuxième est celle du <strong>deuxième cercle</strong>. Celle où l'on voit les fils, les nœuds, les reprises. Où l'on comprend que non, Toriyama n'avait pas tout prévu — qu'il improvisait à la semaine, qu'il inventait ses connexions après coup, et que ce qui ressemble à un plan n'est qu'un magnifique tissu de retcons.</p>
+  <p>Un <strong>retcon</strong> — <em>retroactive continuity</em> — c'est quand un auteur modifie rétroactivement le sens d'un élément ancien de son récit. Ce n'est pas (forcément) une erreur. Ce n'est pas (forcément) un aveu de faiblesse. C'est un outil de construction — et Dragon Ball est le terrain idéal pour comprendre comment il fonctionne, pourquoi il fonctionne, et quand il fabrique quelque chose de plus grand que ce qu'un plan aurait produit.</p>
+  <p>Cet article est une invitation à entrer dans le deuxième cercle. Pas pour abîmer le premier — il restera intact, disponible à chaque relecture. Mais pour en gagner un deuxième. Celui de la construction. Celui du tisserand au travail.</p>
+  <p>Et je vous promets que le voyage en vaut la peine.</p>
+
+  <!-- ══ 1. LE RETCON EST UNE DÉDUCTION ══ -->
+  <h2 class="c1">1. Le retcon est une déduction</h2>
+
+  <p>Avant de chercher des retcons dans Dragon Ball, il faut s'entendre sur la méthode. Un retcon ne se décrète pas au doigt mouillé, et il ne se réduit pas non plus à un aveu d'auteur en interview. C'est une conclusion qui se déduit — et la logique qui y mène est d'une simplicité désarmante.</p>
+  <p>Quand une connexion narrative apparaît entre deux éléments séparés par plusieurs tomes, deux hypothèses s'offrent à nous, et deux seulement. Soit c'est une <strong>révélation</strong> : l'auteur avait cette connexion en tête depuis le début et la dévoile au moment choisi. Soit c'est un <strong>retcon</strong> : l'auteur invente la connexion plus tard et la greffe rétroactivement sur un élément ancien. Il n'y a pas de troisième option.</p>
+  <p>Pour trancher, il suffit d'examiner les conditions de production.</p>
+  <p>En 1984, Akira Toriyama commence Dragon Ball comme une parodie loufoque du <em>Saiyūki</em>, le Voyage en Occident chinois. Le ton est comique, l'univers est un conte, l'ambition est modeste. Les deux premiers tomes forment un récit bouclé : un garçon à queue de singe cherche des boules magiques avec une fille capricieuse, les trouve, fin. Dragon Ball aurait pu — aurait <em>dû</em> — s'arrêter là.</p>
+  <p>C'est Kazuhiko Torishima, son éditeur au Weekly Shōnen Jump, qui réoriente le manga vers les arts martiaux. Le premier Tenka'ichi Budōkai naît de cette impulsion éditoriale, pas d'un plan de l'auteur. Toriyama ne planifiait jamais au-delà de quelques chapitres. Il dessinait au rythme de la publication hebdomadaire, chaque semaine apportant son lot d'improvisations.</p>
+  <p>Ces faits ne sont pas contestés. Ils sont documentés par des décennies d'interviews, confirmés par Torishima lui-même, et surtout — c'est le point crucial — <em>ils sont lisibles dans le texte</em>. On n'a même pas besoin que Toriyama l'avoue. Les conditions de production suffisent.</p>
+  <p>Prenons le Nyoibō, le bâton magique de Goku. Au tome 1, c'est un accessoire de <em>Saiyūki</em> — Sun Wukong possède le même. Il s'allonge, c'est amusant, c'est un gag. Au tome 14, on apprend que ce bâton est en réalité le pilier sacré qui relie la tour Karine au Palais de Dieu, et que le grand-père Gohan l'avait retiré parce que personne n'avait le niveau d'atteindre le sanctuaire.</p>
+  <p>La question se pose : révélation ou retcon ?</p>
+  <p>Pour que ce soit une révélation, il faudrait accepter que Toriyama, en 1984, en dessinant un gag manga qu'il ne pensait pas prolonger au-delà de deux tomes, avait déjà conçu dans sa tête la tour Karine, le Palais de Dieu, la hiérarchie cosmique terre-tour-palais, le personnage du Tout-Puissant, et le rôle du bâton comme pilier sacré. Qu'il a gardé ce plan secret pendant quatre ans de publication hebdomadaire, sans jamais le laisser transparaître. Et qu'il a fait tout cela dans un format qu'il improvisait à la semaine.</p>
+  <p>C'est absurde. Ce n'est pas une opinion, c'est un raisonnement par l'absurde. Soit on accepte un scénario structurellement impossible — un plan de 14 tomes dans la tête d'un auteur qui comptait en faire 2 — soit on reconnaît l'évidence : le bâton n'avait aucun sens caché au tome 1. Le sens est venu après. C'est un retcon. Et un magnifique.</p>
+  <p>Le même raisonnement s'applique à chacun des exemples que nous allons examiner. À chaque fois, la même déduction : l'explication tardive ne peut pas avoir été planifiée, donc elle a été inventée après coup. Les interviews de Toriyama ne font que confirmer ce que la déduction établit seule — elles verrouillent le raisonnement, sans plus.</p>
+  <p>C'est cette méthode — déduction d'abord, vérification ensuite — qui distingue l'analyse du bavardage de fan.</p>
+
+  <div class="infographic">
+    <div class="tag">Infographie interactive</div>
+    <div class="name">L'arbre logique</div>
+    <div class="file">infographics/retcon_deduction.html</div>
+  </div>
+
+  <p>Mais il faut être rigoureux, et la rigueur impose de reconnaître qu'on ne peut pas toujours trancher. C'est pourquoi notre méthode distingue trois niveaux de certitude :</p>
+
+  <div class="pillars">
+    <div class="pillar c1"><strong>Le retcon certain</strong><p>Prouvable par le texte lui-même. Quand Tao Pai Pai reçoit un Kamehameha au tome 6 sans le reconnaître, alors qu'il sera plus tard révélé comme le frère de Tsuru Sennin, le rival de toute une vie de Kamé Sennin — le texte lui-même est incompatible avec la préméditation. Si Toriyama avait su, la scène serait écrite autrement.</p></div>
+    <div class="pillar c2"><strong>Le retcon probable</strong><p>Déduit des conditions de production. Quand Goku révèle que sa queue est un point faible quelques chapitres après que Bulma a simplement tiré dessus dans un bain sans aucune mention de perte de force — la probabilité est forte que Toriyama vient d'inventer cette mécanique pour donner un avantage à Yamcha, mais on ne peut pas l'exclure formellement.</p></div>
+    <div class="pillar c3"><strong>L'indécidable</strong><p>Quand ni le texte ni les conditions de production ne permettent de trancher. Quand Karin révèle que Kamé Sennin a grimpé la tour il y a 300 ans, la connexion est tellement naturelle que Toriyama a pu la prévoir un arc à l'avance — ou l'inventer sur le moment. On ne sait pas, et la rigueur consiste à le dire.</p></div>
+  </div>
+
+  <div class="manga-grid cols2">
+    <img src="images/fig01f_indecidable_300ans.png" alt="Karin : « Quelqu'un d'autre a réussi avant toi, il y a 300 ans... Ton maître est Muten Roshi, c'est bien ça ? Je l'ai compris en observant tes mouvements. »"/>
+    <img src="images/fig01g_tsuru_sennin_surpasse.png" alt="« Je ne sais pas qui c'est, mais en tout cas il surpasse Maître Tsuru Sennin en puissance ! »"/>
+  </div>
+  <p class="img-caption">L'indécidable (les 300 ans de Kamé Sennin) et le premier nom lâché en passant — Tsuru Sennin, qui deviendra crucial</p>
+
+  <img class="img-full" src="images/fig01b_queue_point_faible.png" alt="Yamcha découvre en direct que le point faible de Goku est sa queue"/>
+  <p class="img-caption">Le point faible de la queue, révélé en direct — l'exemple même du retcon probable</p>
+
+  <div class="manga-grid cols2">
+    <img src="images/manga/fig01_tao_paipai_kamehameha.png" alt="Vol. 6 p.175 — Tao Pai Pai encaisse le Kamehameha sans le reconnaître"/>
+    <img src="images/manga/fig02_goku_reconnait_dodonpa.png" alt="Vol. 9 p.15 — Goku reconnaît le Dodonpa de Tenshinhan : « C'est la technique de Tao Pai Pai !! »"/>
+  </div>
+  <p class="img-caption">Vol. 6 p.175 — l'oubli · Vol. 9 p.15 — le rappel</p>
+
+  <p>Ces deux pages, mises côte à côte, forment un diptyque dévastateur. La première prouve l'absence de connexion ; la seconde montre la connexion en train de se nouer, trois tomes plus tard. L'avant et l'après du retcon, par la même technique, vue des deux côtés.</p>
+
+  <img class="img-full" src="images/fig01c_taopaipai_indifferent_dodon_charge.png" alt="Tao Pai Pai, insensible au Kamehameha : « Ça lui a rien fait !! » « T'as ruiné mes fringues... sale gosse... »"/>
+  <p class="img-caption">La technique ultime du tome 2 ne fait même pas ciller l'adversaire du tome 6</p>
+
+  <img class="img-full" src="images/fig01d_dodon_ray_vol_dragonballs.png" alt="Le Dodonpa terrasse Goku — Tao Pai Pai : « Mission accomplie... Voilà donc ces fameuses Dragon Balls... Hé hé hé... »"/>
+
+  <div class="manga-grid cols2">
+    <img src="images/fig02b_kamehameha_vs_dodonpa_doute.png" alt="Kamé Sennin : « Un Kamé Hamé Ha acquis à la hâte ne fera jamais le poids contre le Dodonpa !! »"/>
+    <img src="images/fig02c_tenshinhan_reconnaissance_goku.png" alt="« Ce gamin n'a rien d'ordinaire... Il a repoussé le coup de poing supersonique de son adversaire... »"/>
+  </div>
+  <p class="img-caption">Même Kamé Sennin doute — jusqu'à ce que le nom de Tao Pai Pai refasse surface</p>
+
+  <!-- ══ 2. LA GRANDE CONVERSION ══ -->
+  <h2 class="dark">2. La grande conversion : du gag manga au récit sérieux</h2>
+
+  <p>Dragon Ball ne bascule pas du comique au sérieux en un seul moment. La transition est progressive, et c'est précisément cette progressivité qui permet aux retcons de tissage de s'opérer sans que le lecteur ne voie la couture.</p>
+  <p>Le point de bascule le plus visible est l'entraînement chez Kamé Sennin. Dans une seule page, les deux registres coexistent : le cartouche narrateur annonce solennellement « des exercices extrêmement durs », pendant que Kamé Sennin se fait poursuivre par un requin sur la plage en criant « Qu'est-ce que tu me veux, salopard ?! ». Le gag n'a pas disparu, mais le <em>moteur</em> de l'histoire a changé. On ne cherche plus des boules magiques pour un vœu comique. On s'entraîne pour devenir plus fort. La curiosité du lecteur a muté : il veut voir les progrès.</p>
+
+  <img class="img-full" src="images/fig03_entrainement_requin.png" alt="L'entraînement — le requin, le cartouche sérieux, les deux registres dans la même page"/>
+  <p class="img-caption">Les deux registres, dans la même page</p>
+
+  <p>Et la phrase que Kamé Sennin prononce sur Krilin, dans cette même scène, est un bijou involontaire : « Sacré Krilin, il s'approche des limites de l'être humain ! » Remarque banale dans ce contexte — un maître impressionné par son élève. Mais quand on sait que Goku, lui, n'est <em>pas</em> un être humain (dix tomes plus tard), cette phrase se charge d'un sens qu'elle n'avait pas. Le plafond de Krilin sera réel ; celui de Goku, non. Cette asymétrie deviendra le sujet central de Dragon Ball Z. Mais ici, en 1985, c'est juste le compliment d'un vieux maître.</p>
+  <p>C'est ce que nous appelons une <strong>fausse prophétie</strong> — un terme sur lequel nous reviendrons. Une phrase qui n'annonce rien au moment de l'écriture, mais qu'un retcon futur transforme en signe avant-coureur.</p>
+
+  <!-- ══ 3. LE TISSAGE PROGRESSIF — KINTO'UN ══ -->
+  <h2 class="c2">3. Le tissage progressif — cas d'école : le Kinto'un</h2>
+
+  <p>Le Kinto'un est l'exemple le plus documentable de tissage progressif dans Dragon Ball, parce que sa transformation s'opère en étapes distinctes, chacune séparée par plusieurs tomes, et chacune traçable à la page près.</p>
+
+  <img class="img-full" src="images/fig03b_bulma_question_nuage_tortue.png" alt="Bulma : « Comment ça se fait que le Maître des Tortues possède un nuage ? Ça n'a rien à voir avec une tortue ! » Kamé Sennin : « Tu es bien sectaire... »"/>
+  <p class="img-caption">La question que Bulma pose sans le savoir — et que tout le chapitre va mettre des tomes à résoudre</p>
+
+  <img class="img-full" src="images/fig04a_kinton_don_tout_puissant.png" alt="Goku : « C'est un don que j'ai reçu du Tout-Puissant, c'est un nuage fabuleux ! »"/>
+  <p class="img-caption">Tome 1 — le cadeau comique, avant que le Tout-Puissant n'existe comme personnage</p>
+
+  <div class="hierarchy">
+    <div class="h-row">
+      <div class="h-num c2">1</div>
+      <div class="h-body"><strong>Le cadeau comique (tome 1)</strong><p>Kamé Sennin donne un petit nuage à Goku. C'est un clin d'œil au <em>Saiyūki</em> — le nuage volant de Sun Wukong. Kamé Sennin précise qu'il l'a « reçu du Tout-Puissant » — une expression vague, du registre du conte, qui n'a pas plus de poids que « un vieux monsieur me l'a donné ». Le Tout-Puissant, à ce stade, n'existe pas comme personnage.</p></div>
+    </div>
+    <div class="h-row">
+      <div class="h-num c2">2</div>
+      <div class="h-body"><strong>La multiplication (tome 5, p. 116)</strong><p>Karin lâche une information passante : « Il y en avait plein, quand j'étais jeune. » Et, surtout : « Un Kinto'un ne peut pas disparaître ! » Le nuage unique devient un exemplaire parmi d'autres. Les Kinto'un sont un phénomène — rare, mais naturel. C'est un enrichissement discret qui ne contredit rien.</p></div>
+    </div>
+    <div class="h-row">
+      <div class="h-num c2">3</div>
+      <div class="h-body"><strong>La boucle (tome 8)</strong><p>Au sommet de la tour Karine, le parc à nuages. « Découpes-en un de la grandeur que tu veux. » Karin ajoute : « C'est moi qui lui avais donné, il y a bien longtemps de cela. » Et Goku fait la connexion : « Mais alors, le Kinto'un que m'avait offert grand-père Kamé Sennin... »</p></div>
+    </div>
+  </div>
+
+  <img class="img-full" src="images/fig04b_boeuf_roi_reconnait_kinton.png" alt="Le Bœuf Roi (Gyumao) reconnaît le Kinto'un et révèle que son propre maître était le vieux Kamé Sennin"/>
+  <p class="img-caption">Une lignée qui se noue des tomes avant qu'on en comprenne le motif</p>
+
+  <img class="img-full" src="images/fig04c_goku_appelle_kinton_tour.png" alt="« Kinto-un ?! » « Kinto-un, viens !! »"/>
+
+  <div class="manga-grid cols2">
+    <img src="images/manga/fig04_karin_multiplication.jpg" alt="Vol. 5 p.116 — Karin : « Il y en avait plein, quand j'étais jeune. »"/>
+    <img src="images/manga/fig05_parc_a_nuages.png" alt="« Vas-y, découpes-en un de la grandeur que tu veux et pars avec lui. » « C'est un Kinto-un giga gigantesque !! » Karin : « Oui, c'est moi qui lui avais donné, il y a bien longtemps de cela. » Goku : « Mais alors, le Kinto-un que m'avait offert grand-père Kamé Sennin... »"/>
+  </div>
+
+  <p>La boucle se referme. L'expression vague du tome 1 — « reçu du Tout-Puissant » — peut maintenant être lue comme un indice de cette chaîne. Karin a donné un nuage à Kamé Sennin qui l'a donné à Gohan qui l'a donné à Goku. Une lignée se dessine à travers le nuage. Chaque intermédiaire a jugé le suivant digne de le posséder.</p>
+  <p>Notons ce qui rend ce tissage parfait : aucune des trois étapes ne contredit les précédentes. L'étape 2 enrichit l'étape 1 sans la nier. L'étape 3 boucle avec l'étape 1 en passant par l'étape 2. Le résultat est un univers qui semble avoir toujours été cohérent — la marque du tissage réussi.</p>
+
+  <img class="img-full" src="images/infographic_kinton_tissage.png" alt="Retcon de tissage : un cadeau devient cosmologie — de la simple offrande du tome 1 (1984) au parking à nuages révélé au sommet de la tour Karine au tome 8 (1987)"/>
+  <p class="img-caption">Retcon de tissage : un cadeau devient cosmologie</p>
+
+  <!-- ══ 4. LE TISSAGE PROGRESSIF — NYOIBŌ ══ -->
+  <h2 class="c2">4. Le tissage progressif — cas d'école : le Nyoibō</h2>
+
+  <p>Si le Kinto'un est l'exemple du tissage parfait, le Nyoibō en est la version radicale — celle où le retcon est <em>certain</em>, prouvable, et pourtant invisible au premier cercle de lecture.</p>
+  <p>Au tome 1, le Nyoibō est un bâton extensible hérité du grand-père Gohan. Référence directe au <em>Saiyūki</em>. Il s'allonge, il frappe, c'est un gag. Rien d'autre.</p>
+  <p>Au tome 6, apparaît la tour Karine (p. 164) — un édifice qui « se dresse jusqu'aux cieux ». Bora, le gardien au pied de la tour, prévient : « Nous nous transmettons cette légende de génération en génération... peut-être une superstition. » Au sommet, Karin, le chat immortel.</p>
+
+  <img class="img-full" src="images/fig06_tour_karin_premiere_apparition.png" alt="Vol. 6 p.164 — La tour Karine, première apparition"/>
+
+  <img class="img-full" src="images/fig06e_bora_avertissement_legende.png" alt="Bora : « Nous nous transmettons cette légende depuis la nuit des temps mais ce n'est peut-être qu'une superstition... » « Génial... je devrais peut-être y monter pour devenir plus fort. »"/>
+  <p class="img-caption">La légende, racontée avant même qu'elle ne serve à quoi que ce soit</p>
+
+  <img class="img-full" src="images/fig06a_goku_grimpe_tour_karin.png" alt="Goku gravit la tour Karin pour boire l'eau bénite légendaire et pouvoir vaincre Tao Pai Pai"/>
+
+  <p>Au pied de la tour, Bora le gardien reconnaît le bâton de Goku avant même que quiconque ait gravi une seule marche — et sa réaction en dit long sur ce que le Nyoibō représentait déjà, en coulisse, pour un lecteur qui n'y voyait qu'un gag.</p>
+
+  <img class="img-full" src="images/fig06b_bora_reconnait_nyoibo.png" alt="Bora : « Il n'y a qu'une seule personne qui possède le Nyoi Bo... Comment s'appelait ton grand-père ?! »"/>
+  <img class="img-full" src="images/fig06c_bora_gohan_expert.png" alt="Bora : « Son Gohan était un expert en arts martiaux, il maîtrisait toutes les techniques de combat à la perfection... C'est bien ce que je pensais... »"/>
+  <img class="img-full" src="images/fig06d_bora_muten_roshi_disciples.png" alt="Bora : « J'ai entendu dire qu'il y a très longtemps, Gyumao et son Gohan étaient les deux disciples de Muten Roshi, le grand maître des arts martiaux... »"/>
+  <p class="img-caption">La même lignée, le même maître — Kamé Sennin a formé Gyumao et grand-père Gohan bien avant Goku</p>
+
+  <p>L'important ici, c'est ce qui n'est <em>pas</em> dit. La tour est un cul-de-sac vertical. Il n'y a rien au-dessus. Karin est le sommet. Et Karin porte le titre de « Dieu des arts martiaux » (tome 7, p. 20) — un titre divin, pas celui d'un gardien intermédiaire. Aucune mention d'un palais au-dessus, d'un Tout-Puissant réel, d'une connexion entre le bâton et la tour.</p>
+
+  <img class="img-full" src="images/manga/fig07b_taopaipai_apprend_karin.png" alt="Tao Pai Pai : « Dis-moi, celui qui t'a entraîné, ce ne serait pas un sage du nom de Karin ? Le sanctuaire Karin... est-ce que ce serait... Alors comme ça, c'est là que se trouve le sage Karin, qu'on appelle le Dieu des arts martiaux... »"/>
+  <p class="img-caption">Même le tueur le plus redoutable de l'arc n'avait jamais entendu parler de Karin — la preuve que ce sanctuaire vient d'apparaître dans l'univers</p>
+
+  <img class="img-full" src="images/fig07_karin_dieu_arts_martiaux.jpg" alt="Vol. 7 p.20 — Karin, « Le Dieu des arts martiaux »"/>
+
+  <p>Puis vient l'arc Piccolo Daimaō, et le besoin narratif de créer un palier au-dessus de Karin. Toriyama invente le Tout-Puissant. Et c'est à ce moment que Karin — en direct, devant nous — « se souvient » que le bâton de Goku a un autre usage : « À l'origine, c'est un bâton qui relie notre monde au sanctuaire. » Et Goku : « Mon Nyoibō ?! »</p>
+
+  <img class="img-full" src="images/fig08_karin_baton_relie_sanctuaire.jpg" alt="Karin — « À l'origine, c'est un bâton qui relie notre monde au sanctuaire. »"/>
+
+  <p>Le bâton magique est devenu le pilier sacré. L'accessoire du <em>Saiyūki</em> est devenu un élément fondamental de la cosmologie. Et le lecteur du premier cercle ne voit rien, parce que le « comme si » de Karin est parfait — il <em>se souvient</em>, il ne <em>découvre</em> pas, donc la fiction d'un plan de l'auteur est maintenue.</p>
+  <p>Mais le titre « Dieu des arts martiaux » prouve que le plan n'existait pas. Si Toriyama avait le Tout-Puissant en tête quand il dessinait Karin, il ne lui aurait jamais donné un titre divin — parce que ce titre occupe une place que quelqu'un d'autre doit occuper. Karin devait être le sommet. Il a cessé de l'être.</p>
+  <p>C'est un retcon par absorption : l'ancien statut est dépassé, pas contredit. Karin n'est pas rétrogradé explicitement. Son titre disparaît simplement, absorbé par l'existence d'un être supérieur.</p>
+
+  <img class="img-full" src="images/infographic_nyoibo_tissage.png" alt="Retcon de tissage : un gag devient mythologie — du bâton qui s'allonge tout seul au tome 1 (1984) au pilier sacré reliant la tour Karine au Palais de Dieu au tome 14 (1988)"/>
+  <p class="img-caption">Retcon de tissage : un gag devient mythologie</p>
+
+  <!-- ══ 5. LES FAUSSES PROPHÉTIES ══ -->
+  <h2 class="c3">5. Les fausses prophéties</h2>
+
+  <p>Parmi les effets les plus saisissants du retcon, il y a la fausse prophétie — cette phrase innocente, écrite sans arrière-pensée, qu'un retcon futur transforme rétroactivement en signe avant-coureur.</p>
+  <p>La plus célèbre : Oolong, dans un moment de perplexité devant les pouvoirs inexplicables de Goku, lâche : « Un extraterrestre, peut-être ? » C'est un gag. Le cochon métamorphe cherche une explication comique à une bizarrerie de conte. Toriyama ne pense pas aux extraterrestres — il fait du Saiyūki. Mais dix tomes plus tard, quand Raditz débarque et que la vérité éclate, cette phrase se charge rétroactivement d'un poids prophétique qu'elle n'a jamais eu.</p>
+
+  <img class="img-full" src="images/fig09_oolong_extraterrestre.png" alt="Oolong : « En fin de compte, je me demande qui c'est, ce garçon... Un extraterrestre, peut-être ? » Bulma : « Il vaudrait peut-être mieux ne pas lui dire que c'est lui qui a tué son grand-père... »"/>
+  <p class="img-caption">La phrase gag — et, dans la même case, le fil du grand-père qui va se refermer dix-sept tomes plus tard</p>
+
+  <p>La double fausse prophétie Piccolo/Goku est encore plus frappante. À la fin de Dragon Ball, Piccolo Jr. déclare : « Aucun humain ne peut se battre contre moi. » Et Goku, avec sa queue de singe, répond à un autre moment : « Je suis peut-être pas humain, moi, puisque j'ai une queue. » Deux personnages qui ne sont pas humains, face à face, et aucun des deux ne le sait. L'auteur non plus.</p>
+
+  <img class="img-full" src="images/manga/fig10_piccolo_goku_non_humain.png" alt="Piccolo : « Aucun humain ne peut se battre contre le Grand Roi Piccolo sur un pied d'égalité... C'est du délire... je nage en plein cauchemar... » Goku : « Hé hé hé... je suis peut-être pas humain, moi, puisque j'ai une queue... »"/>
+
+  <p>Ces phrases fonctionnent dans les deux cercles de lecture, mais de manière radicalement différente. Au premier cercle, elles ont l'air de preuves que Toriyama avait tout prévu. Au deuxième cercle, elles sont la preuve exacte du contraire — ce sont des coïncidences textuelles que le retcon réactive après coup. Le tisserand n'a rien caché. C'est le tissu qui produit le motif.</p>
+  <p>Et puis il y a le cas indécidable : le cartouche de l'auteur pendant la transformation en Ōzaru. « L'auteur lui-même n'en revient pas !!! Je n'en savais rien ! » Aveu sincère déguisé en gag ? Ou pur bris comique du quatrième mur ? On ne peut pas trancher. Mais notre méthode n'a pas besoin de cet aveu — la déduction suffit.</p>
+
+  <img class="img-full" src="images/fig09c_transformation_auteur_surprise.png" alt="« À la vue de la pleine lune, Goku s'est transformé en un singe géant monstrueux !! L'auteur lui-même n'en revient pas !!! Je n'en savais rien ! Rien du tout, je vous dis ! »"/>
+  <p class="img-caption">L'aveu (ou le gag) qui résume, à lui seul, toute la méthode de cet article</p>
+
+  <div class="manga-grid cols2">
+    <img src="images/manga/fig09b_loup_garou_grandpere.png" alt="Bulma : « Les loups-garous, ça n'existe pas. » Goku : « Mon grand-père est mort, écrasé par ce monstre !! »"/>
+    <img src="images/manga/fig09d_point_faible_confirme.png" alt="« Son point faible, c'est bien la queue ?! »"/>
+  </div>
+  <p class="img-caption">Le mystère du grand-père, posé sans réponse — et le point faible de la queue, qui refait surface sur le monstre</p>
+
+  <img class="img-full" src="images/fig09e_ciseaux_coupe_queue.png" alt="« Transforme-toi en ciseaux et coupe-lui la queue, il perdra peut-être connaissance !! »"/>
+
+  <p>Ce grand-père écrasé par « ce monstre », ce point faible retrouvé sur un Ōzaru inconnu : deux fils posés ici sans réponse, et que le tome 17 refermera d'un seul coup.</p>
+
+  <!-- ══ 6. RETCONS FONCTIONNELS ET FILS ABANDONNÉS ══ -->
+  <h2 class="dark">6. Les retcons fonctionnels et fils abandonnés</h2>
+
+  <p>Tous les retcons ne sont pas des réussites. Certains sont des ajustements mécaniques, d'autres des oublis purs. Les classifier est aussi important que célébrer les réussites.</p>
+
+  <div class="example">
+    <div class="ex-num">Cas d'école</div>
+    <div class="ex-title">Le Senzu — retcon fonctionnel</div>
+    <p>Sa première apparition (tome 6, p. 203) le présente comme un haricot magique qui rassasie pendant dix jours. Karin le tend à Goku, qui proteste : « Un haricot ? Tu te moques de moi ?! » La fonction est claire : le Senzu nourrit. Rien d'autre.</p>
+
+    <div class="manga-grid cols2">
+      <img src="images/manga/fig11_senzu_haricot.png" alt="« Qu'est-ce que c'est que ça ?! Un haricot ? Tu te moques de moi ?! » Karin : « Un haricot magique si tu préfères : tu en manges un et ça te rassasie pendant une dizaine de jours... C'est un Senzu. »"/>
+      <img src="images/manga/fig12_krilin_question_senzu.jpg" alt="Krilin — « Les Senzu, c'est pas que pour la faim ? »"/>
+    </div>
+
+    <p>Mais dès le combat suivant, quand Goku revient blessé, le Senzu le guérit instantanément. Karin : « Ton corps est parfaitement rétabli, n'est-ce pas ? »</p>
+
+    <img class="img-full" src="images/fig11b_senzu_guerison_instantanee.png" alt="Karin : « Ton corps est parfaitement rétabli, n'est-ce pas ? » Goku : « Hi hi hi, comment te sens-tu ? Génial ! Géniaaal !! Mais c'est vrai !! »"/>
+
+    <p>Pas d'explication du changement. Le haricot rassasiant est devenu un haricot guérisseur, silencieusement, entre deux pages.</p>
+    <p>Et les personnages le remarquent. Plus tard, Krilin demande : « Les Senzu, c'est pas que pour la faim ? » — la question du lecteur dans la bouche d'un personnage. La lampshade est posée, mais la réponse n'est jamais donnée.</p>
+    <div class="concl"><strong>Verdict :</strong> le même objet change de règles selon les besoins de l'auteur — la définition même du retcon fonctionnel.</div>
+  </div>
+
+  <div class="example">
+    <div class="ex-num">Cas d'école</div>
+    <div class="ex-title">Shenron — l'omnipotence bridée</div>
+    <p>Au tome 8 (p. 106), le dragon sacré apparaît et annonce : « Il n'est point de vœu que je ne puisse exaucer. » Omnipotent. Sans limite. Six mots qui auraient dû empêcher toute tension narrative future — si un dragon peut tout faire, tout est résolu d'avance. Progressivement, les limitations apparaissent. Le dragon est bridé, patch par patch, pour maintenir la tension dramatique.</p>
+
+    <img class="img-full" src="images/fig13a_revival_dialogue.png" alt="« Le grand-père de Goku est mort lui aussi, ce serait injuste que mon père seulement... » « Génial !! On va bientôt pouvoir faire revenir ton père à la vie !! »"/>
+    <img class="img-full" src="images/fig13_shenron_omnipotent.png" alt="Vol. 8 p.106 — Shenron : « C'est chose aisée. Il n'est point de vœu que je ne puisse exaucer. » « Mon père s'est fait tuer, rendez-lui la vie !! Je... je vous en supplie... »"/>
+    <p class="img-caption">Même le grand-père de Goku, mort et jamais ressuscité, sert de point de comparaison dans cette même scène</p>
+  </div>
+
+  <div class="example">
+    <div class="ex-num">Cas d'école</div>
+    <div class="ex-title">Baba la voyante — le fil abandonné</div>
+    <p>Au tome 6 (p. 57), elle est présentée comme capable de « lire l'avenir dans sa boule de cristal ». Un pouvoir absolu de précognition, jamais contredit — simplement jamais réutilisé. Les ennemis auraient pu être anticipés, les pièges déjoués. Mais Baba disparaît du récit, et son pouvoir avec elle. Pas de retcon, pas de contradiction : une évacuation silencieuse.</p>
+
+    <img class="img-full" src="images/fig14_baba_lit_avenir.png" alt="« Hé hé hé, évidemment. » « Pas sûr, ma sœur peut lire l'avenir dans sa boule de cristal. Tu savais qu'on allait venir aujourd'hui, hein ? »"/>
+  </div>
+
+  <p>Et le Kinto'un, si magnifiquement tissé par ailleurs, n'échappe pas à l'<strong>erreur arithmétique</strong>. Au tome 5, Karin déclare : « Un Kinto'un ne peut pas disparaître ! » Quelques tomes plus tard, Tambourine pulvérise celui de Goku. La règle explicite est contredite par l'action. Ce n'est pas un changement de registre, pas un enrichissement — c'est un oubli.</p>
+
+  <img class="img-full" src="images/fig05c_kinton_pulverise_tambourine.png" alt="« Il a même tué Kinto-un !! » « Quel salaud... » « Il s'est vraiment fait pulvériser... » « Bah alors... mon Kinto-un... »"/>
+
+  <!-- ══ 7. KAMI-SAMA ══ -->
+  <h2 class="c1">7. La machine à réparer : Kami-sama</h2>
+
+  <p>Si un seul personnage incarne le rôle du retcon dans Dragon Ball, c'est Kami-sama, le Tout-Puissant. Sa création même est un retcon — rien dans les tomes précédents ne suggère son existence (le titre de « Dieu des arts martiaux » de Karin le prouve). Mais sa <em>fonction</em> va bien au-delà : Kami-sama est la machine à réparer le passage du registre comique au registre sérieux.</p>
+  <p>Comment Toriyama en arrive-t-il à le créer ? Par un enchaînement de besoins narratifs. Piccolo Daimaō est mort, mais ses victimes ont des « âmes qui ne trouvent pas le repos ». Pour les libérer, il faut un pouvoir supérieur à Piccolo. Pour qu'un pouvoir supérieur existe, il faut un palier au-dessus de Karin. Pour atteindre ce palier, il faut une raison d'y monter. Et Karin — en direct, devant nous — « se souvient » : le bâton de Goku relie la tour au sanctuaire.</p>
+
+  <img class="img-full" src="images/fig15_karin_ames_sans_repos.jpg" alt="Karin — « Les âmes de ceux qui ont été tués par des démons ne trouvent pas le repos... »"/>
+
+  <p>Mais une fois Kami-sama créé, Toriyama s'en sert pour bien plus que relancer l'arc. Il en fait la <strong>machine à réparer le registre comique</strong>. En l'espace de quelques chapitres, Kami-sama résout tous les problèmes laissés en suspens par le passage du gag au sérieux.</p>
+  <p>La Lune, détruite par un Kamehameha de Kamé Sennin dans un excès comique, puis revenue sans explication ? Kami-sama « voulait restaurer la Lune ». La queue de singe de Goku, qui risquait de le transformer en Ōzaru à chaque pleine lune ? Kami-sama l'arrache, parce que « c'est gênant ». Le Nyoibō, simple accessoire de conte ? Kami-sama révèle qu'il est le pilier sacré reliant la tour au sanctuaire.</p>
+
+  <img class="img-full" src="images/fig16_lune_restauree_queue_arrachee.jpg" alt="Goku de retour — la Lune restaurée, la queue arrachée"/>
+
+  <p>Et la promesse de mariage avec Chichi — un gag d'enfant, au tout début du manga, quand Goku ne savait même pas ce que « se marier » voulait dire — devient un engagement réel au Tenka'ichi Budōkai. Le gag est converti en enjeu sérieux, sans contradiction.</p>
+
+  <img class="img-full" src="images/fig17_chichi_tournoi.jpg" alt="Chichi au tournoi — « Qui t'es, toi ? » / « IDIOT !! »"/>
+
+  <p>C'est <em>le même geste</em> à chaque fois : prendre un élément du registre comique et lui donner du poids dans le registre sérieux. Et c'est pour ça que ça ne se voit pas — parce que chaque conversion est individuelle et naturelle. Le lecteur ne perçoit pas le système. Il voit des histoires qui s'approfondissent, pas un auteur qui recycle méthodiquement ses gags en mythologie.</p>
+  <p>Mais l'idée la plus audacieuse de Kami-sama, c'est le dédoublement. Toriyama n'avait aucune obligation de relier le Tout-Puissant à Piccolo. Et pourtant, Karin tease : « C'est surtout un visage qu'il connaît déjà... » — le Tout-Puissant et Piccolo étaient <em>la même personne</em>, scindée en deux. Le bien et le mal séparés.</p>
+
+  <img class="img-full" src="images/fig18_karin_visage_connu.jpg" alt="Karin — « C'est surtout un visage qu'il connaît déjà... »"/>
+
+  <p>C'est un retcon de tissage total — rien dans l'arc Piccolo Daimaō ne suggérait cette connexion — mais c'est aussi un coup de génie narratif, parce qu'il fait trois choses en même temps : relier l'arc précédent au nouveau (tissage), donner une origine aux Dragon Balls (elles sont créées par le Tout-Puissant), et créer un enjeu dramatique permanent (si Piccolo meurt, Dieu meurt, et les Dragon Balls disparaissent).</p>
+  <p>Le prix à payer, c'est l'incohérence que ça génère. Si Kami-sama est plus fort que Piccolo — et les pages montrent qu'il l'est, de très loin, avec Mr. Popo en échelon intermédiaire — pourquoi ne l'a-t-il pas neutralisé quand Piccolo massacrait le monde entier ? « Pour certaines raisons, nous ne pouvons pas nous battre contre lui » — et ces « certaines raisons » sentent l'improvisation.</p>
+
+  <img class="img-full" src="images/fig19_kamisama_certaines_raisons.jpg" alt="Kami-sama — « Mister Popo et moi, nous ne pouvons pas nous battre contre lui pour certaines raisons. »"/>
+
+  <!-- ══ 8. LE PRIX DE L'ESCALADE ══ -->
+  <h2 class="dark">8. Le prix de l'escalade</h2>
+
+  <p>Derrière les retcons de tissage, derrière les conversions de registre, il y a un moteur mécanique qui alimente tout : l'escalade de puissance. Et ce moteur est consubstantiel au format même du shōnen hebdomadaire de combat.</p>
+  <p>Le principe est simple. L'auteur écrit à la semaine. Chaque arc doit renouveler l'intérêt. Et le code visuel du shōnen, c'est que la menace suivante doit être <em>plus grande</em>. Chaque nouvel ennemi est plus fort que le précédent. Mécaniquement, ça signifie que le « plus fort du monde » d'il y a 50 chapitres est devenu faible — non pas dans la fiction, mais dans le <em>vocabulaire de puissance</em> dont l'auteur dispose.</p>
+  <p>Car le vocabulaire de la puissance s'invente en marchant. Quand Toriyama dessine Kamé Sennin au tome 2, c'est le sommet du monde. Le Kamehameha est la technique ultime. Personne ne vole. Les combats sont au sol, au corps-à-corps. Toriyama ne dispose pas encore du vol, du ki visible, des auras, des transformations. Il les invente tome après tome, en réponse aux besoins de l'escalade. Et chaque invention rend le plafond précédent ridicule.</p>
+  <p>Le cas le plus frappant est celui de la Lune. Au tournoi précédent, Kamé Sennin détruit la Lune avec un Kamehameha — un astre entier, pulvérisé. Quelques tomes plus tard, au tournoi suivant, le Kikoho de Tenshinhan détruit le ring de combat, et Kamé Sennin commente : « Sa puissance destructrice est colossale... rien à voir avec le Kamehameha ! »</p>
+
+  <img class="img-full" src="images/fig20b_dodonpa_blast.png" alt="Le tir de Tenshinhan traverse le ring de part en part"/>
+  <img class="img-full" src="images/fig20_kikoho_ring.png" alt="Kamé Sennin : « Comme prévu, sa puissance destructrice est colossale... rien à voir avec le Kamé Hamé Ha ! » « Et Goku ?! » « Il n'est pas là !! Il a disparu avec le ring !! Mais qu'est-ce que... la surface de combat a sombré dans le néant en une fraction de seconde !! »"/>
+
+  <p>Logiquement, un Kamehameha qui détruit la Lune devrait être infiniment plus puissant qu'un Kikoho qui détruit un ring de quelques mètres carrés. Mais la logique ne s'applique pas entre deux registres. Quand Kamé Sennin détruit la Lune, c'est un gag spectaculaire. Quand Tenshinhan détruit le ring, c'est une mise en scène dramatique. Le Kikoho est <em>présenté</em> comme plus impressionnant, parce que le vocabulaire dramatique a changé. Ce n'est pas la puissance objective qui a monté, c'est le registre narratif qui a basculé.</p>
+  <p>C'est ce que nous appelons l'<strong>amnésie de registre</strong> : les exploits du registre comique ne « comptent » plus dans le registre sérieux, parce qu'ils n'ont jamais été pensés comme des données de puissance. Ils étaient des gags.</p>
+  <p>L'escalade crée aussi des incohérences dans les hiérarchies de personnages. Baba la voyante confirme solennellement que Goku est « le premier humain à avoir le droit de rencontrer Dieu » — personne avant lui, jamais, dans toute l'histoire, n'a atteint ce niveau. Le plafond humain, pendant des siècles, c'était Mutaito, Kamé Sennin, Tsuru Sennin. Aucun d'eux n'a pu accéder au sanctuaire.</p>
+
+  <img class="img-full" src="images/fig21_baba_premier_humain.jpg" alt="Baba — « C'est la première fois qu'un humain aura le droit de rencontrer Dieu. »"/>
+
+  <p>Et pourtant, en l'espace de quelques années narratives, Tenshinhan, Krilin, Yamcha — des humains qui s'entraînent avec les mêmes méthodes terrestres — explosent ce plafond sans aucune raison spéciale. Tenshinhan dit à Kamé Sennin de renoncer au combat pour ne pas être humilié. L'élève d'un élève est devenu infiniment plus fort que le maître des maîtres.</p>
+
+  <img class="img-full" src="images/fig22_tenshinhan_kame_sennin.jpg" alt="Tenshinhan à Kamé Sennin — « S'il vous plaît, renoncez à ce combat... »"/>
+
+  <p>La raison est extra-narrative : Toriyama a besoin de compagnons crédibles pour Goku. Si seul Goku progresse, les autres deviennent des spectateurs et le manga perd son casting. Donc tout le monde progresse. Mais la justification interne n'existe pas.</p>
+  <p>Et puis il y a Mr. Popo. Quand Goku arrive au sanctuaire, Mr. Popo l'écrase totalement. « Tu es faible. Ta force spirituelle est minable, tes techniques sont nulles. » Ce Goku — celui qui vient de battre Piccolo Daimaō — est « minable » aux yeux du serviteur de Dieu. Kami-sama, au-dessus de Mr. Popo, est plus puissant encore.</p>
+
+  <img class="img-full" src="images/fig23_mr_popo_force_minable.jpg" alt="Mr. Popo — « Tu es faible. Ta force spirituelle est minable. »"/>
+
+  <p>Toriyama a besoin que le sanctuaire soit impressionnant, que Goku ait encore des paliers à franchir. Mais pour ça, il doit gonfler Mr. Popo et Kami-sama à un niveau qui rend leur inaction passée absurde. Si Mr. Popo est plus fort que Piccolo, et qu'il n'est pas lié à lui par le pacte de mort — pourquoi a-t-il laissé le monde se faire massacrer depuis le sanctuaire ?</p>
+  <p>Il n'y a pas de réponse. L'escalade crée le spectacle en aval et l'incohérence en amont. C'est le prix de la sérialisation hebdomadaire — et c'est un prix que tous les auteurs de shōnen paient.</p>
+
+  <!-- ══ 9. LE RETCON SAIYAN ══ -->
+  <h2 class="c1">9. Le retcon Saiyan — le coup de théâtre qui réécrit tout</h2>
+
+  <p>Et puis Raditz pose le pied sur Terre.</p>
+
+  <img class="img-full" src="images/fig24a_rassemblement_avant_raditz.png" alt="« Je sais pas où il est !! Il m'a pris la tête, alors je ne lui ai pas dit qu'on se rassemblait tous aujourd'hui !! » Kamé Sennin : « Au fait, Bulma, Yamcha n'est pas avec toi ? »"/>
+  <p class="img-caption">Un jour comme un autre — quelques minutes avant que tout bascule</p>
+  <p>Tome 17. En l'espace de quelques pages, tout ce que le lecteur croyait savoir sur Goku — un garçon bizarre trouvé dans la montagne par un vieil ermite — est balayé et reconstruit.</p>
+
+  <blockquote>« Kakarotto... tu as même oublié tout ça ?! » « Tu es né sur la planète Vegeta !! Tu es un Saiyan !! »</blockquote>
+
+  <p>Le coup de théâtre est total. Goku n'est pas un garçon à queue de singe. C'est un guerrier extraterrestre envoyé sur Terre quand il était bébé pour exterminer toute vie. Sa queue, sa force, ses transformations monstrueuses en Ōzaru — tout était là depuis le tome 1. Tout était <em>visible</em>. Et pourtant, personne n'avait vu.</p>
+
+  <img class="img-full" src="images/fig24d_raditz_reconnait_kakarotto.png" alt="« Qui c'est, ce type ? » Raditz : « Tu ressembles à ton père comme deux gouttes d'eau... Hé hé hé... tu as bien grandi... mais je t'ai reconnu au premier coup d'œil, Kakarotto... »"/>
+
+  <div class="manga-grid cols2">
+    <img src="images/fig24h_raditz_planete_vegeta_saiyan.png" alt="Raditz : « Tu es né sur la planète Vegeta !! Et tu es un Saiyan, le peuple de combattants le plus fier de l'univers !! Je vais tout te raconter. D'abord, tu n'es pas né sur cette planète ! Tu n'es pas humain !! »"/>
+    <img src="images/fig24e_raditz_choc_tete.png" alt="Raditz : « Mais qu'est-ce que ça veut dire ?! Dis-moi ! Tu ne te serais pas cogné la tête très fort, un jour ?! Kakarotto... tu as même oublié tout ça ?! »"/>
+  </div>
+  <p>Ce qui rend le retcon Saiyan si puissant, c'est qu'il remplit simultanément les trois conditions du retcon parfait — et ce sont des conditions qui ne se trouvent presque jamais réunies.</p>
+
+  <div class="hierarchy">
+    <div class="h-row">
+      <div class="h-num c1">1</div>
+      <div class="h-body"><strong>Le choc synchrone</strong><p>Regardez les visages des personnages quand Raditz parle. Krilin, Kamé Sennin, Bulma — ils sont ébahis. Ils apprennent ce que le lecteur apprend, au même instant. Ce choc partagé est essentiel. Dans un roman où le narrateur sait tout, le retcon sent le trucage. Ici, personne ne savait. L'information est neuve pour tout le monde, y compris pour Goku lui-même.</p></div>
+    </div>
+    <div class="h-row">
+      <div class="h-num c1">2</div>
+      <div class="h-body"><strong>Le dispositif de camouflage</strong><p>Pourquoi Goku ne sait-il pas qu'il est un Saiyan ? Parce qu'il s'est cogné la tête en tombant d'une falaise quand il était bébé. L'amnésie justifie seize tomes de silence. Et Kamé Sennin, en maître du tisserand qu'il est, complète le dispositif en produisant un <strong>faux souvenir</strong> : le vieux Gohan lui aurait confié avoir trouvé un bébé au comportement violent, qui s'est calmé après une chute. Une information jamais mentionnée en seize tomes — qui apparaît au moment précis où le retcon en a besoin.</p></div>
+    </div>
+    <div class="h-row">
+      <div class="h-num c1">3</div>
+      <div class="h-body"><strong>La mise en scène écrasante</strong><p>L'arrivée de Raditz est un choc sensoriel. La menace est immédiate, le pouvoir est incommensurable, la mort de Goku est au bout. Le spectacle empêche l'analyse. On ne se demande pas « attends, est-ce que ça colle avec le tome 3 ? » — on est happé. Et quand le calme revient, les coutures ont déjà pris.</p></div>
+    </div>
+  </div>
+
+  <div class="manga-grid cols2">
+    <img src="images/fig24f_goku_confus_cicatrice.png" alt="« Est-ce que tu aurais reçu un choc à la tête quand tu étais petit ?! » « Je m'appelle pas Kakamachin-truc ou je sais pas quoi ! » « Aah ! Ça explique tout !! » « J'ai encore la cicatrice, d'ailleurs... Oui ! Je m'en souviens pas mais c'est vrai, je me suis cogné quand j'étais bébé... »"/>
+    <img src="images/fig24g_kame_sennin_faux_souvenir.png" alt="Kamé Sennin : « Un jour, il est tombé du haut d'une falaise par accident et il s'est fortement heurté la tête... Goku... il y a très longtemps, feu ton grand-père Son Gohan m'avait dit qu'il avait recueilli un petit garçon avec une queue, mais qu'il était d'un tempérament violent et qu'il ne savait pas quoi faire pour l'amadouer... »"/>
+  </div>
+  <p class="img-caption">La cicatrice que Goku découvre en la cherchant — et le souvenir que Kamé Sennin invente en le racontant</p>
+
+  <img class="img-full" src="images/fig24_visages_choques.png" alt="Krilin, Kamé Sennin, Yamcha — les visages choqués, muets face à la révélation"/>
+
+  <p>Ce faux souvenir est la pierre angulaire du camouflage. Il transforme le retcon en « révélation » — quelque chose que Gohan savait, que Kamé Sennin savait, mais dont personne n'avait parlé. Le lecteur du premier cercle acquiesce : « Bien sûr, c'est logique, ils gardaient le secret pour protéger Goku. » Le lecteur du deuxième cercle, lui, voit la main du tisserand : cette histoire n'existait pas il y a cinquante pages.</p>
+
+  <div class="infographic">
+    <div class="tag">Infographie interactive</div>
+    <div class="name">Anatomie d'un retcon</div>
+    <div class="file">infographics/retcon_anatomie.html</div>
+  </div>
+
+  <p><strong>Le retcon qui réactive le passé.</strong> Ce que fait Toriyama après l'arrivée de Raditz est tout aussi remarquable. Vegeta, plus tard, donne un « petit cours sur les singes géants » — et soudain, tout le passé de Dragon Ball se <em>réactive</em>. Les flashbacks arrivent. La mort de Gohan, écrasé par l'Ōzaru de Goku bébé, est confirmée. Kami-sama qui arrachait la queue de Goku « parce que c'est gênant » prend un sens nouveau : il savait, au moins inconsciemment, ce que cette queue représentait. La phrase d'Oolong — « un extraterrestre, peut-être ? » — se réalise. Toutes les fausses prophéties de ce qui précède convergent en un point focal unique.</p>
+
+  <p>Et Raditz ne se contente pas de révéler l'identité de Goku — il déroule, en une poignée de cases, toute une civilisation qui n'existait pas une page plus tôt.</p>
+
+  <img class="img-full" src="images/fig24i_raditz_mission_exterminer.png" alt="Raditz : « C'est très simple. Kakarotto a été envoyé ici pour débarrasser cette planète de sa population encombrante ! Nous, les Saiyans, on est un peuple guerrier. On repère des planètes à l'environnement viable, on élimine leurs habitants et on les revend à bon prix à d'autres populations qui recherchent des planètes convenables. »"/>
+
+  <img class="img-full" src="images/fig24j_raditz_planete_vegeta_explosion.png" alt="Raditz : « Presque tous les Saiyans ont disparu en poussière dans le vide sidéral... Les Saiyans ont toujours été un petit peuple et pour tout arranger, la planète Vegeta est entrée en collision avec une météorite géante et elle a explosé... »"/>
+
+  <img class="img-full" src="images/fig24b_raditz_survivants_saiyans.png" alt="Raditz : « L'un d'eux et moi, on attaquait une autre planète au moment de l'explosion, ça nous a sauvés. Quant au dernier, il avait été envoyé sur une planète, comme toi. Heureusement, d'ailleurs... Il ne reste plus que quatre Saiyans, toi compris ! »"/>
+
+  <img class="img-full" src="images/fig24c_raditz_recrute_goku.png" alt="Raditz : « Alors j'ai pensé à toi. Ta puissance n'est pas encore au top mais si tu te joins à nous, on arrivera à se débrouiller... Et là, on a déniché une planète qu'on pourrait revendre un bon petit paquet ! Sauf qu'à trois, ça fait un peu juste, on risque de peiner à la soumettre... »"/>
+  <p class="img-caption">Un peuple, une planète détruite, trois survivants ailleurs dans la galaxie — une mythologie entière, posée en une seule scène</p>
+  <p>Le passé n'est pas aboli. Il est <em>relu</em>. C'est la puissance spécifique du retcon structurel : il ne supprime pas les seize premiers tomes, il les transforme en prélude.</p>
+  <p>Et c'est ici que notre voyage dans les dix-sept premiers tomes de Dragon Ball s'arrête — au seuil exact d'un monde nouveau. Le gag manga est devenu un récit épique. Le garçon à queue de singe est devenu un guerrier extraterrestre. Et chaque page que nous avons analysée — le Kinto'un, le Nyoibō, les fausses prophéties, le Senzu, Kami-sama, l'escalade — se reconfigure instantanément sous la lumière de cette révélation.</p>
+  <p>Le retcon Saiyan est la preuve vivante de la thèse de cet article. Il ne fonctionne <em>que</em> parce que Toriyama n'avait rien planifié. S'il avait su, il aurait semé des indices explicites, et le coup de théâtre aurait été moins violent. C'est l'absence de plan qui fait la violence de la surprise. Et c'est le tissu — seize tomes de fils tissés sans arrière-pensée — qui donne au retcon sa matière première.</p>
+  <p>Le tisserand n'avait pas de dessin. Mais le tissu, lui, avait un motif.</p>
+
+  <!-- ══ ÉPILOGUE ══ -->
+  <h2 class="dark">Épilogue : les deux cercles</h2>
+
+  <p>Si vous êtes arrivé jusqu'ici, vous avez fait le passage. Vous avez vu les fils, les nœuds, les reprises. Vous savez que le Nyoibō n'a pas toujours été un pilier sacré — qu'il l'est <em>devenu</em>, sous la main d'un auteur qui improvisait à la semaine et qui, en cherchant une solution à un problème immédiat, a trouvé une connexion magnifique avec un objet oublié du tome 1.</p>
+  <p>Et maintenant, relisez le tome 1.</p>
+  <p>Le premier cercle est toujours là. Intact. Le bâton est encore magique, le nuage est encore merveilleux, le garçon à queue de singe est encore plein de mystère. Rien n'est abîmé. Rien n'est diminué.</p>
+  <p>Mais quelque chose s'est ajouté. En regardant Goku tenir son Nyoibō au premier chapitre, vous voyez maintenant le pilier sacré en devenir. En regardant Oolong dire « un extraterrestre, peut-être ? », vous voyez le retcon en embuscade. En regardant Kamé Sennin donner le Kinto'un, vous voyez le fil qui commence — un fil dont le vieux maître ne sait pas encore où il mène.</p>
+  <p>Vous êtes dans les deux cercles à la fois. Et c'est plus riche, pas plus pauvre.</p>
+  <p>Le retcon n'est pas le symptôme d'une écriture défaillante. C'est le <em>processus même</em> par lequel un univers sériel se construit. Le comprendre, c'est accéder à un deuxième plaisir de lecture — celui de voir le tisserand au travail. Et le trouver encore plus admirable.</p>
+
+  <img class="img-full" src="images/infographic_demonter_comprendre.png" alt="La mobylette démontée pièce par pièce, le manga décortiqué page par page — démonter n'est pas détruire, comprendre c'est aimer deux fois"/>
+  <p class="img-caption">Démonter n'est pas détruire. Comprendre, c'est aimer deux fois.</p>
+  <p>Parce que l'exploit n'est pas d'avoir tout prévu. L'exploit, c'est de n'avoir rien prévu — et d'avoir construit quand même quelque chose qui ressemble, à s'y méprendre, à un plan.</p>
+
+  <div class="teaser">Dans un prochain article, nous examinerons ce qui vient après le retcon Saiyan : les retcons de l'ère Z, du retcon Namek au retcon Freezer, en passant par les retcons silencieux — ces petits ajustements de compétence et de règle que l'auteur glisse entre les combats. Et nous poserons la question qui fâche : quand est-ce qu'un retcon <strong>échoue</strong> ?</div>
+
+  <footer class="foot">« Qu'est-ce qu'un retcon ? » · Dragonballologie · La Revue</footer>
+
+</main>
+</body>
+</html>
