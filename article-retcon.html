@@ -194,6 +194,24 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
 .side .head{display:flex;gap:12px;align-items:center;margin-bottom:8px}
 .side .fiche.rouge{background:linear-gradient(170deg,#fff 0 55%,#fff1e6)}
 .side .fiche.rouge .art{background:radial-gradient(circle at 50% 120%,#fecaca,#fff7ed 70%)}
+.side .ticket{background:#fff;border:1.5px dashed var(--ink3);border-radius:4px;padding:14px 16px;font-family:'Share Tech Mono',monospace;font-size:12.5px;color:var(--ink);box-shadow:0 3px 12px rgba(0,0,0,.06);position:relative}
+.side .ticket .t{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;text-align:center;border-bottom:1.5px dashed var(--rule);padding-bottom:8px;margin-bottom:8px}
+.side .ticket .l{display:flex;justify-content:space-between;gap:8px;padding:3px 0}
+.side .ticket .l b{color:var(--c3);font-weight:400}
+.side .ticket .tot{border-top:1.5px dashed var(--rule);margin-top:8px;padding-top:8px;text-align:center;color:var(--ink3)}
+.side ol.chaine{list-style:none;margin:8px 0 0;padding:0;counter-reset:c}
+.side ol.chaine li{background:var(--parchment);border-radius:8px;padding:7px 10px;font-size:13.5px;line-height:1.35;position:relative;margin-bottom:18px}
+.side ol.chaine li:not(:last-child)::after{content:"↓";position:absolute;left:50%;bottom:-17px;transform:translateX(-50%);color:var(--c1);font-weight:700;font-size:13px}
+.side ol.chaine li:last-child{background:#fff3e8;outline:1.5px solid rgba(194,65,12,.3);margin-bottom:0}
+.side .jauge{margin-top:8px}
+.side .jauge .r{font-size:13px;margin-top:10px;display:flex;justify-content:space-between}
+.side .jauge .b{height:14px;border-radius:7px;background:var(--parchment);overflow:hidden;margin-top:4px}
+.side .jauge .b>div{height:100%;border-radius:7px}
+.side .pile{display:flex;flex-direction:column;gap:5px;margin-top:8px}
+.side .pile div{border-radius:7px;padding:6px 10px;font-size:13.5px;display:flex;justify-content:space-between;background:var(--parchment)}
+.side .pile div.haut{background:#fff8e1;outline:1.5px solid #f4b400}
+.side .pile s{color:var(--ink3)}
+.side .pile small{color:var(--ink3);font-size:12px}
 </style>
 </head>
 <body>
@@ -217,6 +235,11 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
     <circle cx="32" cy="32" r="28" fill="#f59e0b" stroke="#1c1917" stroke-width="3"/>
     <circle cx="23" cy="22" r="7" fill="#fde68a" opacity=".8"/>
     <path d="M32 21l3.2 7.2 7.8.6-6 5 1.9 7.6L32 37.3l-6.9 4.1 1.9-7.6-6-5 7.8-.6z" fill="#c2410c"/>
+  </symbol>
+  <symbol id="baton" viewBox="0 0 64 64">
+    <rect x="28" y="4" width="8" height="56" rx="3" fill="#dc2626" stroke="#1c1917" stroke-width="2.5"/>
+    <rect x="26" y="4" width="12" height="9" rx="2" fill="#f59e0b" stroke="#1c1917" stroke-width="2.5"/>
+    <rect x="26" y="51" width="12" height="9" rx="2" fill="#f59e0b" stroke="#1c1917" stroke-width="2.5"/>
   </symbol>
 </svg>
 
@@ -516,11 +539,37 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   </div>
 
   <!-- ══ 4. LE TISSAGE PROGRESSIF — NYOIBŌ ══ -->
+  <section class="marges">
+  <aside class="rail" data-mode="liste" aria-label="Le fil du Nyoibō" data-etapes='[["Un bâton de conte","tome 1"],["La tour Karin","tome 6"],["« Dieu des arts martiaux »","tome 7 : Karin au sommet"],["Le pilier sacré","tome 14"]]'>
+    <div class="fil">
+      <div class="fil-t">Le fil du Nyoibō</div>
+      <div class="fil-s">Du bâton de conte au pilier du monde.</div>
+      <div class="track"></div>
+    </div>
+  </aside>
   <h2 class="c2">4. Le tissage progressif — cas d'école : le Nyoibō</h2>
+  <div class="mfil" aria-hidden="true"><span>T1</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i><span>T14</span></div>
 
   <p>Si le Kinto'un est l'exemple du tissage parfait, le Nyoibō en est la version radicale — celle où le retcon est <em>certain</em>, prouvable, et pourtant invisible au premier cercle de lecture.</p>
-  <p>Au tome 1, le Nyoibō est un bâton extensible hérité du grand-père Gohan. Référence directe au <em>Saiyūki</em>. Il s'allonge, il frappe, c'est un gag. Rien d'autre.</p>
-  <p>Au tome 6, apparaît la tour Karine (p. 164) — un édifice qui « se dresse jusqu'aux cieux ». Bora, le gardien au pied de la tour, prévient : « Nous nous transmettons cette légende de génération en génération... peut-être une superstition. » Au sommet, Karin, le chat immortel.</p>
+  <aside class="side">
+    <div class="fiche rouge">
+      <div class="art"><svg viewBox="0 0 64 64" style="width:70px;transform:rotate(-35deg)" role="img" aria-label="Un bâton rouge et or"><use href="#baton"/></svg></div>
+      <div class="bd">
+        <div class="nm">NYOIBŌ</div>
+        <div class="kj">如意棒 · le bâton qui obéit</div>
+        <dl><dt>Origine</dt><dd>Saiyūki</dd><dt>Hérité de</dt><dd>Grand-père Gohan</dd><dt>Tome 1</dt><dd>un gag qui s'allonge</dd><dt>Tome 14</dt><dd>le pilier du monde</dd></dl>
+      </div>
+    </div>
+  </aside>
+  <p data-step="1">Au tome 1, le Nyoibō est un bâton extensible hérité du grand-père Gohan. Référence directe au <em>Saiyūki</em>. Il s'allonge, il frappe, c'est un gag. Rien d'autre.</p>
+  <aside class="side">
+    <div class="know">
+      <div class="lbl">Le saviez-vous ?</div>
+      <div class="big" style="font-size:30px">13 500 jin</div>
+      <p>Le poids du bâton de Sun Wukong dans le <em>Voyage vers l'Ouest</em>, environ huit tonnes. Chez Toriyama, au tome 1, il tient dans le dos d'un enfant.</p>
+    </div>
+  </aside>
+  <p data-step="2">Au tome 6, apparaît la tour Karine (p. 164) — un édifice qui « se dresse jusqu'aux cieux ». Bora, le gardien au pied de la tour, prévient : « Nous nous transmettons cette légende de génération en génération... peut-être une superstition. » Au sommet, Karin, le chat immortel.</p>
 
   <img class="img-full" src="images/fig06_tour_karin_premiere_apparition.png" alt="Vol. 6 p.164 — La tour Karine, première apparition"/>
 
@@ -536,23 +585,59 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   <img class="img-full" src="images/fig06d_bora_muten_roshi_disciples.png" alt="Bora : « J'ai entendu dire qu'il y a très longtemps, Gyumao et son Gohan étaient les deux disciples de Muten Roshi, le grand maître des arts martiaux... »"/>
   <p class="img-caption">La même lignée, le même maître — Kamé Sennin a formé Gyumao et grand-père Gohan bien avant Goku</p>
 
-  <p>L'important ici, c'est ce qui n'est <em>pas</em> dit. La tour est un cul-de-sac vertical. Il n'y a rien au-dessus. Karin est le sommet. Et Karin porte le titre de « Dieu des arts martiaux » (tome 7, p. 20) — un titre divin, pas celui d'un gardien intermédiaire. Aucune mention d'un palais au-dessus, d'un Tout-Puissant réel, d'une connexion entre le bâton et la tour.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">La hiérarchie, avant / après</div>
+      <div class="duo">
+        <div><b>Tome 7</b><div class="pile"><div class="haut">Karin <small>sommet</small></div><div>La tour</div><div>La Terre</div></div></div>
+        <div class="apres"><b>Arc Piccolo</b><div class="pile"><div class="haut">Tout-Puissant</div><div>Karin <small><s>Dieu</s></small></div><div>La tour</div><div>La Terre</div></div></div>
+      </div>
+      <p style="margin-top:8px">Un titre divin, puis quelqu'un au-dessus. Le plan n'existait pas.</p>
+    </div>
+  </aside>
+  <p data-step="3">L'important ici, c'est ce qui n'est <em>pas</em> dit. La tour est un cul-de-sac vertical. Il n'y a rien au-dessus. Karin est le sommet. Et Karin porte le titre de « Dieu des arts martiaux » (tome 7, p. 20) — un titre divin, pas celui d'un gardien intermédiaire. Aucune mention d'un palais au-dessus, d'un Tout-Puissant réel, d'une connexion entre le bâton et la tour.</p>
 
   <img class="img-full" src="images/manga/fig07b_taopaipai_apprend_karin.png" alt="Tao Pai Pai : « Dis-moi, celui qui t'a entraîné, ce ne serait pas un sage du nom de Karin ? Le sanctuaire Karin... est-ce que ce serait... Alors comme ça, c'est là que se trouve le sage Karin, qu'on appelle le Dieu des arts martiaux... »"/>
   <p class="img-caption">Même le tueur le plus redoutable de l'arc n'avait jamais entendu parler de Karin — la preuve que ce sanctuaire vient d'apparaître dans l'univers</p>
 
   <img class="img-full" src="images/fig07_karin_dieu_arts_martiaux.jpg" alt="Vol. 7 p.20 — Karin, « Le Dieu des arts martiaux »"/>
 
-  <p>Puis vient l'arc Piccolo Daimaō, et le besoin narratif de créer un palier au-dessus de Karin. Toriyama invente le Tout-Puissant. Et c'est à ce moment que Karin — en direct, devant nous — « se souvient » que le bâton de Goku a un autre usage : « À l'origine, c'est un bâton qui relie notre monde au sanctuaire. » Et Goku : « Mon Nyoibō ?! »</p>
+  <aside class="side">
+    <div class="quote">
+      <svg viewBox="0 0 64 64" aria-hidden="true" style="width:34px;top:-20px;transform:rotate(30deg)"><use href="#baton"/></svg>
+      <q>À l'origine, c'est un bâton qui relie notre monde au sanctuaire.</q>
+      <div class="who">Karin</div>
+      <p style="color:rgba(255,255,255,.8)">Il se souvient, il ne découvre pas : la fiction d'un plan est sauve.</p>
+    </div>
+  </aside>
+  <p data-step="4">Puis vient l'arc Piccolo Daimaō, et le besoin narratif de créer un palier au-dessus de Karin. Toriyama invente le Tout-Puissant. Et c'est à ce moment que Karin — en direct, devant nous — « se souvient » que le bâton de Goku a un autre usage : « À l'origine, c'est un bâton qui relie notre monde au sanctuaire. » Et Goku : « Mon Nyoibō ?! »</p>
 
   <img class="img-full" src="images/fig08_karin_baton_relie_sanctuaire.jpg" alt="Karin — « À l'origine, c'est un bâton qui relie notre monde au sanctuaire. »"/>
 
   <p>Le bâton magique est devenu le pilier sacré. L'accessoire du <em>Saiyūki</em> est devenu un élément fondamental de la cosmologie. Et le lecteur du premier cercle ne voit rien, parce que le « comme si » de Karin est parfait — il <em>se souvient</em>, il ne <em>découvre</em> pas, donc la fiction d'un plan de l'auteur est maintenue.</p>
   <p>Mais le titre « Dieu des arts martiaux » prouve que le plan n'existait pas. Si Toriyama avait le Tout-Puissant en tête quand il dessinait Karin, il ne lui aurait jamais donné un titre divin — parce que ce titre occupe une place que quelqu'un d'autre doit occuper. Karin devait être le sommet. Il a cessé de l'être.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Lexique</div>
+      <h4>Retcon par absorption</h4>
+      <svg class="schema" viewBox="0 0 240 90" role="img" aria-label="Un petit cercle englobé par un plus grand">
+        <circle cx="70" cy="45" r="22" fill="#f5ede0" stroke="#78716c" stroke-width="2"/>
+        <text x="70" y="49" text-anchor="middle" font-family="Oswald, sans-serif" font-size="11" fill="#44403c">Karin</text>
+        <path d="M100 45h26" stroke="#c2410c" stroke-width="2" marker-end="url(#fleche2)"/>
+        <defs><marker id="fleche2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c2410c"/></marker></defs>
+        <circle cx="185" cy="45" r="40" fill="#fff8e1" stroke="#f4b400" stroke-width="2"/>
+        <circle cx="185" cy="58" r="17" fill="#f5ede0" stroke="#78716c" stroke-width="2"/>
+        <text x="185" y="62" text-anchor="middle" font-family="Oswald, sans-serif" font-size="10" fill="#44403c">Karin</text>
+        <text x="185" y="30" text-anchor="middle" font-family="Oswald, sans-serif" font-size="11" fill="#b45309">Tout-Puissant</text>
+      </svg>
+      <p>L'ancien statut est dépassé, pas contredit. Rien n'est démenti, tout est englobé.</p>
+    </div>
+  </aside>
   <p>C'est un retcon par absorption : l'ancien statut est dépassé, pas contredit. Karin n'est pas rétrogradé explicitement. Son titre disparaît simplement, absorbé par l'existence d'un être supérieur.</p>
 
   <img class="img-full" src="images/infographic_nyoibo_tissage.png" alt="Retcon de tissage : un gag devient mythologie — du bâton qui s'allonge tout seul au tome 1 (1984) au pilier sacré reliant la tour Karine au Palais de Dieu au tome 14 (1988)"/>
   <p class="img-caption">Retcon de tissage : un gag devient mythologie</p>
+  </section>
 
   <!-- ══ 5. LES FAUSSES PROPHÉTIES ══ -->
   <h2 class="c3">5. Les fausses prophéties</h2>
@@ -584,11 +669,30 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   <p>Ce grand-père écrasé par « ce monstre », ce point faible retrouvé sur un Ōzaru inconnu : deux fils posés ici sans réponse, et que le tome 17 refermera d'un seul coup.</p>
 
   <!-- ══ 6. RETCONS FONCTIONNELS ET FILS ABANDONNÉS ══ -->
+  <section class="marges">
+  <aside class="rail" data-mode="liste" aria-label="Le bestiaire des retcons" data-etapes='[["Le Senzu","retcon fonctionnel"],["Shenron","l&#39;omnipotence bridée"],["Baba","le fil abandonné"],["Le Kinto&#39;un","l&#39;erreur arithmétique"]]'>
+    <div class="fil">
+      <div class="fil-t">Le bestiaire des retcons</div>
+      <div class="fil-s">Quatre façons de rater une couture.</div>
+      <div class="track"></div>
+    </div>
+  </aside>
   <h2 class="dark" id="s6">6. Les retcons fonctionnels et fils abandonnés</h2>
+  <div class="mfil" aria-hidden="true"><span>Senzu</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i><span>Kinto'un</span></div>
 
   <p>Tous les retcons ne sont pas des réussites. Certains sont des ajustements mécaniques, d'autres des oublis purs. Les classifier est aussi important que célébrer les réussites.</p>
 
-  <div class="example">
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Le Senzu, avant / après</div>
+      <div class="duo">
+        <div><b>Tome 6, p. 203</b>Un haricot qui rassasie dix jours.</div>
+        <div class="apres"><b>Combat suivant</b>Un haricot qui guérit tout, instantanément.</div>
+      </div>
+      <div class="meter" style="margin-top:10px"><span>Explications données</span><b>0</b></div>
+    </div>
+  </aside>
+  <div class="example" data-step="1">
     <div class="ex-num">Cas d'école</div>
     <div class="ex-title">Le Senzu — retcon fonctionnel</div>
     <p>Sa première apparition (tome 6, p. 203) le présente comme un haricot magique qui rassasie pendant dix jours. Karin le tend à Goku, qui proteste : « Un haricot ? Tu te moques de moi ?! » La fonction est claire : le Senzu nourrit. Rien d'autre.</p>
@@ -607,7 +711,14 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
     <div class="concl"><strong>Verdict :</strong> le même objet change de règles selon les besoins de l'auteur — la définition même du retcon fonctionnel.</div>
   </div>
 
-  <div class="example">
+  <aside class="side">
+    <div class="slot">
+      <svg viewBox="0 0 64 64" style="width:44px" aria-hidden="true"><use href="#boule"/></svg>
+      <p><strong>Ton illustration ici</strong></p>
+      <p>Ex. : un dragon tout-puissant… avec des pansements « patch 1 », « patch 2 ». Format conseillé : 540 × 540 px.</p>
+    </div>
+  </aside>
+  <div class="example" data-step="2">
     <div class="ex-num">Cas d'école</div>
     <div class="ex-title">Shenron — l'omnipotence bridée</div>
     <p>Au tome 8 (p. 106), le dragon sacré apparaît et annonce : « Il n'est point de vœu que je ne puisse exaucer. » Omnipotent. Sans limite. Six mots qui auraient dû empêcher toute tension narrative future — si un dragon peut tout faire, tout est résolu d'avance. Progressivement, les limitations apparaissent. Le dragon est bridé, patch par patch, pour maintenir la tension dramatique.</p>
@@ -617,7 +728,14 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
     <p class="img-caption">Même le grand-père de Goku, mort et jamais ressuscité, sert de point de comparaison dans cette même scène</p>
   </div>
 
-  <div class="example">
+  <aside class="side">
+    <div class="know">
+      <div class="lbl">Le chiffre</div>
+      <div class="big">0</div>
+      <p>fois où le pouvoir de Baba, lire l'avenir, sert ensuite à anticiper un ennemi. Pas de contradiction : une évacuation silencieuse.</p>
+    </div>
+  </aside>
+  <div class="example" data-step="3">
     <div class="ex-num">Cas d'école</div>
     <div class="ex-title">Baba la voyante — le fil abandonné</div>
     <p>Au tome 6 (p. 57), elle est présentée comme capable de « lire l'avenir dans sa boule de cristal ». Un pouvoir absolu de précognition, jamais contredit — simplement jamais réutilisé. Les ennemis auraient pu être anticipés, les pièges déjoués. Mais Baba disparaît du récit, et son pouvoir avec elle. Pas de retcon, pas de contradiction : une évacuation silencieuse.</p>
@@ -625,50 +743,154 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
     <img class="img-full" src="images/fig14_baba_lit_avenir.png" alt="« Hé hé hé, évidemment. » « Pas sûr, ma sœur peut lire l'avenir dans sa boule de cristal. Tu savais qu'on allait venir aujourd'hui, hein ? »"/>
   </div>
 
-  <p>Et le Kinto'un, si magnifiquement tissé par ailleurs, n'échappe pas à l'<strong>erreur arithmétique</strong>. Au tome 5, Karin déclare : « Un Kinto'un ne peut pas disparaître ! » Quelques tomes plus tard, Tambourine pulvérise celui de Goku. La règle explicite est contredite par l'action. Ce n'est pas un changement de registre, pas un enrichissement — c'est un oubli.</p>
+  <aside class="side">
+    <div class="quote">
+      <svg viewBox="0 0 120 64" aria-hidden="true"><use href="#kinto"/></svg>
+      <q><s style="text-decoration-thickness:2px">Un Kinto'un ne peut pas disparaître !</s></q>
+      <div class="who">Karin, tome 5 · Tambourine, quelques tomes plus tard</div>
+      <p style="color:rgba(255,255,255,.8)">La règle énoncée au §3 est contredite par l'action. Un oubli, pas un tissage.</p>
+    </div>
+  </aside>
+  <p data-step="4">Et le Kinto'un, si magnifiquement tissé par ailleurs, n'échappe pas à l'<strong>erreur arithmétique</strong>. Au tome 5, Karin déclare : « Un Kinto'un ne peut pas disparaître ! » Quelques tomes plus tard, Tambourine pulvérise celui de Goku. La règle explicite est contredite par l'action. Ce n'est pas un changement de registre, pas un enrichissement — c'est un oubli.</p>
 
   <img class="img-full" src="images/fig05c_kinton_pulverise_tambourine.png" alt="« Il a même tué Kinto-un !! » « Quel salaud... » « Il s'est vraiment fait pulvériser... » « Bah alors... mon Kinto-un... »"/>
 
+  </section>
+
   <!-- ══ 7. KAMI-SAMA ══ -->
+  <section class="marges">
+  <aside class="rail" data-mode="liste" aria-label="La machine à réparer" data-etapes='[["L&#39;origine","un enchaînement de besoins"],["La Lune","restaurée"],["La promesse à Chichi","un gag devient un enjeu"],["Le dédoublement","Dieu et Piccolo, une seule personne"],["Le prix","« pour certaines raisons »"]]'>
+    <div class="fil">
+      <div class="fil-t">La machine à réparer</div>
+      <div class="fil-s">Ce que Kami-sama remet d'aplomb.</div>
+      <div class="track"></div>
+    </div>
+  </aside>
   <h2 class="c1">7. La machine à réparer : Kami-sama</h2>
+  <div class="mfil" aria-hidden="true"><span>Origine</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i><i data-s="5"></i><span>Prix</span></div>
 
   <p>Si un seul personnage incarne le rôle du retcon dans Dragon Ball, c'est Kami-sama, le Tout-Puissant. Sa création même est un retcon — rien dans les tomes précédents ne suggère son existence (le titre de « Dieu des arts martiaux » de Karin le prouve). Mais sa <em>fonction</em> va bien au-delà : Kami-sama est la machine à réparer le passage du registre comique au registre sérieux.</p>
-  <p>Comment Toriyama en arrive-t-il à le créer ? Par un enchaînement de besoins narratifs. Piccolo Daimaō est mort, mais ses victimes ont des « âmes qui ne trouvent pas le repos ». Pour les libérer, il faut un pouvoir supérieur à Piccolo. Pour qu'un pouvoir supérieur existe, il faut un palier au-dessus de Karin. Pour atteindre ce palier, il faut une raison d'y monter. Et Karin — en direct, devant nous — « se souvient » : le bâton de Goku relie la tour au sanctuaire.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Schéma</div>
+      <h4>La chaîne des besoins</h4>
+      <ol class="chaine">
+        <li>Des âmes sans repos</li>
+        <li>Il faut un pouvoir supérieur à Piccolo</li>
+        <li>Il faut un palier au-dessus de Karin</li>
+        <li>Il faut une raison d'y monter</li>
+        <li>Le bâton relie la tour au sanctuaire</li>
+      </ol>
+    </div>
+  </aside>
+  <p data-step="1">Comment Toriyama en arrive-t-il à le créer ? Par un enchaînement de besoins narratifs. Piccolo Daimaō est mort, mais ses victimes ont des « âmes qui ne trouvent pas le repos ». Pour les libérer, il faut un pouvoir supérieur à Piccolo. Pour qu'un pouvoir supérieur existe, il faut un palier au-dessus de Karin. Pour atteindre ce palier, il faut une raison d'y monter. Et Karin — en direct, devant nous — « se souvient » : le bâton de Goku relie la tour au sanctuaire.</p>
 
   <img class="img-full" src="images/fig15_karin_ames_sans_repos.jpg" alt="Karin — « Les âmes de ceux qui ont été tués par des démons ne trouvent pas le repos... »"/>
 
   <p>Mais une fois Kami-sama créé, Toriyama s'en sert pour bien plus que relancer l'arc. Il en fait la <strong>machine à réparer le registre comique</strong>. En l'espace de quelques chapitres, Kami-sama résout tous les problèmes laissés en suspens par le passage du gag au sérieux.</p>
-  <p>La Lune, détruite par un Kamehameha de Kamé Sennin dans un excès comique, puis revenue sans explication ? Kami-sama « voulait restaurer la Lune ». La queue de singe de Goku, qui risquait de le transformer en Ōzaru à chaque pleine lune ? Kami-sama l'arrache, parce que « c'est gênant ». Le Nyoibō, simple accessoire de conte ? Kami-sama révèle qu'il est le pilier sacré reliant la tour au sanctuaire.</p>
+  <aside class="side">
+    <div class="ticket">
+      <div class="t">ATELIER KAMI-SAMA<br><span style="font-family:'Share Tech Mono',monospace;font-size:11px;font-weight:400;color:var(--ink3)">réparations du registre comique</span></div>
+      <div class="l"><span>Lune pulvérisée</span><b>restaurée</b></div>
+      <div class="l"><span>Queue de singe</span><b>arrachée</b></div>
+      <div class="l"><span>Bâton de conte</span><b>pilier sacré</b></div>
+      <div class="l"><span>Promesse d'enfant</span><b>tenue</b></div>
+      <div class="tot">Contradictions : 0 · Gags convertis : 4</div>
+    </div>
+  </aside>
+  <p data-step="2">La Lune, détruite par un Kamehameha de Kamé Sennin dans un excès comique, puis revenue sans explication ? Kami-sama « voulait restaurer la Lune ». La queue de singe de Goku, qui risquait de le transformer en Ōzaru à chaque pleine lune ? Kami-sama l'arrache, parce que « c'est gênant ». Le Nyoibō, simple accessoire de conte ? Kami-sama révèle qu'il est le pilier sacré reliant la tour au sanctuaire.</p>
 
   <img class="img-full" src="images/fig16_lune_restauree_queue_arrachee.jpg" alt="Goku de retour — la Lune restaurée, la queue arrachée"/>
 
-  <p>Et la promesse de mariage avec Chichi — un gag d'enfant, au tout début du manga, quand Goku ne savait même pas ce que « se marier » voulait dire — devient un engagement réel au Tenka'ichi Budōkai. Le gag est converti en enjeu sérieux, sans contradiction.</p>
+  <p data-step="3">Et la promesse de mariage avec Chichi — un gag d'enfant, au tout début du manga, quand Goku ne savait même pas ce que « se marier » voulait dire — devient un engagement réel au Tenka'ichi Budōkai. Le gag est converti en enjeu sérieux, sans contradiction.</p>
 
   <img class="img-full" src="images/fig17_chichi_tournoi.jpg" alt="Chichi au tournoi — « Qui t'es, toi ? » / « IDIOT !! »"/>
 
   <p>C'est <em>le même geste</em> à chaque fois : prendre un élément du registre comique et lui donner du poids dans le registre sérieux. Et c'est pour ça que ça ne se voit pas — parce que chaque conversion est individuelle et naturelle. Le lecteur ne perçoit pas le système. Il voit des histoires qui s'approfondissent, pas un auteur qui recycle méthodiquement ses gags en mythologie.</p>
-  <p>Mais l'idée la plus audacieuse de Kami-sama, c'est le dédoublement. Toriyama n'avait aucune obligation de relier le Tout-Puissant à Piccolo. Et pourtant, Karin tease : « C'est surtout un visage qu'il connaît déjà... » — le Tout-Puissant et Piccolo étaient <em>la même personne</em>, scindée en deux. Le bien et le mal séparés.</p>
+  <aside class="side">
+    <div class="fiche rouge">
+      <div class="bd">
+        <div class="lbl">Fiche personnage</div>
+        <div class="nm">KAMI-SAMA</div>
+        <div class="kj">le Tout-Puissant · inventé pendant l'arc Piccolo</div>
+        <dl><dt>L'autre moitié</dt><dd>Piccolo</dd><dt>A créé</dt><dd>les Dragon Balls</dd><dt>Si l'un meurt</dt><dd>l'autre aussi, et plus de Dragon Balls</dd></dl>
+      </div>
+    </div>
+  </aside>
+  <p data-step="4">Mais l'idée la plus audacieuse de Kami-sama, c'est le dédoublement. Toriyama n'avait aucune obligation de relier le Tout-Puissant à Piccolo. Et pourtant, Karin tease : « C'est surtout un visage qu'il connaît déjà... » — le Tout-Puissant et Piccolo étaient <em>la même personne</em>, scindée en deux. Le bien et le mal séparés.</p>
 
   <img class="img-full" src="images/fig18_karin_visage_connu.jpg" alt="Karin — « C'est surtout un visage qu'il connaît déjà... »"/>
 
   <p>C'est un retcon de tissage total — rien dans l'arc Piccolo Daimaō ne suggérait cette connexion — mais c'est aussi un coup de génie narratif, parce qu'il fait trois choses en même temps : relier l'arc précédent au nouveau (tissage), donner une origine aux Dragon Balls (elles sont créées par le Tout-Puissant), et créer un enjeu dramatique permanent (si Piccolo meurt, Dieu meurt, et les Dragon Balls disparaissent).</p>
-  <p>Le prix à payer, c'est l'incohérence que ça génère. Si Kami-sama est plus fort que Piccolo — et les pages montrent qu'il l'est, de très loin, avec Mr. Popo en échelon intermédiaire — pourquoi ne l'a-t-il pas neutralisé quand Piccolo massacrait le monde entier ? « Pour certaines raisons, nous ne pouvons pas nous battre contre lui » — et ces « certaines raisons » sentent l'improvisation.</p>
+  <aside class="side">
+    <div class="quote">
+      <q>Pour certaines raisons, nous ne pouvons pas nous battre contre lui.</q>
+      <div class="who">Kami-sama</div>
+      <p style="color:rgba(255,255,255,.8)">Le contre-exemple parfait : 0 condition sur 3 du retcon réussi.</p>
+      <a href="#s9">Voir §9, Raditz →</a>
+    </div>
+  </aside>
+  <p data-step="5">Le prix à payer, c'est l'incohérence que ça génère. Si Kami-sama est plus fort que Piccolo — et les pages montrent qu'il l'est, de très loin, avec Mr. Popo en échelon intermédiaire — pourquoi ne l'a-t-il pas neutralisé quand Piccolo massacrait le monde entier ? « Pour certaines raisons, nous ne pouvons pas nous battre contre lui » — et ces « certaines raisons » sentent l'improvisation.</p>
 
   <img class="img-full" src="images/fig19_kamisama_certaines_raisons.jpg" alt="Kami-sama — « Mister Popo et moi, nous ne pouvons pas nous battre contre lui pour certaines raisons. »"/>
 
+  </section>
+
   <!-- ══ 8. LE PRIX DE L'ESCALADE ══ -->
+  <section class="marges">
+  <aside class="rail" data-mode="liste" aria-label="Le prix de l'escalade" data-etapes='[["Le vocabulaire s&#39;invente","vol, ki, auras, transformations"],["L&#39;amnésie de registre","la Lune contre le ring"],["Le plafond humain explose","Tenshinhan, Krilin, Yamcha"],["Le sanctuaire gonflé","Mr. Popo, Kami-sama"],["Spectacle en aval","incohérence en amont"]]'>
+    <div class="fil">
+      <div class="fil-t">Le prix de l'escalade</div>
+      <div class="fil-s">Comment le plafond d'hier devient ridicule.</div>
+      <div class="track"></div>
+    </div>
+  </aside>
   <h2 class="dark">8. Le prix de l'escalade</h2>
+  <div class="mfil" aria-hidden="true"><span>Vocabulaire</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i><i data-s="5"></i><span>Prix</span></div>
 
   <p>Derrière les retcons de tissage, derrière les conversions de registre, il y a un moteur mécanique qui alimente tout : l'escalade de puissance. Et ce moteur est consubstantiel au format même du shōnen hebdomadaire de combat.</p>
   <p>Le principe est simple. L'auteur écrit à la semaine. Chaque arc doit renouveler l'intérêt. Et le code visuel du shōnen, c'est que la menace suivante doit être <em>plus grande</em>. Chaque nouvel ennemi est plus fort que le précédent. Mécaniquement, ça signifie que le « plus fort du monde » d'il y a 50 chapitres est devenu faible — non pas dans la fiction, mais dans le <em>vocabulaire de puissance</em> dont l'auteur dispose.</p>
-  <p>Car le vocabulaire de la puissance s'invente en marchant. Quand Toriyama dessine Kamé Sennin au tome 2, c'est le sommet du monde. Le Kamehameha est la technique ultime. Personne ne vole. Les combats sont au sol, au corps-à-corps. Toriyama ne dispose pas encore du vol, du ki visible, des auras, des transformations. Il les invente tome après tome, en réponse aux besoins de l'escalade. Et chaque invention rend le plafond précédent ridicule.</p>
-  <p>Le cas le plus frappant est celui de la Lune. Au tournoi précédent, Kamé Sennin détruit la Lune avec un Kamehameha — un astre entier, pulvérisé. Quelques tomes plus tard, au tournoi suivant, le Kikoho de Tenshinhan détruit le ring de combat, et Kamé Sennin commente : « Sa puissance destructrice est colossale... rien à voir avec le Kamehameha ! »</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Inventé en marchant</div>
+      <h4>Au tome 2, rien de tout ça n'existe</h4>
+      <ul class="coche">
+        <li>le vol</li><li>le ki visible</li><li>les auras</li><li>les transformations</li>
+      </ul>
+      <p style="margin-top:8px">Chaque invention rend le plafond précédent ridicule.</p>
+    </div>
+  </aside>
+  <p data-step="1">Car le vocabulaire de la puissance s'invente en marchant. Quand Toriyama dessine Kamé Sennin au tome 2, c'est le sommet du monde. Le Kamehameha est la technique ultime. Personne ne vole. Les combats sont au sol, au corps-à-corps. Toriyama ne dispose pas encore du vol, du ki visible, des auras, des transformations. Il les invente tome après tome, en réponse aux besoins de l'escalade. Et chaque invention rend le plafond précédent ridicule.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">L'amnésie de registre</div>
+      <h4>Ce qui a été détruit</h4>
+      <div class="jauge">
+        <div class="r"><span>Kamehameha de Kamé Sennin</span><b>la Lune</b></div>
+        <div class="b"><div style="width:100%;background:var(--c2)"></div></div>
+        <div class="r"><span>Kikoho de Tenshinhan</span><b>un ring</b></div>
+        <div class="b"><div style="width:3%;background:var(--c1)"></div></div>
+      </div>
+      <p style="margin-top:10px">Et Kamé Sennin commente le Kikoho : « rien à voir avec le Kamehameha ! »</p>
+      <span class="stamp" style="color:var(--c1);border-color:var(--c1)">Le registre a changé</span>
+    </div>
+  </aside>
+  <p data-step="2">Le cas le plus frappant est celui de la Lune. Au tournoi précédent, Kamé Sennin détruit la Lune avec un Kamehameha — un astre entier, pulvérisé. Quelques tomes plus tard, au tournoi suivant, le Kikoho de Tenshinhan détruit le ring de combat, et Kamé Sennin commente : « Sa puissance destructrice est colossale... rien à voir avec le Kamehameha ! »</p>
 
   <img class="img-full" src="images/fig20_kikoho_ring.png" alt="Kamé Sennin : « Comme prévu, sa puissance destructrice est colossale... rien à voir avec le Kamé Hamé Ha ! » « Et Goku ?! » « Il n'est pas là !! Il a disparu avec le ring !! Mais qu'est-ce que... la surface de combat a sombré dans le néant en une fraction de seconde !! »"/>
 
   <p>Logiquement, un Kamehameha qui détruit la Lune devrait être infiniment plus puissant qu'un Kikoho qui détruit un ring de quelques mètres carrés. Mais la logique ne s'applique pas entre deux registres. Quand Kamé Sennin détruit la Lune, c'est un gag spectaculaire. Quand Tenshinhan détruit le ring, c'est une mise en scène dramatique. Le Kikoho est <em>présenté</em> comme plus impressionnant, parce que le vocabulaire dramatique a changé. Ce n'est pas la puissance objective qui a monté, c'est le registre narratif qui a basculé.</p>
   <p>C'est ce que nous appelons l'<strong>amnésie de registre</strong> : les exploits du registre comique ne « comptent » plus dans le registre sérieux, parce qu'ils n'ont jamais été pensés comme des données de puissance. Ils étaient des gags.</p>
-  <p>L'escalade crée aussi des incohérences dans les hiérarchies de personnages. Baba la voyante confirme solennellement que Goku est « le premier humain à avoir le droit de rencontrer Dieu » — personne avant lui, jamais, dans toute l'histoire, n'a atteint ce niveau. Le plafond humain, pendant des siècles, c'était Mutaito, Kamé Sennin, Tsuru Sennin. Aucun d'eux n'a pu accéder au sanctuaire.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Le plafond humain</div>
+      <h4>Qui a pu rencontrer Dieu ?</h4>
+      <ul class="coche"><li>Mutaito</li><li>Kamé Sennin</li><li>Tsuru Sennin</li></ul>
+      <ul class="coche oui" style="margin-top:0"><li>Goku, « le premier humain »</li></ul>
+      <p style="margin-top:8px">…puis Tenshinhan, Krilin et Yamcha dépassent tout le monde, sans raison spéciale.</p>
+    </div>
+  </aside>
+  <p data-step="3">L'escalade crée aussi des incohérences dans les hiérarchies de personnages. Baba la voyante confirme solennellement que Goku est « le premier humain à avoir le droit de rencontrer Dieu » — personne avant lui, jamais, dans toute l'histoire, n'a atteint ce niveau. Le plafond humain, pendant des siècles, c'était Mutaito, Kamé Sennin, Tsuru Sennin. Aucun d'eux n'a pu accéder au sanctuaire.</p>
 
   <img class="img-full" src="images/fig21_baba_premier_humain.jpg" alt="Baba — « C'est la première fois qu'un humain aura le droit de rencontrer Dieu. »"/>
 
@@ -677,12 +899,26 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   <img class="img-full" src="images/fig22_tenshinhan_kame_sennin.jpg" alt="Tenshinhan à Kamé Sennin — « S'il vous plaît, renoncez à ce combat... »"/>
 
   <p>La raison est extra-narrative : Toriyama a besoin de compagnons crédibles pour Goku. Si seul Goku progresse, les autres deviennent des spectateurs et le manga perd son casting. Donc tout le monde progresse. Mais la justification interne n'existe pas.</p>
-  <p>Et puis il y a Mr. Popo. Quand Goku arrive au sanctuaire, Mr. Popo l'écrase totalement. « Tu es faible. Ta force spirituelle est minable, tes techniques sont nulles. » Ce Goku — celui qui vient de battre Piccolo Daimaō — est « minable » aux yeux du serviteur de Dieu. Kami-sama, au-dessus de Mr. Popo, est plus puissant encore.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">L'échelle du sanctuaire</div>
+      <div class="pile">
+        <div class="haut">Kami-sama <small>encore au-dessus</small></div>
+        <div>Mr. Popo <small>« ta force est minable »</small></div>
+        <div>Goku <small>vainqueur de Piccolo Daimaō</small></div>
+        <div>Piccolo Daimaō <small>a massacré le monde</small></div>
+      </div>
+      <p style="margin-top:10px"><strong>Question sans réponse :</strong> pourquoi le sanctuaire a-t-il laissé faire ?</p>
+    </div>
+  </aside>
+  <p data-step="4">Et puis il y a Mr. Popo. Quand Goku arrive au sanctuaire, Mr. Popo l'écrase totalement. « Tu es faible. Ta force spirituelle est minable, tes techniques sont nulles. » Ce Goku — celui qui vient de battre Piccolo Daimaō — est « minable » aux yeux du serviteur de Dieu. Kami-sama, au-dessus de Mr. Popo, est plus puissant encore.</p>
 
   <img class="img-full" src="images/fig23_mr_popo_force_minable.jpg" alt="Mr. Popo — « Tu es faible. Ta force spirituelle est minable. »"/>
 
   <p>Toriyama a besoin que le sanctuaire soit impressionnant, que Goku ait encore des paliers à franchir. Mais pour ça, il doit gonfler Mr. Popo et Kami-sama à un niveau qui rend leur inaction passée absurde. Si Mr. Popo est plus fort que Piccolo, et qu'il n'est pas lié à lui par le pacte de mort — pourquoi a-t-il laissé le monde se faire massacrer depuis le sanctuaire ?</p>
-  <p>Il n'y a pas de réponse. L'escalade crée le spectacle en aval et l'incohérence en amont. C'est le prix de la sérialisation hebdomadaire — et c'est un prix que tous les auteurs de shōnen paient.</p>
+  <p data-step="5">Il n'y a pas de réponse. L'escalade crée le spectacle en aval et l'incohérence en amont. C'est le prix de la sérialisation hebdomadaire — et c'est un prix que tous les auteurs de shōnen paient.</p>
+
+  </section>
 
   <!-- ══ 9. LE RETCON SAIYAN ══ -->
   <section class="marges">
@@ -694,7 +930,7 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
     </div>
   </aside>
   <div class="mfil" aria-hidden="true"><span>Raditz</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i><i data-s="5"></i><span>3/3</span></div>
-  <h2 class="c1">9. Le retcon Saiyan — le coup de théâtre qui réécrit tout</h2>
+  <h2 class="c1" id="s9">9. Le retcon Saiyan — le coup de théâtre qui réécrit tout</h2>
 
   <aside class="side">
     <div class="fiche rouge">
@@ -931,12 +1167,10 @@ document.querySelectorAll('.infographic-embed iframe').forEach(function(f){
       n.style.transform = '';
       if(!LARGE.matches) return;
       var haut = n.getBoundingClientRect().top + window.scrollY;
-      if(n.closest('.marges') !== (notes._sec || null)){ notes._sec = n.closest('.marges'); bas = -1e9; }
       var decal = Math.max(0, bas + 24 - haut);
       if(decal) n.style.transform = 'translateY(' + decal + 'px)';
       bas = haut + decal + n.offsetHeight;
     });
-    notes._sec = null;
   }
   var ro = new ResizeObserver(placer); ro.observe(document.body);
   window.addEventListener('load', placer);
