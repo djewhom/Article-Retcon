@@ -45,10 +45,10 @@ blockquote{font-family:'Oswald',sans-serif;font-size:clamp(18px,2.6vw,23px);font
 .img-caption{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--ink3);letter-spacing:1px;text-align:center;text-transform:uppercase;margin-top:-24px;margin-bottom:34px}
 
 /* Manga grid (diptyques et planches) */
-.manga-grid{display:grid;gap:10px;margin:24px 0}
+.manga-grid{display:grid;gap:10px;margin:24px 0;align-items:start}
 .manga-grid.cols2{grid-template-columns:1fr 1fr}
 .manga-grid.cols3{grid-template-columns:1fr 1fr 1fr}
-.manga-grid img{width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.15);display:block;background:var(--parchment);aspect-ratio:3/4;object-fit:cover}
+.manga-grid img{width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.15);display:block;background:var(--parchment);height:auto}
 .manga-grid + .img-caption{margin-top:-14px}
 @media(max-width:580px){.manga-grid.cols2,.manga-grid.cols3{grid-template-columns:1fr}}
 
@@ -98,9 +98,80 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
 .foot{margin-top:72px;padding-top:24px;border-top:2px solid var(--rule);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--ink3);text-align:center;text-transform:uppercase}
 .teaser{margin-top:56px;padding:24px 26px;background:var(--parchment);border-radius:10px;font-style:italic;color:var(--ink2);font-size:16px;line-height:1.7}
 @media(max-width:600px){.wrap{padding:32px 16px 64px}.example{padding:20px 16px 18px}}
+
+/* ══ Marges illustrées ══
+   Fil thématique à gauche (sticky), notes à droite alignées sur leur paragraphe.
+   Au-dessus de 1340px : les deux marges. En dessous : notes en encarts dans le texte, fil en barre. */
+:root{--cloud:#f4b400;--cloudl:#fde68a}
+.marges{position:relative}
+.side{font-size:14.5px;line-height:1.55;color:var(--ink2);margin:6px 0 28px;max-width:520px}
+.side p{font-size:14.5px;margin:0;color:var(--ink2)}
+.side h4{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:6px;line-height:1.25}
+.side .lbl{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;color:var(--c2);margin-bottom:4px}
+.side .card{background:#fff;border:1.5px solid var(--rule);border-radius:12px;padding:16px;box-shadow:0 3px 14px rgba(0,0,0,.05)}
+.side .fiche{background:linear-gradient(170deg,#fff 0 55%,#fff8e1);border:2px solid var(--ink);border-radius:14px;overflow:hidden;box-shadow:5px 5px 0 var(--ink);max-width:270px}
+.side .fiche .art{background:radial-gradient(circle at 50% 120%,#bfdbfe,#eff6ff 70%);height:118px;display:grid;place-items:center;border-bottom:2px solid var(--ink)}
+.side .fiche .art svg{width:150px;animation:nuage 4s ease-in-out infinite}
+@keyframes nuage{50%{transform:translateY(-6px)}}
+.side .fiche .bd{padding:12px 16px 14px}
+.side .fiche .nm{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:var(--ink);line-height:1}
+.side .fiche .kj{font-size:13px;color:var(--ink3);margin-bottom:10px}
+.side .fiche dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:13.5px}
+.side .fiche dt{color:var(--ink3)}.side .fiche dd{color:var(--ink);font-weight:600}
+.side .know{border-left:3px solid var(--cloud);padding:2px 0 2px 14px}
+.side .know .big{font-family:'Oswald',sans-serif;font-size:30px;font-weight:700;color:var(--ink);line-height:1.05;margin-bottom:6px}
+.side svg.schema{width:100%;height:auto;display:block;margin:6px 0 8px}
+.side .meter{display:flex;justify-content:space-between;font-size:13.5px;margin-top:8px}
+.side .bar{height:8px;border-radius:4px;background:var(--parchment);overflow:hidden;margin-top:3px}
+.side .bar>div{height:100%;border-radius:4px;background:var(--c2)}
+.side .stamp{display:inline-block;margin-top:12px;font-family:'Oswald',sans-serif;font-weight:700;font-size:14px;color:var(--c3);border:2px solid var(--c3);border-radius:6px;padding:2px 10px;transform:rotate(-3deg)}
+.side .slot{border:2px dashed #c9bfae;border-radius:14px;padding:16px;text-align:center;background:repeating-linear-gradient(45deg,transparent 0 10px,rgba(0,0,0,.018) 10px 20px)}
+.side .slot svg{width:64px;opacity:.5;margin-bottom:6px}
+.side .slot p{font-size:13.5px;color:var(--ink3)}
+.side .quote{background:var(--ink);color:#fff;border-radius:14px;padding:18px 18px 16px;position:relative;margin-top:14px}
+.side .quote q{font-family:'Oswald',sans-serif;font-size:21px;font-weight:600;line-height:1.2;display:block;quotes:"« " " »"}
+.side .quote .who{font-size:13px;color:rgba(255,255,255,.6);margin:6px 0 12px}
+.side .quote a{font-size:14px;color:var(--cloudl);text-decoration:none;border-bottom:1px solid rgba(253,230,138,.4)}
+.side .quote svg{position:absolute;right:14px;top:-16px;width:48px}
+/* fil (gauche) */
+.rail{display:none}
+.rail .fil{position:sticky;top:28px}
+.rail .fil-t{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.rail .fil-s{font-size:13px;color:var(--ink3);line-height:1.4;margin-bottom:18px}
+.rail .track{position:relative;height:440px;margin:30px 0 0 22px}
+.rail .track::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:repeating-linear-gradient(var(--rule) 0 4px,transparent 4px 8px)}
+.rail .tick{position:absolute;left:-3px;width:8px;height:1px;background:var(--ink3);opacity:.35}
+.rail .node{position:absolute;left:-7px;display:flex;align-items:center;gap:14px;transform:translateY(-50%)}
+.rail .node i{width:16px;height:16px;border-radius:50%;background:var(--bg);border:2.5px solid var(--ink3);flex:none;transition:all .3s}
+.rail .node b{font-family:'Share Tech Mono',monospace;font-size:11px;font-weight:400;color:var(--ink3);display:block;line-height:1.2}
+.rail .node span{font-family:'Oswald',sans-serif;font-size:14px;color:var(--ink2);line-height:1.2}
+.rail .node.on i{background:var(--cloud);border-color:#b45309;box-shadow:0 0 0 5px rgba(244,180,0,.22)}
+.rail .node.on span{color:var(--ink);font-weight:600}
+.rail .node.later{opacity:.45}.rail .node.later i{border-style:dashed}
+.rail .puff{position:absolute;left:-22px;width:44px;transform:translateY(-50%);transition:top .7s cubic-bezier(.3,1.4,.5,1)}
+.rail .fil-end{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--ink3);margin:10px 0 0 4px}
+/* barre (petits écrans) */
+.mfil{display:flex;position:sticky;top:0;z-index:5;background:rgba(250,247,242,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);padding:10px 0;gap:6px;align-items:center;margin:-8px 0 24px;font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--ink3)}
+.mfil i{flex:1;height:6px;border-radius:3px;background:var(--parchment)}
+.mfil i.on{background:var(--cloud)}
+.mfil i.later{background:repeating-linear-gradient(90deg,var(--parchment) 0 4px,transparent 4px 7px)}
+.mfil i.later.on{background:var(--cloud);opacity:.5}
+@media(min-width:1340px){
+  .side{position:absolute;left:calc(100% + 40px);width:250px;margin:6px 0 0}
+  .rail{display:block;position:absolute;right:calc(100% + 40px);top:0;bottom:0;width:200px}
+  .mfil{display:none}
+}
+@media(prefers-reduced-motion:reduce){.side .fiche .art svg{animation:none}.rail .puff,.rail .node i{transition:none}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="kinto" viewBox="0 0 120 64">
+    <path d="M18 56c-9 0-14-6-14-12s5-12 13-12c1-10 10-17 20-15 4-9 13-14 23-12 9 2 15 9 16 17 3-2 7-3 11-2 9 2 14 10 12 18 6 2 9 7 8 12-1 5-5 6-9 6z" fill="#f4b400" stroke="#1c1917" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M26 34c2-6 8-9 14-8M58 20c5-2 11 0 14 4M86 34c4-1 8 1 10 4" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+    <path d="M100 52c6 0 10-2 12-6" fill="none" stroke="#1c1917" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+</svg>
 
 <nav class="topnav">
   <a class="logo" href="index.html"><em>Dragon</em>ballologie</a>
@@ -179,6 +250,8 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   <img class="img-full" src="images/fig01c_taopaipai_indifferent_dodon_charge.png" alt="Tao Pai Pai, insensible au Kamehameha : « Ça lui a rien fait !! » « T'as ruiné mes fringues... sale gosse... »"/>
   <p class="img-caption">La technique ultime du tome 2 ne fait même pas ciller l'adversaire du tome 6</p>
 
+  <img class="img-full" src="images/fig20b_dodonpa_blast.png" alt="Tome 6 — le Dodonpa de Tao Pai Pai fonce sur Goku"/>
+
   <img class="img-full" src="images/fig01d_dodon_ray_vol_dragonballs.png" alt="Le Dodonpa terrasse Goku — Tao Pai Pai : « Mission accomplie... Voilà donc ces fameuses Dragon Balls... Hé hé hé... »"/>
 
   <div class="manga-grid cols2">
@@ -200,31 +273,91 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   <p>C'est ce que nous appelons une <strong>fausse prophétie</strong> — un terme sur lequel nous reviendrons. Une phrase qui n'annonce rien au moment de l'écriture, mais qu'un retcon futur transforme en signe avant-coureur.</p>
 
   <!-- ══ 3. LE TISSAGE PROGRESSIF — KINTO'UN ══ -->
+  <section class="marges" data-fil="kinto">
+  <aside class="rail" aria-label="Le fil du Kinto'un" data-etapes='[[1,"Le cadeau"],[5,"La multiplication"],[8,"La boucle"],[12,"L&#39;erreur (§6)",1]]'>
+    <div class="fil">
+      <div class="fil-t">Le fil du Kinto'un</div>
+      <div class="fil-s">Où en est le nuage, tome par tome.</div>
+      <div class="track"><svg class="puff" viewBox="0 0 120 64" aria-hidden="true"><use href="#kinto"/></svg></div>
+      <div class="fil-end">tome 17 ↓</div>
+    </div>
+  </aside>
   <h2 class="c2">3. Le tissage progressif — cas d'école : le Kinto'un</h2>
+  <div class="mfil" aria-hidden="true"><span>T1</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i class="later" data-s="4"></i><span>§6</span></div>
 
-  <p>Le Kinto'un est l'exemple le plus documentable de tissage progressif dans Dragon Ball, parce que sa transformation s'opère en étapes distinctes, chacune séparée par plusieurs tomes, et chacune traçable à la page près.</p>
+  <aside class="side">
+    <div class="fiche">
+      <div class="art"><svg viewBox="0 0 120 64" role="img" aria-label="Un petit nuage jaune"><use href="#kinto"/></svg></div>
+      <div class="bd">
+        <div class="nm">KINTO'UN</div>
+        <div class="kj">筋斗雲 · le nuage-culbute</div>
+        <dl><dt>Origine</dt><dd>Saiyūki</dd><dt>Apparition</dt><dd>Tome 1</dd><dt>Condition</dt><dd>Un cœur pur</dd><dt>Tissé sur</dt><dd>7 tomes</dd></dl>
+      </div>
+    </div>
+  </aside>
+  <p data-step="1">Le Kinto'un est l'exemple le plus documentable de tissage progressif dans Dragon Ball, parce que sa transformation s'opère en étapes distinctes, chacune séparée par plusieurs tomes, et chacune traçable à la page près.</p>
 
-  <img class="img-full" src="images/fig03b_bulma_question_nuage_tortue.png" alt="Bulma : « Comment ça se fait que le Maître des Tortues possède un nuage ? Ça n'a rien à voir avec une tortue ! » Kamé Sennin : « Tu es bien sectaire... »"/>
+  <aside class="side">
+    <div class="know">
+      <div class="lbl">Le saviez-vous ?</div>
+      <div class="big">108 000 li</div>
+      <p>Dans le <em>Voyage vers l'Ouest</em>, le nuage de Sun Wukong franchit cette distance d'une seule culbute, soit environ 54 000 km. Toriyama emprunte le nuage, pas encore le mythe.</p>
+    </div>
+  </aside>
+  <img class="img-full" data-step="1" src="images/fig03b_bulma_question_nuage_tortue.png" alt="Bulma : « Comment ça se fait que le Maître des Tortues possède un nuage ? Ça n'a rien à voir avec une tortue ! » Kamé Sennin : « Tu es bien sectaire... »"/>
   <p class="img-caption">La question que Bulma pose sans le savoir — et que tout le chapitre va mettre des tomes à résoudre</p>
 
-  <img class="img-full" src="images/fig04a_kinton_don_tout_puissant.png" alt="Goku : « C'est un don que j'ai reçu du Tout-Puissant, c'est un nuage fabuleux ! »"/>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Les deux cercles de lecture</div>
+      <h4>« Reçu du Tout-Puissant »</h4>
+      <svg class="schema" viewBox="0 0 240 120" role="img" aria-label="Deux cercles : première lecture et relecture">
+        <circle cx="66" cy="60" r="52" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+        <circle cx="174" cy="60" r="52" fill="#fff8e1" stroke="#b45309" stroke-width="2"/>
+        <g text-anchor="middle" font-size="11" fill="#44403c" font-family="Source Serif 4, Georgia, serif">
+          <text x="66" y="52" font-family="Oswald, sans-serif" font-size="13" fill="#1d4ed8">1re lecture</text>
+          <text x="66" y="72">une formule</text><text x="66" y="86">de conte</text>
+          <text x="174" y="52" font-family="Oswald, sans-serif" font-size="13" fill="#b45309">Relecture</text>
+          <text x="174" y="72">l'indice</text><text x="174" y="86">d'une chaîne</text>
+        </g>
+      </svg>
+      <p>La même phrase change de poids selon le cercle d'où on la lit.</p>
+    </div>
+  </aside>
+  <img class="img-full" data-step="1" src="images/fig04a_kinton_don_tout_puissant.png" alt="Goku : « C'est un don que j'ai reçu du Tout-Puissant, c'est un nuage fabuleux ! »"/>
   <p class="img-caption">Tome 1 — le cadeau comique, avant que le Tout-Puissant n'existe comme personnage</p>
 
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Bilan du tissage</div>
+      <div class="meter"><span>Étapes</span><b>3 / 3</b></div><div class="bar"><div style="width:100%"></div></div>
+      <div class="meter"><span>Contradictions</span><b>0</b></div><div class="bar"><div style="width:2%;background:var(--c1)"></div></div>
+      <div class="meter"><span>Tomes traversés</span><b>1 → 8</b></div><div class="bar"><div style="width:47%;background:var(--cloud)"></div></div>
+      <span class="stamp">Tissage parfait</span>
+    </div>
+  </aside>
   <div class="hierarchy">
-    <div class="h-row">
+    <div class="h-row" data-step="1">
       <div class="h-num c2">1</div>
       <div class="h-body"><strong>Le cadeau comique (tome 1)</strong><p>Kamé Sennin donne un petit nuage à Goku. C'est un clin d'œil au <em>Saiyūki</em> — le nuage volant de Sun Wukong. Kamé Sennin précise qu'il l'a « reçu du Tout-Puissant » — une expression vague, du registre du conte, qui n'a pas plus de poids que « un vieux monsieur me l'a donné ». Le Tout-Puissant, à ce stade, n'existe pas comme personnage.</p></div>
     </div>
-    <div class="h-row">
+    <div class="h-row" data-step="2">
       <div class="h-num c2">2</div>
       <div class="h-body"><strong>La multiplication (tome 5, p. 116)</strong><p>Karin lâche une information passante : « Il y en avait plein, quand j'étais jeune. » Et, surtout : « Un Kinto'un ne peut pas disparaître ! » Le nuage unique devient un exemplaire parmi d'autres. Les Kinto'un sont un phénomène — rare, mais naturel. C'est un enrichissement discret qui ne contredit rien.</p></div>
     </div>
-    <div class="h-row">
+    <div class="h-row" data-step="3">
       <div class="h-num c2">3</div>
       <div class="h-body"><strong>La boucle (tome 8)</strong><p>Au sommet de la tour Karine, le parc à nuages. « Découpes-en un de la grandeur que tu veux. » Karin ajoute : « C'est moi qui lui avais donné, il y a bien longtemps de cela. » Et Goku fait la connexion : « Mais alors, le Kinto'un que m'avait offert grand-père Kamé Sennin... »</p></div>
     </div>
   </div>
 
+  <aside class="side">
+    <div class="slot">
+      <svg viewBox="0 0 120 64" aria-hidden="true"><use href="#kinto"/></svg>
+      <p><strong>Ton illustration ici</strong></p>
+      <p>Ex. : Gyumao, immense, qui lève les yeux vers un tout petit nuage. Format conseillé : 540 × 540 px.</p>
+    </div>
+  </aside>
   <img class="img-full" src="images/fig04b_boeuf_roi_reconnait_kinton.png" alt="Le Bœuf Roi (Gyumao) reconnaît le Kinto'un et révèle que son propre maître était le vieux Kamé Sennin"/>
   <p class="img-caption">Une lignée qui se noue des tomes avant qu'on en comprenne le motif</p>
 
@@ -235,11 +368,40 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
     <img src="images/manga/fig05_parc_a_nuages.png" alt="« Vas-y, découpes-en un de la grandeur que tu veux et pars avec lui. » « C'est un Kinto-un giga gigantesque !! » Karin : « Oui, c'est moi qui lui avais donné, il y a bien longtemps de cela. » Goku : « Mais alors, le Kinto-un que m'avait offert grand-père Kamé Sennin... »"/>
   </div>
 
-  <p>La boucle se referme. L'expression vague du tome 1 — « reçu du Tout-Puissant » — peut maintenant être lue comme un indice de cette chaîne. Karin a donné un nuage à Kamé Sennin qui l'a donné à Gohan qui l'a donné à Goku. Une lignée se dessine à travers le nuage. Chaque intermédiaire a jugé le suivant digne de le posséder.</p>
-  <p>Notons ce qui rend ce tissage parfait : aucune des trois étapes ne contredit les précédentes. L'étape 2 enrichit l'étape 1 sans la nier. L'étape 3 boucle avec l'étape 1 en passant par l'étape 2. Le résultat est un univers qui semble avoir toujours été cohérent — la marque du tissage réussi.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Schéma</div>
+      <h4>La chaîne de transmission</h4>
+      <svg class="schema" viewBox="0 0 230 220" role="img" aria-label="Karin donne le nuage à Kamé Sennin, qui le donne à Goku">
+        <defs><marker id="fleche" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b45309"/></marker></defs>
+        <g font-family="Oswald, sans-serif" font-size="15" fill="#1c1917">
+          <rect x="10" y="8" width="210" height="44" rx="10" fill="#f5ede0"/><text x="22" y="36">Karin</text>
+          <rect x="10" y="88" width="210" height="44" rx="10" fill="#f5ede0"/><text x="22" y="116">Kamé Sennin</text>
+          <rect x="10" y="168" width="210" height="44" rx="10" fill="#fff8e1" stroke="#f4b400" stroke-width="2"/><text x="22" y="196">Goku</text>
+        </g>
+        <g font-family="Share Tech Mono, monospace" font-size="11" fill="#78716c" text-anchor="end">
+          <text x="208" y="36">tome 8</text><text x="208" y="116">« jadis »</text><text x="208" y="196">tome 1</text>
+        </g>
+        <path d="M115 54v30M115 134v30" stroke="#b45309" stroke-width="2" marker-end="url(#fleche)"/>
+        <use href="#kinto" x="132" y="58" width="40" height="22"/><use href="#kinto" x="132" y="138" width="40" height="22"/>
+      </svg>
+      <p>Révélée à l'envers : on voit d'abord le dernier don, puis le premier.</p>
+    </div>
+  </aside>
+  <p data-step="3">La boucle se referme. L'expression vague du tome 1 — « reçu du Tout-Puissant » — peut maintenant être lue comme un indice de cette chaîne. Karin a donné un nuage à Kamé Sennin qui l'a donné à Gohan qui l'a donné à Goku. Une lignée se dessine à travers le nuage. Chaque intermédiaire a jugé le suivant digne de le posséder.</p>
+  <aside class="side">
+    <div class="quote">
+      <svg viewBox="0 0 120 64" aria-hidden="true"><use href="#kinto"/></svg>
+      <q>Un Kinto'un ne peut pas disparaître !</q>
+      <div class="who">Karin, tome 5</div>
+      <a href="#s6">… et pourtant. Voir §6, Tambourine →</a>
+    </div>
+  </aside>
+  <p data-step="4">Notons ce qui rend ce tissage parfait : aucune des trois étapes ne contredit les précédentes. L'étape 2 enrichit l'étape 1 sans la nier. L'étape 3 boucle avec l'étape 1 en passant par l'étape 2. Le résultat est un univers qui semble avoir toujours été cohérent — la marque du tissage réussi.</p>
 
   <img class="img-full" src="images/infographic_kinton_tissage.png" alt="Retcon de tissage : un cadeau devient cosmologie — de la simple offrande du tome 1 (1984) au parking à nuages révélé au sommet de la tour Karine au tome 8 (1987)"/>
   <p class="img-caption">Retcon de tissage : un cadeau devient cosmologie</p>
+  </section>
 
   <div class="infographic-embed">
     <div class="embed-label">Infographie interactive — Le Métier à Tisser</div>
@@ -315,7 +477,7 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   <p>Ce grand-père écrasé par « ce monstre », ce point faible retrouvé sur un Ōzaru inconnu : deux fils posés ici sans réponse, et que le tome 17 refermera d'un seul coup.</p>
 
   <!-- ══ 6. RETCONS FONCTIONNELS ET FILS ABANDONNÉS ══ -->
-  <h2 class="dark">6. Les retcons fonctionnels et fils abandonnés</h2>
+  <h2 class="dark" id="s6">6. Les retcons fonctionnels et fils abandonnés</h2>
 
   <p>Tous les retcons ne sont pas des réussites. Certains sont des ajustements mécaniques, d'autres des oublis purs. Les classifier est aussi important que célébrer les réussites.</p>
 
@@ -395,7 +557,6 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   <p>Car le vocabulaire de la puissance s'invente en marchant. Quand Toriyama dessine Kamé Sennin au tome 2, c'est le sommet du monde. Le Kamehameha est la technique ultime. Personne ne vole. Les combats sont au sol, au corps-à-corps. Toriyama ne dispose pas encore du vol, du ki visible, des auras, des transformations. Il les invente tome après tome, en réponse aux besoins de l'escalade. Et chaque invention rend le plafond précédent ridicule.</p>
   <p>Le cas le plus frappant est celui de la Lune. Au tournoi précédent, Kamé Sennin détruit la Lune avec un Kamehameha — un astre entier, pulvérisé. Quelques tomes plus tard, au tournoi suivant, le Kikoho de Tenshinhan détruit le ring de combat, et Kamé Sennin commente : « Sa puissance destructrice est colossale... rien à voir avec le Kamehameha ! »</p>
 
-  <img class="img-full" src="images/fig20b_dodonpa_blast.png" alt="Le tir de Tenshinhan traverse le ring de part en part"/>
   <img class="img-full" src="images/fig20_kikoho_ring.png" alt="Kamé Sennin : « Comme prévu, sa puissance destructrice est colossale... rien à voir avec le Kamé Hamé Ha ! » « Et Goku ?! » « Il n'est pas là !! Il a disparu avec le ring !! Mais qu'est-ce que... la surface de combat a sombré dans le néant en une fraction de seconde !! »"/>
 
   <p>Logiquement, un Kamehameha qui détruit la Lune devrait être infiniment plus puissant qu'un Kikoho qui détruit un ring de quelques mètres carrés. Mais la logique ne s'applique pas entre deux registres. Quand Kamé Sennin détruit la Lune, c'est un gag spectaculaire. Quand Tenshinhan détruit le ring, c'est une mise en scène dramatique. Le Kikoho est <em>présenté</em> comme plus impressionnant, parce que le vocabulaire dramatique a changé. Ce n'est pas la puissance objective qui a monté, c'est le registre narratif qui a basculé.</p>
@@ -509,6 +670,56 @@ document.querySelectorAll('.infographic-embed iframe').forEach(function(f){
   function ajuste(){ try{ var h=f.contentDocument.documentElement.scrollHeight; if(h>200) f.style.height=(h+4)+'px'; }catch(e){} }
   f.addEventListener('load',function(){ ajuste(); setTimeout(ajuste,800); });
 });
+</script>
+<script>
+/* ══ Marges illustrées : fil qui suit la lecture + notes qui ne se chevauchent pas ══ */
+(function(){
+  var LARGE = window.matchMedia('(min-width:1340px)');
+
+  document.querySelectorAll('.marges').forEach(function(sec){
+    var rail = sec.querySelector('.rail'), barre = sec.querySelector('.mfil');
+    if(!rail) return;
+    var etapes = JSON.parse(rail.dataset.etapes), T0 = 1, T1 = 17;
+    var y = function(t){ return ((t - T0) / (T1 - T0) * 100) + '%'; };
+    var track = rail.querySelector('.track'), puff = rail.querySelector('.puff'), html = '';
+    for(var t = T0; t <= T1; t++) html += '<i class="tick" style="top:' + y(t) + '"></i>';
+    etapes.forEach(function(e, k){
+      html += '<div class="node' + (e[2] ? ' later' : '') + '" data-k="' + (k + 1) + '" style="top:' + y(e[0]) + '"><i></i><div><b>tome ' + e[0] + '</b><span>' + e[1] + '</span></div></div>';
+    });
+    track.insertAdjacentHTML('beforeend', html);
+    var nodes = track.querySelectorAll('.node'), segs = barre ? barre.querySelectorAll('i') : [];
+    function etape(k){
+      nodes.forEach(function(n){ var d = +n.dataset.k; n.classList.toggle('on', d === k || (d < k && !n.classList.contains('later'))); });
+      segs.forEach(function(s){ s.classList.toggle('on', +s.dataset.s <= k); });
+      puff.style.top = y(etapes[k - 1][0]);
+    }
+    etape(1);
+    var obs = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting) etape(+e.target.dataset.step); });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    sec.querySelectorAll('[data-step]').forEach(function(el){ obs.observe(el); });
+  });
+
+  var notes = Array.prototype.slice.call(document.querySelectorAll('.marges .side'));
+  function placer(){
+    var bas = -1e9;
+    notes.forEach(function(n){
+      /* grand écran : la note précède son ancre (alignée en face) ; petit écran : elle la suit */
+      var ancre = n._ancre || (n._ancre = n.nextElementSibling);
+      if(LARGE.matches){ if(n.nextElementSibling !== ancre) ancre.before(n); }
+      else if(ancre.nextElementSibling !== n) ancre.after(n);
+      n.style.transform = '';
+      if(!LARGE.matches) return;
+      var haut = n.getBoundingClientRect().top + window.scrollY;
+      var decal = Math.max(0, bas + 24 - haut);
+      if(decal) n.style.transform = 'translateY(' + decal + 'px)';
+      bas = haut + decal + n.offsetHeight;
+    });
+  }
+  var ro = new ResizeObserver(placer); ro.observe(document.body);
+  window.addEventListener('load', placer);
+  placer();
+})();
 </script>
 </body>
 </html>
