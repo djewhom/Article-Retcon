@@ -1150,10 +1150,16 @@ document.querySelectorAll('.infographic-embed iframe').forEach(function(f){
     }
     var pas = Array.prototype.map.call(sec.querySelectorAll('[data-step]'), function(el){ return +el.dataset.step; });
     etape(pas.length ? Math.min.apply(null, pas) : 1);
-    var obs = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting) etape(+e.target.dataset.step); });
-    }, {rootMargin:'-45% 0px -50% 0px'});
-    sec.querySelectorAll('[data-step]').forEach(function(el){ obs.observe(el); });
+    var pasEls = Array.prototype.slice.call(sec.querySelectorAll('[data-step]'));
+    var courant = 0;
+    function suivre(){
+      var milieu = window.innerHeight * 0.5, k = pasEls.length ? +pasEls[0].dataset.step : 1;
+      pasEls.forEach(function(el){ if(el.getBoundingClientRect().top < milieu) k = +el.dataset.step; });
+      if(k !== courant){ courant = k; etape(k); }
+    }
+    window.addEventListener('scroll', suivre, {passive:true});
+    window.addEventListener('resize', suivre);
+    suivre();
   });
 
   var notes = Array.prototype.slice.call(document.querySelectorAll('.marges .side'));
