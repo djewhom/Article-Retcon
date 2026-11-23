@@ -50,6 +50,25 @@ blockquote{font-family:'Oswald',sans-serif;font-size:clamp(18px,2.6vw,23px);font
 .manga-grid.cols3{grid-template-columns:1fr 1fr 1fr}
 .manga-grid img{width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.15);display:block;background:var(--parchment);height:auto}
 .manga-grid + .img-caption{margin-top:-14px}
+/* ── Cases annotées : pastilles + infobulles ── */
+.pinfig{position:relative;margin:0}
+.pinfig img{width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.15);display:block;background:var(--parchment);height:auto}
+.pinfig figcaption{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink3);text-align:center;margin-top:8px}
+.pinfig figcaption b{color:var(--c1)}
+.pin{position:absolute;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;border:2px solid #fff;background:var(--c1);color:#fff;font:700 14px/1 'Oswald',sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.35);animation:pinpulse 2.4s ease-in-out infinite;padding:0;z-index:2}
+.pin.b{background:var(--c2)}
+.pin .bulle{display:none;position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);width:230px;background:var(--ink);color:#fff;font:400 13.5px/1.45 'Source Serif 4',Georgia,serif;text-align:left;padding:10px 12px;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.3);z-index:6}
+.pin .bulle::after{content:'';position:absolute;top:100%;left:50%;margin-left:-6px;border:6px solid transparent;border-top-color:var(--ink)}
+.pin.d .bulle{left:auto;right:-10px;transform:none}.pin.d .bulle::after{left:auto;right:12px}
+.pin.g .bulle{left:-10px;transform:none}.pin.g .bulle::after{left:22px}
+.pin.bas .bulle{bottom:auto;top:calc(100% + 10px)}.pin.bas .bulle::after{top:auto;bottom:100%;border-top-color:transparent;border-bottom-color:var(--ink)}
+.pin:hover,.pin:focus{animation:none;z-index:7;outline:none;transform:scale(1.1)}
+.pin:hover .bulle,.pin:focus .bulle{display:block}
+@keyframes pinpulse{0%,100%{box-shadow:0 0 0 0 rgba(194,65,12,.55),0 2px 8px rgba(0,0,0,.35)}50%{box-shadow:0 0 0 8px rgba(194,65,12,0),0 2px 8px rgba(0,0,0,.35)}}
+.pin-aide{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--ink3);text-align:center;margin:-8px 0 22px}
+.rappel{background:var(--parchment);border-left:4px solid var(--goldb);border-radius:0 8px 8px 0;padding:12px 16px;font-style:italic}
+.rappel a{color:var(--c2)}
+.teaser-queue{font-family:'Oswald',sans-serif;font-size:clamp(19px,2.6vw,23px);font-weight:600;color:var(--c1);text-align:center;margin:30px 0 44px}
 @media(max-width:580px){.manga-grid.cols2,.manga-grid.cols3{grid-template-columns:1fr}}
 
 /* Cadre méthodologique (3 niveaux de certitude) */
@@ -366,6 +385,35 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   <p data-step="3">Cet article est une invitation à entrer dans le deuxième cercle. Pas pour abîmer le premier — il restera intact, disponible à chaque relecture. Mais pour en gagner un deuxième. Celui de la construction. Celui du tisserand au travail.</p>
   <p>Et je vous promets que le voyage en vaut la peine.</p>
 
+  <!-- ══ OUVERTURE : LA QUEUE DE GOKU ══ -->
+  <h2 class="c1" id="queue">Avant toute théorie : la queue de Goku</h2>
+
+  <p>Commençons par un exemple, le tout premier. Pas besoin de théorie pour le voir : il suffit de regarder deux scènes, à quelques chapitres d'écart. Dans les deux, quelqu'un tire sur la queue de Goku.</p>
+
+  <div class="manga-grid cols2">
+    <figure class="pinfig">
+      <img src="images/manga/Capture%20d'%C3%A9cran%202026-11-23%20204750.png" alt="Bulma tire sur la queue de Goku pendant le bain : « Aïe aïe ! Tu me fais mal, arrête ! » — puis Goku : « Ça suffit, je peux finir de me laver tout seul... »" loading="lazy"/>
+      <button class="pin g" style="left:88%;top:60%">1<span class="bulle">Bulma tire de toutes ses forces, persuadée que c'est une fausse queue.</span></button>
+      <button class="pin g" style="left:9%;top:24%">2<span class="bulle">Résultat : « Aïe aïe ! » Goku a mal… et c'est tout.</span></button>
+      <button class="pin g" style="left:14%;top:72%">3<span class="bulle">Il garde toute son énergie : il la repousse et finit de se laver tout seul. Aucune perte de force.</span></button>
+      <figcaption><b>Avant</b> — le bain : une queue comme une autre</figcaption>
+    </figure>
+    <figure class="pinfig">
+      <img src="images/manga/Capture%20d'%C3%A9cran%202026-11-23%20205229.png" alt="Goku sur le Kinto'un avec Chichi : « Évite de tirer sur ma queue, s'il te plaît... je perds toutes mes forces quand on tire dessus. » — Yamcha, caché : « Le point faible du gamin, c'est sa queue !! »" loading="lazy"/>
+      <button class="pin b d" style="left:57%;top:45%">4<span class="bulle">Quelques chapitres plus tard : « Je perds toutes mes forces quand on tire dessus. » La même queue devient un point faible.</span></button>
+      <button class="pin b d" style="left:50%;top:86%">5<span class="bulle">Et l'information tombe pile dans l'oreille de Yamcha. Le point faible devient une arme pour l'adversaire.</span></button>
+      <figcaption><b>Après</b> — le point faible apparaît</figcaption>
+    </figure>
+  </div>
+  <p class="pin-aide">Survolez ou touchez les pastilles numérotées.</p>
+
+  <div class="pillars">
+    <div class="pillar c1"><strong>Pourquoi c'est un retcon ?</strong><p>Si cette faiblesse avait existé dès le départ, la scène du bain l'aurait montrée : Bulma tire, Goku s'effondre. Or il proteste et continue de se débattre. La règle n'existe pas encore. Elle est inventée après coup, au moment où le récit en a besoin.</p></div>
+    <div class="pillar c2"><strong>Pourquoi Toriyama le fait ?</strong><p>Goku est trop fort pour son âge et pour ses adversaires. Pour que le combat contre Yamcha ait un vrai enjeu, il lui faut un handicap, un petit malus. Toriyama n'invente pas un nouvel élément : il recycle un détail qui existait déjà, la queue, et lui donne une nouvelle fonction. On reste dans un manga léger et comique, le registre ne change pas. Le retcon n'est pas une erreur : c'est un outil au service du récit.</p></div>
+  </div>
+
+  <p class="teaser-queue">Retenez bien cette queue. On n'en a pas fini avec elle.</p>
+
   <!-- ══ 1. LE RETCON EST UNE DÉDUCTION ══ -->
   <h2 class="c1">1. Le retcon est une déduction</h2>
 
@@ -456,7 +504,7 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   </aside>
   <div class="pillars" data-step="1">
     <div class="pillar c1"><strong>Le retcon certain</strong><p>Prouvable par le texte lui-même. Quand Tao Pai Pai reçoit un Kamehameha au tome 6 sans le reconnaître, alors qu'il sera plus tard révélé comme le frère de Tsuru Sennin, le rival de toute une vie de Kamé Sennin — le texte lui-même est incompatible avec la préméditation. Si Toriyama avait su, la scène serait écrite autrement.</p></div>
-    <div class="pillar c2"><strong>Le retcon probable</strong><p>Déduit des conditions de production. Quand Goku révèle que sa queue est un point faible quelques chapitres après que Bulma a simplement tiré dessus dans un bain sans aucune mention de perte de force — la probabilité est forte que Toriyama vient d'inventer cette mécanique pour donner un avantage à Yamcha, mais on ne peut pas l'exclure formellement.</p></div>
+    <div class="pillar c2"><strong>Le retcon probable</strong><p>Déduit des conditions de production. Quand Goku révèle que sa queue est un point faible quelques chapitres après que Bulma a simplement tiré dessus dans un bain sans aucune mention de perte de force — la probabilité est forte que Toriyama vient d'inventer cette mécanique pour donner un avantage à Yamcha, mais on ne peut pas l'exclure formellement. <a href="#queue" style="color:var(--c2)">Revoir les deux scènes ↑</a></p></div>
     <div class="pillar c3"><strong>L'indécidable</strong><p>Quand ni le texte ni les conditions de production ne permettent de trancher. Quand Karin révèle que Kamé Sennin a grimpé la tour il y a 300 ans, la connexion est tellement naturelle que Toriyama a pu la prévoir un arc à l'avance — ou l'inventer sur le moment. On ne sait pas, et la rigueur consiste à le dire.</p></div>
   </div>
 
@@ -971,7 +1019,9 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   </aside>
   <p data-step="2">La Lune, détruite par un Kamehameha de Kamé Sennin dans un excès comique, puis revenue sans explication ? Kami-sama « voulait restaurer la Lune ». La queue de singe de Goku, qui risquait de le transformer en Ōzaru à chaque pleine lune ? Kami-sama l'arrache, parce que « c'est gênant ». Le Nyoibō, simple accessoire de conte ? Kami-sama révèle qu'il est le pilier sacré reliant la tour au sanctuaire.</p>
 
-  <img class="img-full" src="images/fig16_lune_restauree_queue_arrachee.jpg" alt="Goku de retour — la Lune restaurée, la queue arrachée"/>
+  <img class="img-full" src="images/manga/Capture%20d'%C3%A9cran%202026-11-23%20205010.png" alt="Goku de retour : « Il a dit que c'était gênant si je gardais ma queue. » — « Non, le Tout-Puissant me l'a arrachée. »" loading="lazy"/>
+
+  <p class="rappel">Vous vous souvenez de la queue du bain, au tout début ? Celle que Bulma tirait sans effet, puis qui est devenue un point faible pour corser un combat ? La voici dans sa troisième vie : un problème encombrant, que Kami-sama règle d'un geste parce que « c'est gênant ». Et ce n'est pas fini. <a href="#s9">Rendez-vous au §9.</a></p>
 
   <p data-step="3">Et la promesse de mariage avec Chichi — un gag d'enfant, au tout début du manga, quand Goku ne savait même pas ce que « se marier » voulait dire — devient un engagement réel au Tenka'ichi Budōkai. Le gag est converti en enjeu sérieux, sans contradiction.</p>
 
@@ -1129,6 +1179,8 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   <blockquote>« Kakarotto... tu as même oublié tout ça ?! » « Tu es né sur la planète Vegeta !! Tu es un Saiyan !! »</blockquote>
 
   <p>Le coup de théâtre est total. Goku n'est pas un garçon à queue de singe. C'est un guerrier extraterrestre envoyé sur Terre quand il était bébé pour exterminer toute vie. Sa queue, sa force, ses transformations monstrueuses en Ōzaru — tout était là depuis le tome 1. Tout était <em>visible</em>. Et pourtant, personne n'avait vu.</p>
+
+  <p class="rappel">Et la queue du bain ? <a href="#queue">Celle du tout début</a> : un gag, puis un point faible, puis un problème que Kami-sama arrache. La voici dans sa dernière vie, la plus spectaculaire : la marque de toute une race de guerriers. Le même fil, tissé quatre fois.</p>
 
   <aside class="side">
     <div class="card">
