@@ -221,6 +221,17 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
 .side ol.chaine li{background:var(--parchment);border-radius:8px;padding:7px 10px;font-size:13.5px;line-height:1.35;position:relative;margin-bottom:18px}
 .side ol.chaine li:not(:last-child)::after{content:"↓";position:absolute;left:50%;bottom:-17px;transform:translateX(-50%);color:var(--c1);font-weight:700;font-size:13px}
 .side ol.chaine li:last-child{background:#fff3e8;outline:1.5px solid rgba(194,65,12,.3);margin-bottom:0}
+.accroche{margin:10px 0 34px}
+.accroche-q{font-family:'Oswald',sans-serif;font-size:clamp(22px,3vw,28px);font-weight:700;text-align:center;margin-bottom:14px;color:var(--ink)}
+.accroche-duo{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:center}
+.accroche figure{margin:0}
+.accroche img{width:100%;display:block;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.14)}
+.accroche figcaption{margin-top:10px;font-size:15px;line-height:1.45;color:var(--ink2);border-left:4px solid var(--c2);padding-left:10px}
+.accroche figcaption.r{border-color:var(--c1)}
+.accroche figcaption b{display:block;font-family:'Oswald',sans-serif;font-size:18px;color:var(--c2)}
+.accroche figcaption.r b{color:var(--c1)}
+.accroche-ou{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:var(--ink3);text-transform:uppercase}
+@media(max-width:600px){.accroche-duo{grid-template-columns:1fr}.accroche-ou{text-align:center}}
 </style>
 <script src="/assets/site-nav.js" defer></script>
 <script data-goatcounter="https://dragonballogy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -272,6 +283,21 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
 
   <h1>Qu'est-ce qu'un retcon ?</h1>
   <p class="subtitle">Dragon Ball et l'art de construire un univers en marchant</p>
+
+  <div class="accroche">
+    <div class="accroche-q">Révélation ou retcon ?</div>
+    <div class="accroche-duo">
+      <figure>
+        <img src="images/accroche-revelation.jpg" alt="Un architecte penché sur un plan précis : la tour Karin, le Kinto'un, le Nyoibō et le petit Goku, déjà reliés par des flèches et des jalons.">
+        <figcaption><b>Révélation</b>Tout était prévu. L'auteur pose ses jalons, puis les dévoile.</figcaption>
+      </figure>
+      <div class="accroche-ou">ou</div>
+      <figure>
+        <img src="images/accroche-retcon.jpg" alt="Un tisserand qui récupère de vieux fils et les renoue à sa tapisserie : la tour, le nuage, le bâton et l'enfant à queue de singe, reliés après coup, avec des reprises visibles.">
+        <figcaption class="r"><b>Retcon</b>Tout a été tissé. L'auteur reprend ses anciens fils et les relie après coup.</figcaption>
+      </figure>
+    </div>
+  </div>
 
 
   <p class="lead">Il y a deux façons de lire Dragon Ball. La première ne voit qu'un plan. La seconde voit le tisserand au travail.</p>
