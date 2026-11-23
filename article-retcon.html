@@ -182,6 +182,30 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   .mfil{display:none}
 }
 @media(prefers-reduced-motion:reduce){.side .fiche .art svg{animation:none}.rail .puff,.rail .node i{transition:none}}
+/* ── Sommaire « Le voyage » ── */
+.voyage{background:#fff;border:2px solid var(--goldb);border-radius:16px;padding:18px 18px 10px;margin:34px 0 44px;box-shadow:0 8px 24px rgba(180,83,9,.10)}
+.voyage .v-tete{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.voyage .v-tete span{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:var(--ink)}
+.voyage .v-tete b{font-family:'Share Tech Mono',monospace;font-size:12px;font-weight:400;color:var(--ink3);letter-spacing:.5px}
+.voyage ol{list-style:none;margin:0;padding:0}
+.voyage li{margin:0;padding:0}
+.voyage a{display:flex;align-items:center;gap:12px;padding:9px 8px;border-radius:10px;color:var(--ink);text-decoration:none;border-top:1px dashed var(--rule)}
+.voyage li:first-child a{border-top:0}
+.voyage a:hover{background:var(--parchment)}
+.voyage .v-num{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:700 14px 'Oswald',sans-serif;color:#b91c1c;background:radial-gradient(circle at 35% 30%,#ffe08a 0,#ffc531 25%,#f5821f 75%);box-shadow:inset -3px -4px 6px rgba(160,60,0,.3)}
+.voyage .v-txt{flex:1;min-width:0;line-height:1.25}
+.voyage .v-txt b{display:block;font-family:'Oswald',sans-serif;font-size:16.5px;font-weight:600}
+.voyage .v-txt small{display:block;font-size:13.5px;color:var(--ink3);margin-top:2px}
+.voyage .v-min{flex:none;font-family:'Share Tech Mono',monospace;font-size:11.5px;color:var(--goldb);white-space:nowrap}
+/* ── Encadrés de marge repliables (petits écrans) ── */
+details.pli>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:var(--parchment);border:1.5px solid var(--rule);font-family:'Oswald',sans-serif;font-size:15px;font-weight:500;color:var(--ink2);line-height:1.25}
+details.pli>summary::-webkit-details-marker{display:none}
+details.pli>summary::after{content:'+';margin-left:auto;font-size:20px;line-height:1;color:var(--goldb)}
+details.pli[open]>summary{margin-bottom:12px}
+details.pli[open]>summary::after{content:'–'}
+details.pli>summary .pli-ic{font-size:16px}
+@media(min-width:1340px){details.pli>summary{display:none}}
+@media(max-width:1339px){.side .slot{display:none}}
 /* fil « liste » (conditions à cocher) */
 .rail[data-mode=liste] .track{height:auto;margin:22px 0 0}
 .rail[data-mode=liste] .track::before{display:none}
@@ -384,6 +408,8 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   </aside>
   <p data-step="3">Cet article est une invitation à entrer dans le deuxième cercle. Pas pour abîmer le premier — il restera intact, disponible à chaque relecture. Mais pour en gagner un deuxième. Celui de la construction. Celui du tisserand au travail.</p>
   <p>Et je vous promets que le voyage en vaut la peine.</p>
+
+  <nav class="voyage" id="voyage" aria-label="Sommaire de l'article"></nav>
 
   <!-- ══ OUVERTURE : LA QUEUE DE GOKU ══ -->
   <h2 class="c1" id="queue">Avant toute théorie : la queue de Goku</h2>
@@ -1419,6 +1445,70 @@ document.querySelectorAll('.infographic-embed iframe').forEach(function(f){
   var ro = new ResizeObserver(placer); ro.observe(document.body);
   window.addEventListener('load', placer);
   placer();
+})();
+</script>
+<script>
+/* ── Sommaire « Le voyage » + encadrés repliables sur mobile ── */
+(function(){
+  var ACCROCHES = {
+    'queue':'Le tout premier retcon, en deux scènes',
+    '1':'La méthode pour trancher : révélation ou retcon ?',
+    '2':'Du gag au sérieux, une transition en douceur',
+    '3':"Un cadeau d'enfant devient cosmologie",
+    '4':'Un bâton de conte devient pilier du monde',
+    '5':'Quand une phrase innocente devient présage',
+    '6':'Les coutures utiles… et les fils abandonnés',
+    '7':'Kami-sama recycle les gags en mythologie',
+    '8':"Pourquoi le plus fort d'hier devient ridicule",
+    '9':'Le coup de théâtre qui réécrit tout',
+    'epilogue':'Relire le tome 1 avec d\'autres yeux'
+  };
+  var nav = document.getElementById('voyage');
+  var main = nav && nav.closest('main') || document.body;
+  var hs = Array.prototype.slice.call(main.querySelectorAll('h2'));
+  if(nav && hs.length){
+    /* mots par partie : on parcourt le texte dans l'ordre et on change de partie à chaque titre */
+    var MOTS = hs.map(function(){ return 0; }), cur = -1;
+    var tw = document.createTreeWalker(main, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+    while(tw.nextNode()){
+      var n = tw.currentNode;
+      if(n.nodeType === 1){ var j = hs.indexOf(n); if(j >= 0) cur = j; if(n.tagName === 'SCRIPT' || n.tagName === 'STYLE') { /* ignoré */ } continue; }
+      if(cur >= 0 && n.parentNode && !/^(SCRIPT|STYLE)$/.test(n.parentNode.tagName)) MOTS[cur] += n.nodeValue.split(/\s+/).filter(Boolean).length;
+    }
+    var total = 0, items = '';
+    hs.forEach(function(h, i){
+      var titre = h.textContent.trim();
+      var m = titre.match(/^(\d+)\.\s*(.*)$/);
+      var num = m ? m[1] : (h.id === 'epilogue' ? 'É' : '★');
+      var cle = m ? m[1] : h.id;
+      if(!h.id) h.id = 'partie-' + (m ? m[1] : i);
+      var min = Math.max(1, Math.round((MOTS[i] || 0) / 230)); total += min;
+      items += '<li><a href="#' + h.id + '"><span class="v-num">' + num + '</span><span class="v-txt"><b>' + (m ? m[2] : titre) + '</b>' + (ACCROCHES[cle] ? '<small>' + ACCROCHES[cle] + '</small>' : '') + '</span><span class="v-min">' + min + ' min</span></a></li>';
+    });
+    nav.innerHTML = '<div class="v-tete"><span>Le voyage</span><b>' + hs.length + ' étapes · environ ' + total + ' min de lecture</b></div><ol>' + items + '</ol>';
+  }
+  /* encadrés de marge : repliés sur petit écran, ouverts sur grand écran */
+  var LARGE = window.matchMedia('(min-width:1340px)');
+  function texte(n){ return n ? n.textContent.replace(/\s+/g,' ').trim() : ''; }
+  Array.prototype.slice.call(document.querySelectorAll('aside.side')).forEach(function(as){
+    var bloc = as.firstElementChild; if(!bloc || as.querySelector('details.pli')) return;
+    var k = bloc.className || '';
+    if(/\b(quote|slot)\b/.test(k)) return;
+    var lbl = texte(as.querySelector('.lbl')), h4 = texte(as.querySelector('h4')), nm = texte(as.querySelector('.nm')), ic = '📌', lib;
+    if(/\bknow\b/.test(k)){ ic = '💡'; lib = lbl || 'Le saviez-vous ?'; var big = texte(as.querySelector('.big')); if(big) lib += ' — ' + big; }
+    else if(/\bfiche\b/.test(k)){ ic = '🪪'; lib = (lbl || 'Fiche') + (nm ? ' : ' + nm : ''); }
+    else if(/\bticket\b/.test(k)){ ic = '🧾'; lib = texte(as.querySelector('.t')).split(' réparations')[0] || 'Ticket'; }
+    else { lib = lbl || h4 || 'En savoir plus'; if(lbl && h4) lib += ' : ' + h4; }
+    if(lib.length > 70) lib = lib.slice(0, 67) + '…';
+    var d = document.createElement('details'); d.className = 'pli';
+    var s = document.createElement('summary'); s.innerHTML = '<span class="pli-ic">' + ic + '</span><span></span>'; s.lastChild.textContent = lib;
+    d.appendChild(s);
+    while(as.firstChild) d.appendChild(as.firstChild);
+    as.appendChild(d);
+  });
+  function synchro(){ Array.prototype.forEach.call(document.querySelectorAll('details.pli'), function(d){ d.open = LARGE.matches; }); }
+  if(LARGE.addEventListener) LARGE.addEventListener('change', synchro); else LARGE.addListener(synchro);
+  synchro();
 })();
 </script>
 </body>
