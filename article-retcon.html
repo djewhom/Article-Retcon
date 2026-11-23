@@ -212,6 +212,15 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
 .side .pile div.haut{background:#fff8e1;outline:1.5px solid #f4b400}
 .side .pile s{color:var(--ink3)}
 .side .pile small{color:var(--ink3);font-size:12px}
+.side ul.mini-frise{list-style:none;margin:8px 0 0;padding:0 0 0 14px;border-left:2px dashed var(--rule)}
+.side ul.mini-frise li{position:relative;padding:4px 0 8px;font-size:13.5px;line-height:1.35}
+.side ul.mini-frise li::before{content:"";position:absolute;left:-21px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2.5px solid var(--c2)}
+.side ul.mini-frise li.rouge::before{background:var(--c1);border-color:var(--c1)}
+.side ul.mini-frise b{display:block;font-family:'Share Tech Mono',monospace;font-size:11.5px;font-weight:400;color:var(--ink3)}
+.side ol.chaine{list-style:none;margin:8px 0 0;padding:0}
+.side ol.chaine li{background:var(--parchment);border-radius:8px;padding:7px 10px;font-size:13.5px;line-height:1.35;position:relative;margin-bottom:18px}
+.side ol.chaine li:not(:last-child)::after{content:"↓";position:absolute;left:50%;bottom:-17px;transform:translateX(-50%);color:var(--c1);font-weight:700;font-size:13px}
+.side ol.chaine li:last-child{background:#fff3e8;outline:1.5px solid rgba(194,65,12,.3);margin-bottom:0}
 </style>
 <script src="/assets/site-nav.js" defer></script>
 <script data-goatcounter="https://dragonballogy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -266,11 +275,53 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
 
   <p class="lead">Il y a deux façons de lire Dragon Ball. La première ne voit qu'un plan. La seconde voit le tisserand au travail.</p>
 
-  <p>Il y a deux façons de lire Dragon Ball.</p>
+  <section class="marges">
+  <aside class="rail" data-mode="liste" aria-label="Révélation ou retcon ?" data-etapes='[["Deux lectures","le plan ou le tisserand"],["Le retcon, défini","un outil, pas une faute"],["Le programme","ce que vous allez voir"],["Les conditions de production","1984, à la semaine"],["Le cas Nyoibō","tome 1 contre tome 14"],["Le raisonnement par l&#39;absurde","révélation impossible"],["La méthode","déduction d&#39;abord"]]'>
+    <div class="fil">
+      <div class="fil-t">Révélation ou retcon ?</div>
+      <div class="fil-s">Comment on tranche, étape par étape.</div>
+      <div class="track"></div>
+    </div>
+  </aside>
+  <div class="mfil" aria-hidden="true"><span>Lire</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i><i data-s="5"></i><i data-s="6"></i><i data-s="7"></i><span>méthode</span></div>
+
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Deux lectures</div>
+      <div class="duo">
+        <div><b>1er cercle</b>« Tout était prévu. On n'avait pas vu, c'est tout. »</div>
+        <div class="apres"><b>2e cercle</b>« Tout a été tissé, semaine après semaine. »</div>
+      </div>
+      <p style="margin-top:8px">Le premier reste intact. On en gagne un second.</p>
+      <a href="/Les-3-cercles-de-lectures/article-3cercles_7.html" style="font-size:13.5px;color:var(--c2)">Les 3 cercles de lecture →</a>
+    </div>
+  </aside>
+  <p data-step="1">Il y a deux façons de lire Dragon Ball.</p>
   <p>La première est celle de l'enfance — ou de la première lecture, quel que soit l'âge. C'est le <strong>premier cercle</strong>. Celui où tout coule de source, où chaque révélation semble avoir été prévue depuis le début, où l'univers se déploie comme un plan qui était là, caché, attendant son heure. Goku est un Saiyan ? Bien sûr — sa queue, sa force, sa transformation en singe géant, tout était <em>là</em>. On n'avait pas vu, c'est tout.</p>
   <p>La deuxième est celle du <strong>deuxième cercle</strong>. Celle où l'on voit les fils, les nœuds, les reprises. Où l'on comprend que non, Toriyama n'avait pas tout prévu — qu'il improvisait à la semaine, qu'il inventait ses connexions après coup, et que ce qui ressemble à un plan n'est qu'un magnifique tissu de retcons.</p>
-  <p>Un <strong>retcon</strong> — <em>retroactive continuity</em> — c'est quand un auteur modifie rétroactivement le sens d'un élément ancien de son récit. Ce n'est pas (forcément) une erreur. Ce n'est pas (forcément) un aveu de faiblesse. C'est un outil de construction — et Dragon Ball est le terrain idéal pour comprendre comment il fonctionne, pourquoi il fonctionne, et quand il fabrique quelque chose de plus grand que ce qu'un plan aurait produit.</p>
-  <p>Cet article est une invitation à entrer dans le deuxième cercle. Pas pour abîmer le premier — il restera intact, disponible à chaque relecture. Mais pour en gagner un deuxième. Celui de la construction. Celui du tisserand au travail.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Lexique</div>
+      <h4>Retcon</h4>
+      <p><em>Retroactive continuity</em> : la continuité rétroactive. Le mot vient des comics américains, où les univers s'écrivent sur des décennies.</p>
+      <div class="meter" style="margin-top:8px"><span>Une erreur ?</span><b>pas forcément</b></div>
+      <div class="meter"><span>Un outil ?</span><b>toujours</b></div>
+    </div>
+  </aside>
+  <p data-step="2">Un <strong>retcon</strong> — <em>retroactive continuity</em> — c'est quand un auteur modifie rétroactivement le sens d'un élément ancien de son récit. Ce n'est pas (forcément) une erreur. Ce n'est pas (forcément) un aveu de faiblesse. C'est un outil de construction — et Dragon Ball est le terrain idéal pour comprendre comment il fonctionne, pourquoi il fonctionne, et quand il fabrique quelque chose de plus grand que ce qu'un plan aurait produit.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Au programme</div>
+      <h4>Neuf cas, du nuage au Saiyan</h4>
+      <div class="pile">
+        <div><a href="#s3" style="color:inherit">Le Kinto'un</a><small>un cadeau devient cosmologie</small></div>
+        <div><a href="#s4" style="color:inherit">Le Nyoibō</a><small>un gag devient pilier</small></div>
+        <div><a href="#s7" style="color:inherit">Kami-sama</a><small>la machine à réparer</small></div>
+        <div class="haut"><a href="#s9" style="color:inherit">Raditz</a><small>le retcon parfait</small></div>
+      </div>
+    </div>
+  </aside>
+  <p data-step="3">Cet article est une invitation à entrer dans le deuxième cercle. Pas pour abîmer le premier — il restera intact, disponible à chaque relecture. Mais pour en gagner un deuxième. Celui de la construction. Celui du tisserand au travail.</p>
   <p>Et je vous promets que le voyage en vaut la peine.</p>
 
   <!-- ══ 1. LE RETCON EST UNE DÉDUCTION ══ -->
@@ -279,15 +330,58 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   <p>Avant de chercher des retcons dans Dragon Ball, il faut s'entendre sur la méthode. Un retcon ne se décrète pas au doigt mouillé, et il ne se réduit pas non plus à un aveu d'auteur en interview. C'est une conclusion qui se déduit — et la logique qui y mène est d'une simplicité désarmante.</p>
   <p>Quand une connexion narrative apparaît entre deux éléments séparés par plusieurs tomes, deux hypothèses s'offrent à nous, et deux seulement. Soit c'est une <strong>révélation</strong> : l'auteur avait cette connexion en tête depuis le début et la dévoile au moment choisi. Soit c'est un <strong>retcon</strong> : l'auteur invente la connexion plus tard et la greffe rétroactivement sur un élément ancien. Il n'y a pas de troisième option.</p>
   <p>Pour trancher, il suffit d'examiner les conditions de production.</p>
-  <p>En 1984, Akira Toriyama commence Dragon Ball comme une parodie loufoque du <em>Saiyūki</em>, le Voyage en Occident chinois. Le ton est comique, l'univers est un conte, l'ambition est modeste. Les deux premiers tomes forment un récit bouclé : un garçon à queue de singe cherche des boules magiques avec une fille capricieuse, les trouve, fin. Dragon Ball aurait pu — aurait <em>dû</em> — s'arrêter là.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Les conditions de production</div>
+      <ul class="mini-frise">
+        <li><b>1984 · tomes 1-2</b>Une parodie du <em>Saiyūki</em>, bouclée : les boules sont trouvées, fin.</li>
+        <li><b>Torishima, l'éditeur</b>Réoriente vers les arts martiaux : le Tenka'ichi Budōkai.</li>
+        <li class="rouge"><b>Chaque semaine</b>Toriyama ne planifie jamais au-delà de quelques chapitres.</li>
+      </ul>
+    </div>
+  </aside>
+  <p data-step="4">En 1984, Akira Toriyama commence Dragon Ball comme une parodie loufoque du <em>Saiyūki</em>, le Voyage en Occident chinois. Le ton est comique, l'univers est un conte, l'ambition est modeste. Les deux premiers tomes forment un récit bouclé : un garçon à queue de singe cherche des boules magiques avec une fille capricieuse, les trouve, fin. Dragon Ball aurait pu — aurait <em>dû</em> — s'arrêter là.</p>
   <p>C'est Kazuhiko Torishima, son éditeur au Weekly Shōnen Jump, qui réoriente le manga vers les arts martiaux. Le premier Tenka'ichi Budōkai naît de cette impulsion éditoriale, pas d'un plan de l'auteur. Toriyama ne planifiait jamais au-delà de quelques chapitres. Il dessinait au rythme de la publication hebdomadaire, chaque semaine apportant son lot d'improvisations.</p>
   <p>Ces faits ne sont pas contestés. Ils sont documentés par des décennies d'interviews, confirmés par Torishima lui-même, et surtout — c'est le point crucial — <em>ils sont lisibles dans le texte</em>. On n'a même pas besoin que Toriyama l'avoue. Les conditions de production suffisent.</p>
-  <p>Prenons le Nyoibō, le bâton magique de Goku. Au tome 1, c'est un accessoire de <em>Saiyūki</em> — Sun Wukong possède le même. Il s'allonge, c'est amusant, c'est un gag. Au tome 14, on apprend que ce bâton est en réalité le pilier sacré qui relie la tour Karine au Palais de Dieu, et que le grand-père Gohan l'avait retiré parce que personne n'avait le niveau d'atteindre le sanctuaire.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Le cas d'école</div>
+      <div style="display:flex;justify-content:center;margin:2px 0 6px"><svg viewBox="0 0 64 64" style="width:46px;transform:rotate(-35deg)" aria-hidden="true"><use href="#baton"/></svg></div>
+      <div class="duo">
+        <div><b>Tome 1</b>Un bâton qui s'allonge. Un gag.</div>
+        <div class="apres"><b>Tome 14</b>Le pilier sacré entre la tour Karin et le Palais de Dieu.</div>
+      </div>
+      <div class="meter" style="margin-top:8px"><span>Écart</span><b>13 tomes, 4 ans</b></div>
+    </div>
+  </aside>
+  <p data-step="5">Prenons le Nyoibō, le bâton magique de Goku. Au tome 1, c'est un accessoire de <em>Saiyūki</em> — Sun Wukong possède le même. Il s'allonge, c'est amusant, c'est un gag. Au tome 14, on apprend que ce bâton est en réalité le pilier sacré qui relie la tour Karine au Palais de Dieu, et que le grand-père Gohan l'avait retiré parce que personne n'avait le niveau d'atteindre le sanctuaire.</p>
   <p>La question se pose : révélation ou retcon ?</p>
-  <p>Pour que ce soit une révélation, il faudrait accepter que Toriyama, en 1984, en dessinant un gag manga qu'il ne pensait pas prolonger au-delà de deux tomes, avait déjà conçu dans sa tête la tour Karine, le Palais de Dieu, la hiérarchie cosmique terre-tour-palais, le personnage du Tout-Puissant, et le rôle du bâton comme pilier sacré. Qu'il a gardé ce plan secret pendant quatre ans de publication hebdomadaire, sans jamais le laisser transparaître. Et qu'il a fait tout cela dans un format qu'il improvisait à la semaine.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Pour que ce soit une révélation…</div>
+      <h4>Toriyama aurait dû avoir en tête, dès 1984 :</h4>
+      <ul class="coche">
+        <li>la tour Karin</li><li>le Palais de Dieu</li><li>le Tout-Puissant</li><li>le bâton comme pilier sacré</li><li>et garder le secret 4 ans, à la semaine</li>
+      </ul>
+      <span class="stamp" style="color:var(--c1);border-color:var(--c1)">Absurde</span>
+    </div>
+  </aside>
+  <p data-step="6">Pour que ce soit une révélation, il faudrait accepter que Toriyama, en 1984, en dessinant un gag manga qu'il ne pensait pas prolonger au-delà de deux tomes, avait déjà conçu dans sa tête la tour Karine, le Palais de Dieu, la hiérarchie cosmique terre-tour-palais, le personnage du Tout-Puissant, et le rôle du bâton comme pilier sacré. Qu'il a gardé ce plan secret pendant quatre ans de publication hebdomadaire, sans jamais le laisser transparaître. Et qu'il a fait tout cela dans un format qu'il improvisait à la semaine.</p>
   <p>C'est absurde. Ce n'est pas une opinion, c'est un raisonnement par l'absurde. Soit on accepte un scénario structurellement impossible — un plan de 14 tomes dans la tête d'un auteur qui comptait en faire 2 — soit on reconnaît l'évidence : le bâton n'avait aucun sens caché au tome 1. Le sens est venu après. C'est un retcon. Et un magnifique.</p>
-  <p>Le même raisonnement s'applique à chacun des exemples que nous allons examiner. À chaque fois, la même déduction : l'explication tardive ne peut pas avoir été planifiée, donc elle a été inventée après coup. Les interviews de Toriyama ne font que confirmer ce que la déduction établit seule — elles verrouillent le raisonnement, sans plus.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">La méthode, en trois temps</div>
+      <ol class="chaine">
+        <li><strong>Déduire</strong> : une connexion tardive, deux hypothèses, révélation ou retcon</li>
+        <li><strong>Trancher</strong> par les conditions de production</li>
+        <li><strong>Vérifier</strong> avec les interviews, qui verrouillent sans décider</li>
+      </ol>
+    </div>
+  </aside>
+  <p data-step="7">Le même raisonnement s'applique à chacun des exemples que nous allons examiner. À chaque fois, la même déduction : l'explication tardive ne peut pas avoir été planifiée, donc elle a été inventée après coup. Les interviews de Toriyama ne font que confirmer ce que la déduction établit seule — elles verrouillent le raisonnement, sans plus.</p>
   <p>C'est cette méthode — déduction d'abord, vérification ensuite — qui distingue l'analyse du bavardage de fan.</p>
+
+  </section>
 
   <div class="infographic-embed">
     <div class="embed-label">Infographie interactive — L'arbre logique</div>
@@ -414,7 +508,7 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
       <div class="fil-end">tome 17 ↓</div>
     </div>
   </aside>
-  <h2 class="c2">3. Le tissage progressif — cas d'école : le Kinto'un</h2>
+  <h2 id="s3" class="c2">3. Le tissage progressif — cas d'école : le Kinto'un</h2>
   <div class="mfil" aria-hidden="true"><span>T1</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i class="later" data-s="4"></i><span>§6</span></div>
 
   <aside class="side">
@@ -549,7 +643,7 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
       <div class="track"></div>
     </div>
   </aside>
-  <h2 class="c2">4. Le tissage progressif — cas d'école : le Nyoibō</h2>
+  <h2 id="s4" class="c2">4. Le tissage progressif — cas d'école : le Nyoibō</h2>
   <div class="mfil" aria-hidden="true"><span>T1</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i><span>T14</span></div>
 
   <p>Si le Kinto'un est l'exemple du tissage parfait, le Nyoibō en est la version radicale — celle où le retcon est <em>certain</em>, prouvable, et pourtant invisible au premier cercle de lecture.</p>
@@ -768,7 +862,7 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
       <div class="track"></div>
     </div>
   </aside>
-  <h2 class="c1">7. La machine à réparer : Kami-sama</h2>
+  <h2 id="s7" class="c1">7. La machine à réparer : Kami-sama</h2>
   <div class="mfil" aria-hidden="true"><span>Origine</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i><i data-s="5"></i><span>Prix</span></div>
 
   <p>Si un seul personnage incarne le rôle du retcon dans Dragon Ball, c'est Kami-sama, le Tout-Puissant. Sa création même est un retcon — rien dans les tomes précédents ne suggère son existence (le titre de « Dieu des arts martiaux » de Karin le prouve). Mais sa <em>fonction</em> va bien au-delà : Kami-sama est la machine à réparer le passage du registre comique au registre sérieux.</p>
