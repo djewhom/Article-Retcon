@@ -232,6 +232,13 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
 .accroche figcaption.r b{color:var(--c1)}
 .accroche-ou{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:var(--ink3);text-transform:uppercase}
 @media(max-width:600px){.accroche-duo{grid-template-columns:1fr}.accroche-ou{text-align:center}}
+.bulle-manquante{margin:6px 0 34px;padding:22px 24px 20px;background:var(--parchment);border:1.5px solid var(--rule);border-radius:14px;text-align:center}
+.bm-lbl{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--c1);margin-bottom:14px}
+.bm-scene{position:relative;display:inline-block;max-width:520px;width:100%}
+.bm-bulle{position:relative;background:#fff;border:3px solid var(--ink);border-radius:50%/42%;padding:30px 34px;font-family:'Oswald',sans-serif;font-size:clamp(22px,3.2vw,30px);font-weight:600;line-height:1.2;color:var(--ink)}
+.bm-bulle::after{content:"";position:absolute;left:18%;bottom:-22px;border:12px solid transparent;border-top:20px solid var(--ink)}
+.bm-tampon{position:absolute;right:-8px;top:-14px;font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(16px,2.2vw,20px);color:var(--c1);border:3px solid var(--c1);background:rgba(255,255,255,.9);border-radius:8px;padding:2px 12px;transform:rotate(9deg)}
+.bm-txt{max-width:560px;margin:30px auto 0;font-size:16px;line-height:1.6;color:var(--ink2)}
 </style>
 <script src="/assets/site-nav.js" defer></script>
 <script data-goatcounter="https://dragonballogy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -470,19 +477,20 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
   <img class="img-full" src="images/fig01b_queue_point_faible.png" alt="Yamcha découvre en direct que le point faible de Goku est sa queue"/>
   <p class="img-caption">Le point faible de la queue, révélé en direct — l'exemple même du retcon probable</p>
 
-  <aside class="side">
-    <div style="position:relative;padding-top:6px">
-      <div class="lbl">La bulle qui manque</div>
-      <div class="bulle" style="margin-top:8px">Le Kamehameha ?!<br>La technique de cette vieille tortue !</div>
-      <span class="tampon">Jamais dit</span>
-      <p style="margin-top:24px">Au tome 6, Tao Pai Pai encaisse la technique de son rival sans la reconnaître. La rivalité n'existe pas encore.</p>
-    </div>
-  </aside>
   <div class="manga-grid cols2" data-step="2">
     <img src="images/manga/fig01_tao_paipai_kamehameha.png" alt="Vol. 6 p.175 — Tao Pai Pai encaisse le Kamehameha sans le reconnaître"/>
     <img src="images/manga/fig02_goku_reconnait_dodonpa.png" alt="Vol. 9 p.15 — Goku reconnaît le Dodonpa de Tenshinhan : « C'est la technique de Tao Pai Pai !! »"/>
   </div>
   <p class="img-caption">Vol. 6 p.175 — l'oubli · Vol. 9 p.15 — le rappel</p>
+
+  <div class="bulle-manquante">
+    <div class="bm-lbl">La bulle qui manque</div>
+    <div class="bm-scene">
+      <div class="bm-bulle">Le Kamehameha ?!<br>La technique de cette vieille tortue !</div>
+      <span class="bm-tampon">Jamais dit</span>
+    </div>
+    <p class="bm-txt">Si la rivalité entre la Tortue et la Grue avait été prévue, c'est ce que Tao Pai Pai aurait dit au tome 6, en encaissant le Kamehameha. Il ne le dit pas. Il se plaint de ses vêtements.</p>
+  </div>
 
   <aside class="side">
     <div class="card">
@@ -495,6 +503,18 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
     </div>
   </aside>
   <p data-step="3">Ces deux pages, mises côte à côte, forment un diptyque dévastateur. La première prouve l'absence de connexion ; la seconde montre la connexion en train de se nouer, trois tomes plus tard. L'avant et l'après du retcon, par la même technique, vue des deux côtés.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Le test du silence</div>
+      <ol class="chaine">
+        <li>Une connexion explicite rend le récit plus riche et plus immersif</li>
+        <li>Un auteur qui l'avait prévue n'avait aucune raison de la taire</li>
+        <li>Se taire exprès, c'est affaiblir son propre récit</li>
+        <li><strong>Donc le silence est un indice</strong> : la connexion n'existait pas encore</li>
+      </ol>
+    </div>
+  </aside>
+  <p>On objectera qu'un silence ne prouve rien : Toriyama aurait pu garder la connexion pour plus tard. Mais il faut alors expliquer pourquoi un auteur se priverait volontairement d'une balise qui renforce son récit. Faire dire à Tao Pai Pai « la technique de cette vieille tortue », c'est rendre l'univers plus cohérent, plus vivant, plus immersif — et cela n'aurait rien gâché de la révélation future. Taire cette connexion n'aurait rien protégé : cela aurait seulement appauvri la scène. Un auteur qui tient un fil ne fragilise pas exprès la qualité de ce qu'il écrit en omettant les balises qui tissent son récit. Le silence n'est donc pas neutre : quand la connexion aurait enrichi la scène sans rien coûter, son absence est un indice qu'elle n'existait pas encore.</p>
 
   <img class="img-full" data-step="2" src="images/fig01c_taopaipai_indifferent_dodon_charge.png" alt="Tao Pai Pai, insensible au Kamehameha : « Ça lui a rien fait !! » « T'as ruiné mes fringues... sale gosse... »"/>
   <p class="img-caption">La technique ultime du tome 2 ne fait même pas ciller l'adversaire du tome 6</p>
@@ -532,9 +552,9 @@ ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);fo
       <p style="margin-top:6px">Un auteur, un feuilleton, la pression du public : bien avant le Jump, la sérialisation écrivait déjà avec ses lecteurs.</p>
     </div>
   </aside>
-  <p>Le point de bascule le plus visible est l'entraînement chez Kamé Sennin. Dans une seule page, les deux registres coexistent : le cartouche narrateur annonce solennellement « des exercices extrêmement durs », pendant que Kamé Sennin se fait poursuivre par un requin sur la plage en criant « Qu'est-ce que tu me veux, salopard ?! ». Le gag n'a pas disparu, mais le <em>moteur</em> de l'histoire a changé. On ne cherche plus des boules magiques pour un vœu comique. On s'entraîne pour devenir plus fort. La curiosité du lecteur a muté : il veut voir les progrès.</p>
+  <p>Le point de bascule le plus visible est l'entraînement chez Kamé Sennin. Dans une seule page, les deux registres coexistent : le cartouche narrateur annonce solennellement « des exercices extrêmement durs », pendant que Lunch, passée en version blonde, poursuit Krilin un couteau de cuisine à la main : « Qu'est-ce que tu me veux, salopard ?! ». Le gag n'a pas disparu, mais le <em>moteur</em> de l'histoire a changé. On ne cherche plus des boules magiques pour un vœu comique. On s'entraîne pour devenir plus fort. La curiosité du lecteur a muté : il veut voir les progrès.</p>
 
-  <img class="img-full" src="images/fig03_entrainement_requin.png" alt="L'entraînement — le requin, le cartouche sérieux, les deux registres dans la même page"/>
+  <img class="img-full" src="images/fig03_entrainement_requin.png" alt="L'entraînement — Lunch blonde poursuit Krilin au couteau sous le cartouche solennel : les deux registres dans la même page"/>
   <p class="img-caption">Les deux registres, dans la même page</p>
 
   <p>Et la phrase que Kamé Sennin prononce sur Krilin, dans cette même scène, est un bijou involontaire : « Sacré Krilin, il s'approche des limites de l'être humain ! » Remarque banale dans ce contexte — un maître impressionné par son élève. Mais quand on sait que Goku, lui, n'est <em>pas</em> un être humain (dix tomes plus tard), cette phrase se charge d'un sens qu'elle n'avait pas. Le plafond de Krilin sera réel ; celui de Goku, non. Cette asymétrie deviendra le sujet central de Dragon Ball Z. Mais ici, en 1985, c'est juste le compliment d'un vieux maître.</p>
