@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qu'est-ce qu'un retcon ? — Dragonballologie</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Share+Tech+Mono&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c1:#c2410c;--c2:#1d4ed8;--c3:#15803d;
+  --gold:#b45309;--goldb:#d97706;
+  --bg:#faf7f2;--parchment:#f5ede0;
+  --ink:#1c1917;--ink2:#44403c;--ink3:#78716c;
+  --rule:rgba(0,0,0,.1);--max:800px;
+}
+body{background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.78}
+.topnav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:16px}
+.logo{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:#fff;letter-spacing:2px;text-decoration:none}
+.logo em{color:#f97316;font-style:normal}
+.nav-back{font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(255,255,255,.4);letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;margin-left:auto}
+.nav-back:hover{color:rgba(255,255,255,.7)}
+.banner{width:100%;max-height:560px;object-fit:cover;object-position:center 30%;display:block;background:var(--parchment)}
+.wrap{max-width:var(--max);margin:0 auto;padding:52px 24px 96px}
+.meta{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--ink3);text-transform:uppercase;display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.meta .cat{color:var(--goldb);font-weight:700}
+h1{font-family:'Oswald',sans-serif;font-size:clamp(30px,5vw,50px);font-weight:700;letter-spacing:1px;line-height:1.12;color:var(--ink);margin-bottom:10px}
+.subtitle{font-family:'Oswald',sans-serif;font-size:clamp(16px,2.2vw,20px);font-weight:400;font-style:italic;color:var(--ink3);margin-bottom:28px}
+.lead{font-size:20px;line-height:1.68;color:var(--ink2);font-style:italic;border-left:4px solid var(--goldb);padding-left:18px;margin-bottom:40px}
+h2{font-family:'Oswald',sans-serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;letter-spacing:.5px;margin:56px 0 18px;padding-bottom:10px;border-bottom:2px solid}
+h2.c1{color:var(--c1);border-color:rgba(194,65,12,.25)}
+h2.c2{color:var(--c2);border-color:rgba(29,78,216,.2)}
+h2.c3{color:var(--c3);border-color:rgba(21,128,61,.2)}
+h2.dark{color:var(--ink);border-color:var(--rule)}
+h3{font-family:'Oswald',sans-serif;font-size:clamp(19px,2.8vw,25px);font-weight:600;margin:38px 0 14px;color:var(--ink)}
+p{margin-bottom:20px;color:var(--ink2)}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+em{font-style:italic}
+blockquote{font-family:'Oswald',sans-serif;font-size:clamp(18px,2.6vw,23px);font-weight:600;font-style:italic;color:var(--ink);border-left:4px solid var(--c1);padding:4px 0 4px 20px;margin:32px 0}
+
+/* Images */
+.img-full{width:100%;border-radius:10px;display:block;margin:34px 0;box-shadow:0 4px 28px rgba(0,0,0,.1);background:var(--parchment)}
+.img-sep{width:100%;max-width:700px;display:block;margin:52px auto;border-radius:14px;box-shadow:0 8px 40px rgba(0,0,0,.14);background:var(--parchment)}
+.img-caption{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--ink3);letter-spacing:1px;text-align:center;text-transform:uppercase;margin-top:-24px;margin-bottom:34px}
+
+/* Manga grid (diptyques et planches) */
+.manga-grid{display:grid;gap:10px;margin:24px 0;align-items:start}
+.manga-grid.cols2{grid-template-columns:1fr 1fr}
+.manga-grid.cols3{grid-template-columns:1fr 1fr 1fr}
+.manga-grid img{width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.15);display:block;background:var(--parchment);height:auto}
+.manga-grid + .img-caption{margin-top:-14px}
+/* ── Cases annotées : pastilles + infobulles ── */
+.pinfig{position:relative;margin:0}
+.pinfig img{width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.15);display:block;background:var(--parchment);height:auto}
+.pinfig figcaption{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink3);text-align:center;margin-top:8px}
+.pinfig figcaption b{color:var(--c1)}
+.pin{position:absolute;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;border:2px solid #fff;background:var(--c1);color:#fff;font:700 14px/1 'Oswald',sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.35);animation:pinpulse 2.4s ease-in-out infinite;padding:0;z-index:2}
+.pin.b{background:var(--c2)}
+.pin .bulle{display:none;position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);width:230px;background:var(--ink);color:#fff;font:400 13.5px/1.45 'Source Serif 4',Georgia,serif;text-align:left;padding:10px 12px;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.3);z-index:6}
+.pin .bulle::after{content:'';position:absolute;top:100%;left:50%;margin-left:-6px;border:6px solid transparent;border-top-color:var(--ink)}
+.pin.d .bulle{left:auto;right:-10px;transform:none}.pin.d .bulle::after{left:auto;right:12px}
+.pin.g .bulle{left:-10px;transform:none}.pin.g .bulle::after{left:22px}
+.pin.bas .bulle{bottom:auto;top:calc(100% + 10px)}.pin.bas .bulle::after{top:auto;bottom:100%;border-top-color:transparent;border-bottom-color:var(--ink)}
+.pin:hover,.pin:focus{animation:none;z-index:7;outline:none;transform:scale(1.1)}
+.pin:hover .bulle,.pin:focus .bulle{display:block}
+@keyframes pinpulse{0%,100%{box-shadow:0 0 0 0 rgba(194,65,12,.55),0 2px 8px rgba(0,0,0,.35)}50%{box-shadow:0 0 0 8px rgba(194,65,12,0),0 2px 8px rgba(0,0,0,.35)}}
+.pin-aide{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--ink3);text-align:center;margin:-8px 0 22px}
+.rappel{background:var(--parchment);border-left:4px solid var(--goldb);border-radius:0 8px 8px 0;padding:12px 16px;font-style:italic}
+.rappel a{color:var(--c2)}
+.teaser-queue{font-family:'Oswald',sans-serif;font-size:clamp(19px,2.6vw,23px);font-weight:600;color:var(--c1);text-align:center;margin:30px 0 44px}
+@media(max-width:580px){.manga-grid.cols2,.manga-grid.cols3{grid-template-columns:1fr}}
+
+/* Cadre méthodologique (3 niveaux de certitude) */
+.pillars{display:flex;flex-direction:column;gap:10px;margin:20px 0 28px}
+.pillar{background:var(--parchment);border-radius:8px;padding:14px 18px;border-left:4px solid}
+.pillar.c1{border-color:var(--c1)}.pillar.c2{border-color:var(--c2)}.pillar.c3{border-color:var(--c3)}
+.pillar strong{display:block;margin-bottom:3px;font-size:15.5px;color:var(--ink)}
+.pillar p{margin:0;font-size:15px;color:var(--ink2)}
+
+/* Liste flèche */
+ul.arrow{list-style:none;padding:0;margin:0 0 20px}
+ul.arrow li{padding:6px 0 6px 24px;position:relative;color:var(--ink2);font-size:17px}
+ul.arrow li::before{content:'→';position:absolute;left:0;color:var(--goldb);font-weight:700}
+
+/* Étapes numérotées (tissage progressif, conditions du retcon parfait) */
+.hierarchy{background:var(--parchment);border:1.5px solid var(--rule);border-radius:10px;padding:24px;margin:28px 0 36px}
+.h-row{display:flex;gap:18px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--rule)}
+.h-row:last-child{border:none;padding-bottom:0}
+.h-num{font-family:'Oswald',sans-serif;font-size:32px;font-weight:700;line-height:1;flex-shrink:0;width:38px}
+.h-num.c1{color:var(--c1)}.h-num.c2{color:var(--c2)}.h-num.c3{color:var(--c3)}
+.h-body strong{display:block;font-size:16px;margin-bottom:4px}
+.h-body p{margin:0;font-size:15px;color:var(--ink2)}
+
+/* Blocs d'exemple / analyse (retcon fonctionnel, fils abandonnés) */
+.example{background:var(--parchment);border:1.5px solid var(--rule);border-radius:12px;padding:30px 30px 26px;margin:40px 0}
+.ex-num{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--ink3);text-transform:uppercase;margin-bottom:4px}
+.ex-title{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:var(--ink);margin-bottom:22px;padding-bottom:14px;border-bottom:2px solid var(--rule)}
+.level{margin-bottom:22px;padding-left:16px;border-left:3px solid}
+.level.c1{border-color:var(--c1)}.level.c2{border-color:var(--c2)}.level.c3{border-color:var(--c3)}
+.level-tag{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.level-tag.c1{color:var(--c1)}.level-tag.c2{color:var(--c2)}.level-tag.c3{color:var(--c3)}
+.concl{background:var(--ink);color:rgba(255,255,255,.82);border-radius:9px;padding:18px 22px;margin-top:22px;font-size:15.5px;line-height:1.65}
+.concl strong{color:#fff}
+.verdict{display:inline-block;font-family:'Oswald',sans-serif;font-size:19px;font-weight:700;color:var(--c1);background:rgba(194,65,12,.1);padding:6px 18px;border-radius:6px;margin-top:10px}
+
+/* Placeholders d'infographies interactives */
+.infographic{max-width:700px;margin:52px auto;border:2px dashed var(--rule);border-radius:14px;padding:40px 24px;text-align:center;background:rgba(0,0,0,.015)}
+.infographic .tag{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--goldb);text-transform:uppercase;margin-bottom:10px}
+.infographic .name{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.infographic .file{font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--ink3)}
+.infographic-embed{width:min(1100px,100vw);position:relative;left:50%;transform:translateX(-50%);margin:52px 0}
+.infographic-embed .embed-label{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--goldb);text-transform:uppercase;text-align:center;margin-bottom:14px;padding:0 24px}
+.infographic-embed iframe{width:100%;height:820px;border:none;border-radius:14px;box-shadow:0 8px 40px rgba(0,0,0,.14);background:#0c0a09;display:block}
+@media(max-width:600px){.infographic-embed iframe{height:640px}}
+
+.foot{margin-top:72px;padding-top:24px;border-top:2px solid var(--rule);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--ink3);text-align:center;text-transform:uppercase}
+.teaser{margin-top:56px;padding:24px 26px;background:var(--parchment);border-radius:10px;font-style:italic;color:var(--ink2);font-size:16px;line-height:1.7}
+@media(max-width:600px){.wrap{padding:32px 16px 64px}.example{padding:20px 16px 18px}}
+
+/* ══ Marges illustrées ══
+   Fil thématique à gauche (sticky), notes à droite alignées sur leur paragraphe.
+   Au-dessus de 1340px : les deux marges. En dessous : notes en encarts dans le texte, fil en barre. */
+:root{--cloud:#f4b400;--cloudl:#fde68a}
+.marges{position:relative}
+.side{font-size:14.5px;line-height:1.55;color:var(--ink2);margin:6px 0 28px;max-width:520px}
+.side p{font-size:14.5px;margin:0;color:var(--ink2)}
+.side h4{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:6px;line-height:1.25}
+.side .lbl{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;color:var(--c2);margin-bottom:4px}
+.side .card{background:#fff;border:1.5px solid var(--rule);border-radius:12px;padding:16px;box-shadow:0 3px 14px rgba(0,0,0,.05)}
+.side .fiche{background:linear-gradient(170deg,#fff 0 55%,#fff8e1);border:2px solid var(--ink);border-radius:14px;overflow:hidden;box-shadow:5px 5px 0 var(--ink);max-width:270px}
+.side .fiche .art{background:radial-gradient(circle at 50% 120%,#bfdbfe,#eff6ff 70%);height:118px;display:grid;place-items:center;border-bottom:2px solid var(--ink)}
+.side .fiche .art svg{width:150px;animation:nuage 4s ease-in-out infinite}
+@keyframes nuage{50%{transform:translateY(-6px)}}
+.side .fiche .bd{padding:12px 16px 14px}
+.side .fiche .nm{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:var(--ink);line-height:1}
+.side .fiche .kj{font-size:13px;color:var(--ink3);margin-bottom:10px}
+.side .fiche dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:13.5px}
+.side .fiche dt{color:var(--ink3)}.side .fiche dd{color:var(--ink);font-weight:600}
+.side .know{border-left:3px solid var(--cloud);padding:2px 0 2px 14px}
+.side .know .big{font-family:'Oswald',sans-serif;font-size:30px;font-weight:700;color:var(--ink);line-height:1.05;margin-bottom:6px}
+.side svg.schema{width:100%;height:auto;display:block;margin:6px 0 8px}
+.side .meter{display:flex;justify-content:space-between;font-size:13.5px;margin-top:8px}
+.side .bar{height:8px;border-radius:4px;background:var(--parchment);overflow:hidden;margin-top:3px}
+.side .bar>div{height:100%;border-radius:4px;background:var(--c2)}
+.side .stamp{display:inline-block;margin-top:12px;font-family:'Oswald',sans-serif;font-weight:700;font-size:14px;color:var(--c3);border:2px solid var(--c3);border-radius:6px;padding:2px 10px;transform:rotate(-3deg)}
+.side .slot{border:2px dashed #c9bfae;border-radius:14px;padding:16px;text-align:center;background:repeating-linear-gradient(45deg,transparent 0 10px,rgba(0,0,0,.018) 10px 20px)}
+.side .slot svg{width:64px;opacity:.5;margin-bottom:6px}
+.side .slot p{font-size:13.5px;color:var(--ink3)}
+.side .quote{background:var(--ink);color:#fff;border-radius:14px;padding:18px 18px 16px;position:relative;margin-top:14px}
+.side .quote q{font-family:'Oswald',sans-serif;font-size:21px;font-weight:600;line-height:1.2;display:block;quotes:"« " " »"}
+.side .quote .who{font-size:13px;color:rgba(255,255,255,.6);margin:6px 0 12px}
+.side .quote a{font-size:14px;color:var(--cloudl);text-decoration:none;border-bottom:1px solid rgba(253,230,138,.4)}
+.side .quote svg{position:absolute;right:14px;top:-16px;width:48px}
+/* fil (gauche) */
+.rail{display:none}
+.rail .fil{position:sticky;top:28px}
+.rail .fil-t{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.rail .fil-s{font-size:13px;color:var(--ink3);line-height:1.4;margin-bottom:18px}
+.rail .track{position:relative;height:440px;margin:30px 0 0 22px}
+.rail .track::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:repeating-linear-gradient(var(--rule) 0 4px,transparent 4px 8px)}
+.rail .tick{position:absolute;left:-3px;width:8px;height:1px;background:var(--ink3);opacity:.35}
+.rail .node{position:absolute;left:-7px;display:flex;align-items:center;gap:14px;transform:translateY(-50%)}
+.rail .node i{width:16px;height:16px;border-radius:50%;background:var(--bg);border:2.5px solid var(--ink3);flex:none;transition:all .3s}
+.rail .node b{font-family:'Share Tech Mono',monospace;font-size:11px;font-weight:400;color:var(--ink3);display:block;line-height:1.2}
+.rail .node div{line-height:1.2}
+.rail .node span{font-family:'Oswald',sans-serif;font-size:14px;color:var(--ink2);line-height:1.2}
+.rail .node.on i{background:var(--cloud);border-color:#b45309;box-shadow:0 0 0 5px rgba(244,180,0,.22)}
+.rail .node.on span{color:var(--ink);font-weight:600}
+.rail .node.later{opacity:.45}.rail .node.later i{border-style:dashed}
+.rail .puff{position:absolute;left:-22px;width:44px;transform:translateY(-50%);transition:top .7s cubic-bezier(.3,1.4,.5,1)}
+.rail .fil-end{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--ink3);margin:10px 0 0 4px}
+/* barre (petits écrans) */
+.mfil{display:flex;position:sticky;top:0;z-index:5;background:rgba(250,247,242,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);padding:10px 0;gap:6px;align-items:center;margin:-8px 0 24px;font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--ink3)}
+.mfil i{flex:1;height:6px;border-radius:3px;background:var(--parchment)}
+.mfil i.on{background:var(--cloud)}
+.mfil i.later{background:repeating-linear-gradient(90deg,var(--parchment) 0 4px,transparent 4px 7px)}
+.mfil i.later.on{background:var(--cloud);opacity:.5}
+@media(min-width:1340px){
+  .side{position:absolute;left:calc(100% + 40px);width:250px;margin:6px 0 0}
+  .rail{display:block;position:absolute;right:calc(100% + 40px);top:0;bottom:0;width:200px}
+  .mfil{display:none}
+}
+@media(prefers-reduced-motion:reduce){.side .fiche .art svg{animation:none}.rail .puff,.rail .node i{transition:none}}
+/* ── Sommaire « Le voyage » ── */
+.voyage{background:#fff;border:2px solid var(--goldb);border-radius:16px;padding:18px 18px 10px;margin:34px 0 44px;box-shadow:0 8px 24px rgba(180,83,9,.10)}
+.voyage .v-tete{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.voyage .v-tete span{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:var(--ink)}
+.voyage .v-tete b{font-family:'Share Tech Mono',monospace;font-size:12px;font-weight:400;color:var(--ink3);letter-spacing:.5px}
+.voyage ol{list-style:none;margin:0;padding:0}
+.voyage li{margin:0;padding:0}
+.voyage a{display:flex;align-items:center;gap:12px;padding:9px 8px;border-radius:10px;color:var(--ink);text-decoration:none;border-top:1px dashed var(--rule)}
+.voyage li:first-child a{border-top:0}
+.voyage a:hover{background:var(--parchment)}
+.voyage .v-num{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:700 14px 'Oswald',sans-serif;color:#b91c1c;background:radial-gradient(circle at 35% 30%,#ffe08a 0,#ffc531 25%,#f5821f 75%);box-shadow:inset -3px -4px 6px rgba(160,60,0,.3)}
+.voyage .v-txt{flex:1;min-width:0;line-height:1.25}
+.voyage .v-txt b{display:block;font-family:'Oswald',sans-serif;font-size:16.5px;font-weight:600}
+.voyage .v-txt small{display:block;font-size:13.5px;color:var(--ink3);margin-top:2px}
+.voyage .v-min{flex:none;font-family:'Share Tech Mono',monospace;font-size:11.5px;color:var(--goldb);white-space:nowrap}
+/* ── Encadrés de marge repliables (petits écrans) ── */
+details.pli>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:var(--parchment);border:1.5px solid var(--rule);font-family:'Oswald',sans-serif;font-size:15px;font-weight:500;color:var(--ink2);line-height:1.25}
+details.pli>summary::-webkit-details-marker{display:none}
+details.pli>summary::after{content:'+';margin-left:auto;font-size:20px;line-height:1;color:var(--goldb)}
+details.pli[open]>summary{margin-bottom:12px}
+details.pli[open]>summary::after{content:'–'}
+details.pli>summary .pli-ic{font-size:16px}
+@media(min-width:1340px){details.pli>summary{display:none}}
+@media(max-width:1339px){.side .slot{display:none}}
+/* fil « liste » (conditions à cocher) */
+.rail[data-mode=liste] .track{height:auto;margin:22px 0 0}
+.rail[data-mode=liste] .track::before{display:none}
+.rail .item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;opacity:.45;transition:opacity .3s}
+.rail .item i{width:26px;height:26px;border-radius:50%;border:2px solid var(--ink3);display:grid;place-items:center;font-style:normal;font-family:'Oswald',sans-serif;font-size:13px;color:var(--ink3);flex:none;transition:all .3s}
+.rail .item span{font-family:'Oswald',sans-serif;font-size:15px;color:var(--ink);line-height:1.2;display:block}
+.rail .item b{font-weight:400;font-size:12.5px;color:var(--ink3);line-height:1.35;display:block;margin-top:2px}
+.rail .item.on{opacity:1}
+.rail .item.on i{background:var(--c1);border-color:var(--c1);color:#fff}
+.rail .item.final{margin-top:8px;border-top:1px dashed var(--rule);padding-top:16px}
+.rail .item.final span{font-size:17px;font-weight:700}
+.rail .item.final.on span{color:var(--c1)}
+.rail .item.final.on i{background:var(--ink);border-color:var(--ink)}
+/* badges et petites briques des notes */
+.side .badge{width:56px;height:56px;flex:none}
+.side .duo{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.side .duo>div{background:var(--parchment);border-radius:8px;padding:8px 10px;font-size:13px;line-height:1.4}
+.side .duo b{display:block;font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:4px}
+.side .duo>div.apres{background:#fff3e8;outline:1.5px solid rgba(194,65,12,.3)}
+.side .duo>div.apres b{color:var(--c1)}
+.side ul.coche{list-style:none;margin:8px 0 0;padding:0}
+.side ul.coche li{padding:4px 0 4px 24px;position:relative;font-size:13.5px;line-height:1.4}
+.side ul.coche li::before{content:"✗";position:absolute;left:2px;color:var(--c1);font-weight:700}
+.side ul.coche.oui li::before{content:"✓";color:var(--c3)}
+.side .bulle{position:relative;background:#fff;border:2.5px solid var(--ink);border-radius:50% / 42%;padding:22px 20px;text-align:center;font-family:'Oswald',sans-serif;font-size:16px;line-height:1.25;color:var(--ink)}
+.side .bulle::after{content:"";position:absolute;left:34px;bottom:-16px;border:9px solid transparent;border-top:14px solid var(--ink)}
+.side .tampon{position:absolute;right:-6px;top:-10px;font-family:'Oswald',sans-serif;font-weight:700;font-size:13px;color:var(--c1);border:2.5px solid var(--c1);background:rgba(255,255,255,.85);border-radius:6px;padding:1px 8px;transform:rotate(8deg)}
+.side .big{font-family:'Oswald',sans-serif;font-size:40px;font-weight:700;color:var(--ink);line-height:1}
+.side .head{display:flex;gap:12px;align-items:center;margin-bottom:8px}
+.side .fiche.rouge{background:linear-gradient(170deg,#fff 0 55%,#fff1e6)}
+.side .fiche.rouge .art{background:radial-gradient(circle at 50% 120%,#fecaca,#fff7ed 70%)}
+.side .ticket{background:#fff;border:1.5px dashed var(--ink3);border-radius:4px;padding:14px 16px;font-family:'Share Tech Mono',monospace;font-size:12.5px;color:var(--ink);box-shadow:0 3px 12px rgba(0,0,0,.06);position:relative}
+.side .ticket .t{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;text-align:center;border-bottom:1.5px dashed var(--rule);padding-bottom:8px;margin-bottom:8px}
+.side .ticket .l{display:flex;justify-content:space-between;gap:8px;padding:3px 0}
+.side .ticket .l b{color:var(--c3);font-weight:400}
+.side .ticket .tot{border-top:1.5px dashed var(--rule);margin-top:8px;padding-top:8px;text-align:center;color:var(--ink3)}
+.side ol.chaine{list-style:none;margin:8px 0 0;padding:0;counter-reset:c}
+.side ol.chaine li{background:var(--parchment);border-radius:8px;padding:7px 10px;font-size:13.5px;line-height:1.35;position:relative;margin-bottom:18px}
+.side ol.chaine li:not(:last-child)::after{content:"↓";position:absolute;left:50%;bottom:-17px;transform:translateX(-50%);color:var(--c1);font-weight:700;font-size:13px}
+.side ol.chaine li:last-child{background:#fff3e8;outline:1.5px solid rgba(194,65,12,.3);margin-bottom:0}
+.side .jauge{margin-top:8px}
+.side .jauge .r{font-size:13px;margin-top:10px;display:flex;justify-content:space-between}
+.side .jauge .b{height:14px;border-radius:7px;background:var(--parchment);overflow:hidden;margin-top:4px}
+.side .jauge .b>div{height:100%;border-radius:7px}
+.side .pile{display:flex;flex-direction:column;gap:5px;margin-top:8px}
+.side .pile div{border-radius:7px;padding:6px 10px;font-size:13.5px;display:flex;justify-content:space-between;background:var(--parchment)}
+.side .pile div.haut{background:#fff8e1;outline:1.5px solid #f4b400}
+.side .pile s{color:var(--ink3)}
+.side .pile small{color:var(--ink3);font-size:12px}
+.side ul.mini-frise{list-style:none;margin:8px 0 0;padding:0 0 0 14px;border-left:2px dashed var(--rule)}
+.side ul.mini-frise li{position:relative;padding:4px 0 8px;font-size:13.5px;line-height:1.35}
+.side ul.mini-frise li::before{content:"";position:absolute;left:-21px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2.5px solid var(--c2)}
+.side ul.mini-frise li.rouge::before{background:var(--c1);border-color:var(--c1)}
+.side ul.mini-frise b{display:block;font-family:'Share Tech Mono',monospace;font-size:11.5px;font-weight:400;color:var(--ink3)}
+.side ol.chaine{list-style:none;margin:8px 0 0;padding:0}
+.side ol.chaine li{background:var(--parchment);border-radius:8px;padding:7px 10px;font-size:13.5px;line-height:1.35;position:relative;margin-bottom:18px}
+.side ol.chaine li:not(:last-child)::after{content:"↓";position:absolute;left:50%;bottom:-17px;transform:translateX(-50%);color:var(--c1);font-weight:700;font-size:13px}
+.side ol.chaine li:last-child{background:#fff3e8;outline:1.5px solid rgba(194,65,12,.3);margin-bottom:0}
+.accroche{margin:10px 0 34px}
+.accroche-q{font-family:'Oswald',sans-serif;font-size:clamp(22px,3vw,28px);font-weight:700;text-align:center;margin-bottom:14px;color:var(--ink)}
+.accroche-duo{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:center}
+.accroche figure{margin:0}
+.accroche img{width:100%;display:block;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.14)}
+.accroche figcaption{margin-top:10px;font-size:15px;line-height:1.45;color:var(--ink2);border-left:4px solid var(--c2);padding-left:10px}
+.accroche figcaption.r{border-color:var(--c1)}
+.accroche figcaption b{display:block;font-family:'Oswald',sans-serif;font-size:18px;color:var(--c2)}
+.accroche figcaption.r b{color:var(--c1)}
+.accroche-ou{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:var(--ink3);text-transform:uppercase}
+@media(max-width:600px){.accroche-duo{grid-template-columns:1fr}.accroche-ou{text-align:center}}
+.bulle-manquante{margin:6px 0 34px;padding:22px 24px 20px;background:var(--parchment);border:1.5px solid var(--rule);border-radius:14px;text-align:center}
+.bm-lbl{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--c1);margin-bottom:14px}
+.bm-scene{position:relative;display:inline-block;max-width:520px;width:100%}
+.bm-bulle{position:relative;background:#fff;border:3px solid var(--ink);border-radius:50%/42%;padding:30px 34px;font-family:'Oswald',sans-serif;font-size:clamp(22px,3.2vw,30px);font-weight:600;line-height:1.2;color:var(--ink)}
+.bm-bulle::after{content:"";position:absolute;left:18%;bottom:-22px;border:12px solid transparent;border-top:20px solid var(--ink)}
+.bm-tampon{position:absolute;right:-8px;top:-14px;font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(16px,2.2vw,20px);color:var(--c1);border:3px solid var(--c1);background:rgba(255,255,255,.9);border-radius:8px;padding:2px 12px;transform:rotate(9deg)}
+.bm-txt{max-width:560px;margin:30px auto 0;font-size:16px;line-height:1.6;color:var(--ink2)}
+</style>
+<script src="/assets/site-nav.js?v=10" defer></script>
+<script data-goatcounter="https://dragonballogy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<meta name="robots" content="noindex,follow"><link rel="canonical" href="https://dragonballogy.com/Article-Retcon/article-retcon.html"><style>.v2-note{border-left:3px solid var(--c2);background:var(--parchment);padding:12px 16px;margin:18px 0;border-radius:4px;overflow-wrap:anywhere}.v2-note summary{cursor:pointer;font-weight:600}.v2-note a{color:var(--c2)}.v2-status{font-family:Oswald,sans-serif;font-size:14px;letter-spacing:.03em;color:var(--c2);margin:8px 0}.v2-note p{margin:8px 0}.v2-note ul{padding-left:20px}.v2-note li{margin:4px 0}</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="kinto" viewBox="0 0 120 64">
+    <path d="M18 56c-9 0-14-6-14-12s5-12 13-12c1-10 10-17 20-15 4-9 13-14 23-12 9 2 15 9 16 17 3-2 7-3 11-2 9 2 14 10 12 18 6 2 9 7 8 12-1 5-5 6-9 6z" fill="#f4b400" stroke="#1c1917" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M26 34c2-6 8-9 14-8M58 20c5-2 11 0 14 4M86 34c4-1 8 1 10 4" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+    <path d="M100 52c6 0 10-2 12-6" fill="none" stroke="#1c1917" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="tortue" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="29" fill="#f97316" stroke="#1c1917" stroke-width="3"/>
+    <circle cx="32" cy="32" r="22" fill="#fff"/>
+    <text x="32" y="43" text-anchor="middle" font-size="30" font-weight="700" fill="#1c1917" font-family="'Noto Serif JP','Yu Mincho','Hiragino Mincho ProN',serif">亀</text>
+  </symbol>
+  <symbol id="grue" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="29" fill="#1d4ed8" stroke="#1c1917" stroke-width="3"/>
+    <circle cx="32" cy="32" r="22" fill="#fff"/>
+    <text x="32" y="43" text-anchor="middle" font-size="30" font-weight="700" fill="#1c1917" font-family="'Noto Serif JP','Yu Mincho','Hiragino Mincho ProN',serif">鶴</text>
+  </symbol>
+  <symbol id="boule" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="28" fill="#f59e0b" stroke="#1c1917" stroke-width="3"/>
+    <circle cx="23" cy="22" r="7" fill="#fde68a" opacity=".8"/>
+    <path d="M32 21l3.2 7.2 7.8.6-6 5 1.9 7.6L32 37.3l-6.9 4.1 1.9-7.6-6-5 7.8-.6z" fill="#c2410c"/>
+  </symbol>
+  <symbol id="baton" viewBox="0 0 64 64">
+    <rect x="28" y="4" width="8" height="56" rx="3" fill="#dc2626" stroke="#1c1917" stroke-width="2.5"/>
+    <rect x="26" y="4" width="12" height="9" rx="2" fill="#f59e0b" stroke="#1c1917" stroke-width="2.5"/>
+    <rect x="26" y="51" width="12" height="9" rx="2" fill="#f59e0b" stroke="#1c1917" stroke-width="2.5"/>
+  </symbol>
+</svg>
+
+<nav class="topnav">
+  <a class="logo" href="index.html"><em>Dragon</em>ballologie</a>
+  <a class="nav-back" href="index.html">← Accueil</a>
+</nav>
+
+<!-- BANNIÈRE : remplacer par une image de couverture (ex. le Nyoibō, la tour Karine, ou un montage "tisserand") -->
+<img class="banner" src="images/banner_retcon.jpg" alt="Qu'est-ce qu'un retcon ? — Dragon Ball" onerror="this.style.display='none'"/>
+
+<main class="wrap">
+
+  <div class="meta">
+    <span class="cat">Dragonballologie</span>
+    <span>Théorie narrative</span>
+    <span>Tomes 1 à 17</span>
+  </div>
+
+  <h1>Qu'est-ce qu'un retcon ?</h1>
+  <p class="subtitle">Dragon Ball et l'art de construire un univers en marchant</p>
+
+  <div class="accroche">
+    <div class="accroche-q">Révélation ou retcon ?</div>
+    <div class="accroche-duo">
+      <figure>
+        <img src="images/accroche-revelation.jpg" alt="Un architecte penché sur un plan précis : la tour Karin, le Kinto'un, le Nyoibō et le petit Goku, déjà reliés par des flèches et des jalons.">
+        <figcaption><b>Révélation</b>Tout était prévu. L'auteur pose ses jalons, puis les dévoile.</figcaption>
+      </figure>
+      <div class="accroche-ou">ou</div>
+      <figure>
+        <img src="images/accroche-retcon.jpg?v=2" alt="Un tisserand qui tend le bras pour attraper un écheveau de fils au mur, dans un atelier en désordre : sa tapisserie (tour Karin, Kinto'un, Nyoibō, petit Goku) est faite de morceaux rapiécés.">
+        <figcaption class="r"><b>Retcon</b>Tout a été tissé. L'auteur reprend ses anciens fils et les relie après coup.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+
+  <p class="lead">Il y a deux façons de lire Dragon Ball. La première ne voit qu'un plan. La seconde voit le tisserand au travail.</p>
+
+  <section class="marges">
+  <aside class="rail" data-mode="liste" aria-label="Révélation ou retcon ?" data-etapes='[["Deux lectures","le plan ou le tisserand"],["Le retcon, défini","un outil, pas une faute"],["Le programme","ce que vous allez voir"],["Les conditions de production","1984, à la semaine"],["Le cas Nyoibō","tome 1 contre tome 14"],["Le raisonnement par l&#39;absurde","révélation impossible"],["La méthode","déduction d&#39;abord"]]'>
+    <div class="fil">
+      <div class="fil-t">Révélation ou retcon ?</div>
+      <div class="fil-s">Comment on tranche, étape par étape.</div>
+      <div class="track"></div>
+    </div>
+  </aside>
+  <div class="mfil" aria-hidden="true"><span>Lire</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i><i data-s="5"></i><i data-s="6"></i><i data-s="7"></i><span>méthode</span></div>
+
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Deux lectures</div>
+      <div class="duo">
+        <div><b>1er cercle</b>« Tout était prévu. On n'avait pas vu, c'est tout. »</div>
+        <div class="apres"><b>2e cercle</b>« Tout a été tissé, semaine après semaine. »</div>
+      </div>
+      <p style="margin-top:8px">Le premier reste intact. On en gagne un second.</p>
+      <a href="/Les-3-cercles-de-lectures/article-3cercles_7.html" style="font-size:13.5px;color:var(--c2)">Les 3 cercles de lecture →</a>
+    </div>
+  </aside>
+  <p data-step="1">Il y a deux façons de lire Dragon Ball.</p>
+  <p>La première est celle de l'enfance — ou de la première lecture, quel que soit l'âge. C'est le <strong>premier cercle</strong>. Celui où tout coule de source, où chaque révélation semble avoir été prévue depuis le début, où l'univers se déploie comme un plan qui était là, caché, attendant son heure. Goku est un Saiyan ? Bien sûr — sa queue, sa force, sa transformation en singe géant, tout était <em>là</em>. On n'avait pas vu, c'est tout.</p>
+  <p>La deuxième est celle du <strong>deuxième cercle</strong>. Celle où l'on voit les fils, les nœuds, les reprises. Où l'on comprend que non, Toriyama n'avait pas tout prévu — qu'il improvisait à la semaine, qu'il inventait ses connexions après coup, et que ce qui ressemble à un plan n'est qu'un magnifique tissu de retcons.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Lexique</div>
+      <h4>Retcon</h4>
+      <p><em>Retroactive continuity</em> : la continuité rétroactive. Le mot vient des comics américains, où les univers s'écrivent sur des décennies.</p>
+      <div class="meter" style="margin-top:8px"><span>Une erreur ?</span><b>pas forcément</b></div>
+      <div class="meter"><span>Un outil ?</span><b>toujours</b></div>
+    </div>
+    <div class="know" style="margin-top:18px">
+      <div class="lbl">Le saviez-vous ?</div>
+      <div class="big" style="font-size:24px">« Je suis ton père. »</div>
+      <p>Le retcon le plus célèbre du cinéma. En 1977, Obi-Wan dit à Luke que Dark Vador a tué son père. Ce n'est qu'en avril 1978, dans le 2e brouillon de <em>L'Empire contre-attaque</em>, que Vador devient le père.</p>
+      <p style="margin-top:6px">Lucas affirmera pourtant : « Quand j'ai écrit le scénario original de Star Wars, je savais que Dark Vador était le père de Luke ; le public ne le savait pas. » Les brouillons disent le contraire.</p>
+      <p style="margin-top:6px">Et c'est Lucasfilm qui le contredit : Phil Szostak, son historien, l'a rappelé en 2019 — Vador n'est pas le père de Luke avant le 2e brouillon de <em>L'Empire contre-attaque</em>, en avril 1978. <a href="https://www.yahoo.com/lifestyle/lucasfilm-debunks-star-wars-myths-phil-szostak-obi-wan-kenobi-darth-vader-104406706.html" target="_blank" rel="noopener" style="color:var(--c2)">Source</a></p>
+      <p style="margin-top:6px">Pour recoudre, <em>Le Retour du Jedi</em> fait dire à Obi-Wan qu'il disait vrai… « d'un certain point de vue ». Un camouflage, comme le faux souvenir de Kamé Sennin (§9).</p>
+    </div>
+  </aside>
+  <p data-step="2">Un <strong>retcon</strong> — <em>retroactive continuity</em> — c'est quand un auteur modifie rétroactivement le sens d'un élément ancien de son récit. Ce n'est pas (forcément) une erreur. Ce n'est pas (forcément) un aveu de faiblesse. C'est un outil de construction — et Dragon Ball est le terrain idéal pour comprendre comment il fonctionne, pourquoi il fonctionne, et quand il fabrique quelque chose de plus grand que ce qu'un plan aurait produit.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Au programme</div>
+      <h4>Neuf cas, du nuage au Saiyan</h4>
+      <div class="pile">
+        <div><a href="#s3" style="color:inherit">Le Kinto'un</a><small>un cadeau devient cosmologie</small></div>
+        <div><a href="#s4" style="color:inherit">Le Nyoibō</a><small>un gag devient pilier</small></div>
+        <div><a href="#s7" style="color:inherit">Kami-sama</a><small>la machine à réparer</small></div>
+        <div class="haut"><a href="#s9" style="color:inherit">Raditz</a><small>le retcon parfait</small></div>
+      </div>
+    </div>
+  </aside>
+  <p data-step="3">Cet article est une invitation à entrer dans le deuxième cercle. Pas pour abîmer le premier — il restera intact, disponible à chaque relecture. Mais pour en gagner un deuxième. Celui de la construction. Celui du tisserand au travail.</p>
+  <p>Et je vous promets que le voyage en vaut la peine.</p>
+
+  <div class="v2-note"><strong>Version expérimentale — 26 novembre 2026</strong><p>Le dossier se lit d'un bout à l'autre ou par chapitre. Les encadrés documentaires permettent d'approfondir sans interrompre le fil principal.</p><a href="article-retcon.html">Comparer avec la version originale</a> · <a href="#sources-v2">Sources et méthode</a></div><nav class="voyage" id="voyage" aria-label="Sommaire de l'article"></nav>
+
+  <!-- ══ OUVERTURE : LA QUEUE DE GOKU ══ -->
+  <h2 class="c1" id="queue">Avant toute théorie : la queue de Goku</h2><p class="v2-status">Probable : variation observée, intention non attestée.</p>
+
+  <p>Commençons par un exemple, le tout premier. Pas besoin de théorie pour le voir : il suffit de regarder deux scènes, à quelques chapitres d'écart. Dans les deux, quelqu'un tire sur la queue de Goku.</p>
+
+  <div class="manga-grid cols2">
+    <figure class="pinfig">
+      <img src="images/manga/Capture%20d'%C3%A9cran%202026-11-23%20204750.png" alt="Bulma tire sur la queue de Goku pendant le bain : « Aïe aïe ! Tu me fais mal, arrête ! » — puis Goku : « Ça suffit, je peux finir de me laver tout seul... »" loading="lazy"/>
+      <button class="pin g" style="left:88%;top:60%">1<span class="bulle">Bulma tire de toutes ses forces, persuadée que c'est une fausse queue.</span></button>
+      <button class="pin g" style="left:9%;top:24%">2<span class="bulle">Résultat : « Aïe aïe ! » Goku a mal… et c'est tout.</span></button>
+      <button class="pin g" style="left:14%;top:72%">3<span class="bulle">Il garde toute son énergie : il la repousse et finit de se laver tout seul. Aucune perte de force.</span></button>
+      <figcaption><b>Avant</b> — le bain : une queue comme une autre</figcaption>
+    </figure>
+    <figure class="pinfig">
+      <img src="images/manga/Capture%20d'%C3%A9cran%202026-11-23%20205229.png" alt="Goku sur le Kinto'un avec Chichi : « Évite de tirer sur ma queue, s'il te plaît... je perds toutes mes forces quand on tire dessus. » — Yamcha, caché : « Le point faible du gamin, c'est sa queue !! »" loading="lazy"/>
+      <button class="pin b d" style="left:57%;top:45%">4<span class="bulle">Quelques chapitres plus tard : « Je perds toutes mes forces quand on tire dessus. » La même queue devient un point faible.</span></button>
+      <button class="pin b d" style="left:50%;top:86%">5<span class="bulle">Et l'information tombe pile dans l'oreille de Yamcha. Le point faible devient une arme pour l'adversaire.</span></button>
+      <figcaption><b>Après</b> — le point faible apparaît</figcaption>
+    </figure>
+  </div>
+  <p class="pin-aide">Survolez ou touchez les pastilles numérotées.</p>
+
+  <div class="pillars">
+    <div class="pillar c1"><strong>Pourquoi c'est un retcon ?</strong><p>Si cette faiblesse avait existé dès le départ, la scène du bain l'aurait montrée : Bulma tire, Goku s'effondre. Or il proteste et continue de se débattre. La règle n'existe pas encore. Elle est inventée après coup, au moment où le récit en a besoin.</p></div>
+    <div class="pillar c2"><strong>Pourquoi Toriyama le fait ?</strong><p>Goku est trop fort pour son âge et pour ses adversaires. Pour que le combat contre Yamcha ait un vrai enjeu, il lui faut un handicap, un petit malus. Toriyama n'invente pas un nouvel élément : il recycle un détail qui existait déjà, la queue, et lui donne une nouvelle fonction. On reste dans un manga léger et comique, le registre ne change pas. Le retcon n'est pas une erreur : c'est un outil au service du récit.</p></div>
+  </div>
+
+  <p class="teaser-queue">Retenez bien cette queue. On n'en a pas fini avec elle.</p>
+
+  <!-- ══ 1. LE RETCON EST UNE DÉDUCTION ══ -->
+  <h2 class="c1">1. Le retcon est une déduction</h2>
+
+  <p>Avant de chercher des retcons dans Dragon Ball, il faut s'entendre sur la méthode. Un retcon ne se décrète pas au doigt mouillé, et il ne se réduit pas non plus à un aveu d'auteur en interview. C'est une conclusion qui se déduit — et la logique qui y mène est d'une simplicité désarmante.</p>
+  <p>Quand une connexion narrative apparaît entre deux éléments séparés par plusieurs tomes, deux hypothèses s'offrent à nous, et deux seulement. Soit c'est une <strong>révélation</strong> : l'auteur avait cette connexion en tête depuis le début et la dévoile au moment choisi. Soit c'est un <strong>retcon</strong> : l'auteur invente la connexion plus tard et la greffe rétroactivement sur un élément ancien. Il n'y a pas de troisième option.</p>
+  <p>Pour trancher, il suffit d'examiner les conditions de production.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Les conditions de production</div>
+      <ul class="mini-frise">
+        <li><b>1984 · tomes 1-2</b>Une parodie du <em>Saiyūki</em>, bouclée : les boules sont trouvées, fin.</li>
+        <li><b>Torishima, l'éditeur</b>Réoriente vers les arts martiaux : le Tenka'ichi Budōkai.</li>
+        <li class="rouge"><b>Chaque semaine</b>Toriyama ne planifie jamais au-delà de quelques chapitres.</li>
+      </ul>
+    </div>
+  </aside>
+  <p data-step="4">En 1984, Akira Toriyama commence Dragon Ball comme une parodie loufoque du <em>Saiyūki</em>, le Voyage en Occident chinois. Le ton est comique, l'univers est un conte, l'ambition est modeste. Les deux premiers tomes forment un récit bouclé : un garçon à queue de singe cherche des boules magiques avec une fille capricieuse, les trouve, fin. Dragon Ball aurait pu — aurait <em>dû</em> — s'arrêter là.</p>
+  <p>C'est Kazuhiko Torishima, son éditeur au Weekly Shōnen Jump, qui réoriente le manga vers les arts martiaux. Le premier Tenka'ichi Budōkai naît de cette impulsion éditoriale, pas d'un plan de l'auteur. Toriyama travaillait largement au fil de la publication, sans que cela exclue toute anticipation ponctuelle. Il dessinait au rythme de la publication hebdomadaire, chaque semaine apportant son lot d'improvisations.</p>
+  <p>Ces faits ne sont pas contestés. Ils sont documentés par des décennies d'interviews, confirmés par Torishima lui-même, et surtout — c'est le point crucial — <em>ils sont lisibles dans le texte</em>. On n'a même pas besoin que Toriyama l'avoue. Les conditions de production rendent l'hypothèse du retcon souvent très convaincante. Elles ne suffisent cependant pas à établir l'intention de l'auteur dans chaque cas particulier.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Le cas d'école</div>
+      <div style="display:flex;justify-content:center;margin:2px 0 6px"><svg viewBox="0 0 64 64" style="width:46px;transform:rotate(-35deg)" aria-hidden="true"><use href="#baton"/></svg></div>
+      <div class="duo">
+        <div><b>Tome 1</b>Un bâton qui s'allonge. Un gag.</div>
+        <div class="apres"><b>Tome 14</b>Le pilier sacré entre la tour Karin et le Palais de Dieu.</div>
+      </div>
+      <div class="meter" style="margin-top:8px"><span>Écart</span><b>13 tomes, 4 ans</b></div>
+    </div>
+  </aside>
+  <p data-step="5">Prenons le Nyoibō, le bâton magique de Goku. Au tome 1, c'est un accessoire de <em>Saiyūki</em> — Sun Wukong possède le même. Il s'allonge, c'est amusant, c'est un gag. Au tome 14, on apprend que ce bâton est en réalité le pilier sacré qui relie la tour Karine au Palais de Dieu, et que le grand-père Gohan l'avait retiré parce que personne n'avait le niveau d'atteindre le sanctuaire.</p>
+  <p>La question se pose : révélation ou retcon ?</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Pour que ce soit une révélation…</div>
+      <h4>Toriyama aurait dû avoir en tête, dès 1984 :</h4>
+      <ul class="coche">
+        <li>la tour Karin</li><li>le Palais de Dieu</li><li>le Tout-Puissant</li><li>le bâton comme pilier sacré</li><li>et garder le secret 4 ans, à la semaine</li>
+      </ul>
+      <span class="stamp" style="color:var(--c1);border-color:var(--c1)">Absurde</span>
+    </div>
+  </aside>
+  <p data-step="6">Pour que ce soit une révélation, il faudrait accepter que Toriyama, en 1984, en dessinant un gag manga qu'il ne pensait pas prolonger au-delà de deux tomes, avait déjà conçu dans sa tête la tour Karine, le Palais de Dieu, la hiérarchie cosmique terre-tour-palais, le personnage du Tout-Puissant, et le rôle du bâton comme pilier sacré. Qu'il a gardé ce plan secret pendant quatre ans de publication hebdomadaire, sans jamais le laisser transparaître. Et qu'il a fait tout cela dans un format qu'il improvisait à la semaine.</p>
+  <p>L'hypothèse d'une préméditation aussi détaillée paraît très peu vraisemblable au regard de ces conditions de production. La lecture la plus économique est que le sens cosmologique du bâton est venu après. C'est un retcon très probable. Et un magnifique exemple de tissage.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">La méthode, en trois temps</div>
+      <ol class="chaine">
+        <li><strong>Déduire</strong> : une connexion tardive, deux hypothèses, révélation ou retcon</li>
+        <li><strong>Trancher</strong> par les conditions de production</li>
+        <li><strong>Vérifier</strong> avec les interviews, qui verrouillent sans décider</li>
+      </ol>
+    </div>
+  </aside>
+  <p data-step="7">Le même raisonnement s'applique à chacun des exemples que nous allons examiner. À chaque fois, la même enquête : comparer les scènes, évaluer la vraisemblance d'une préméditation et chercher des documents de production. Une interview peut confirmer directement une hypothèse ; son absence ne rend pas la déduction inutile, mais en limite la certitude.</p>
+  <p>C'est cette méthode — déduction d'abord, vérification ensuite — qui distingue l'analyse du bavardage de fan.</p>
+
+  </section>
+
+  <div class="infographic-embed">
+    <div class="embed-label">Infographie interactive — L'arbre logique</div>
+    <iframe src="Infographie/retcon_deduction.html" title="L'arbre logique — déduction révélation ou retcon"></iframe>
+  </div>
+
+  <p>Mais il faut être rigoureux, et la rigueur impose de reconnaître qu'on ne peut pas toujours trancher. C'est pourquoi notre méthode distingue quatre niveaux de certitude :</p>
+
+  <section class="marges">
+  <aside class="rail" aria-label="Le fil des deux écoles" data-etapes='[[2,"Le Kamehameha"],[6,"Aucune école"],[9,"La Grue apparaît"]]'>
+    <div class="fil">
+      <div class="fil-t">Le fil des deux écoles</div>
+      <div class="fil-s">Quand la Tortue et la Grue entrent dans l'histoire.</div>
+      <div class="track"><svg class="puff" viewBox="0 0 64 64" aria-hidden="true"><use href="#tortue"/></svg></div>
+      <div class="fil-end">tome 17 ↓</div>
+    </div>
+  </aside>
+  <div class="mfil" aria-hidden="true"><span>T2</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><span>T9</span></div>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Le test du silence</div>
+      <h4>Si Toriyama avait su, au tome 6, Tao Pai Pai aurait…</h4>
+      <ul class="coche">
+        <li>reconnu le Kamehameha</li>
+        <li>nommé l'école de la Tortue</li>
+        <li>parlé de son frère, Tsuru Sennin</li>
+      </ul>
+      <p style="margin-top:8px">Il ne fait rien de tout ça. Il se plaint de ses vêtements.</p>
+    </div>
+  </aside>
+  <div class="pillars" data-step="1">
+    <div class="pillar c1"><strong>Le retcon confirmé</strong><p>Une déclaration explicite de l'auteur ou un document de production établit l'ajout rétroactif. L'origine extraterrestre de Goku en est un exemple documenté.</p></div><div class="pillar c1"><strong>Le retcon très probable</strong><p>Plusieurs indices convergent, sans document décisif. Le Nyoibō devenu pilier cosmologique relève de cette catégorie.</p></div>
+    <div class="pillar c2"><strong>Le retcon probable</strong><p>Déduit des conditions de production. Quand Goku révèle que sa queue est un point faible quelques chapitres après que Bulma a simplement tiré dessus dans un bain sans aucune mention de perte de force — la probabilité est forte que Toriyama vient d'inventer cette mécanique pour donner un avantage à Yamcha, mais on ne peut pas l'exclure formellement. <a href="#queue" style="color:var(--c2)">Revoir les deux scènes ↑</a></p></div>
+    <div class="pillar c3"><strong>L'indécidable</strong><p>Quand ni le texte ni les conditions de production ne permettent de trancher. Quand Karin révèle que Kamé Sennin a grimpé la tour il y a 300 ans, la connexion est tellement naturelle que Toriyama a pu la prévoir un arc à l'avance — ou l'inventer sur le moment. On ne sait pas, et la rigueur consiste à le dire.</p></div>
+  </div>
+
+  <aside class="side">
+    <div class="fiche rouge">
+      <div class="art"><svg viewBox="0 0 64 64" style="width:78px" role="img" aria-label="Emblème de la Grue"><use href="#grue"/></svg></div>
+      <div class="bd">
+        <div class="nm">DODONPA</div>
+        <div class="kj">どどん波 · le rayon de la Grue</div>
+        <dl><dt>Tome 6</dt><dd>l'arme d'un tueur à gages</dd><dt>Tome 9</dt><dd>la signature d'une école</dd><dt>Utilisateurs</dt><dd>Tao Pai Pai, Tenshinhan</dd></dl>
+      </div>
+    </div>
+  </aside>
+  <div class="manga-grid cols2">
+    <img src="images/fig01f_indecidable_300ans.png" alt="Karin : « Quelqu'un d'autre a réussi avant toi, il y a 300 ans... Ton maître est Muten Roshi, c'est bien ça ? Je l'ai compris en observant tes mouvements. »"/>
+    <img src="images/fig01g_tsuru_sennin_surpasse.png" alt="« Je ne sais pas qui c'est, mais en tout cas il surpasse Maître Tsuru Sennin en puissance ! »"/>
+  </div>
+  <p class="img-caption">L'indécidable (les 300 ans de Kamé Sennin) et le premier nom lâché en passant — Tsuru Sennin, qui deviendra crucial</p>
+
+  <img class="img-full" src="images/fig01b_queue_point_faible.png" alt="Yamcha découvre en direct que le point faible de Goku est sa queue"/>
+  <p class="img-caption">Le point faible de la queue, révélé en direct — l'exemple même du retcon probable</p>
+
+  <div class="manga-grid cols2" data-step="2">
+    <img src="images/manga/fig01_tao_paipai_kamehameha.png" alt="Vol. 6 p.175 — Tao Pai Pai encaisse le Kamehameha sans le reconnaître"/>
+    <img src="images/manga/fig02_goku_reconnait_dodonpa.png" alt="Vol. 9 p.15 — Goku reconnaît le Dodonpa de Tenshinhan : « C'est la technique de Tao Pai Pai !! »"/>
+  </div>
+  <p class="img-caption">Vol. 6 p.175 — l'oubli · Vol. 9 p.15 — le rappel</p>
+
+  <div class="bulle-manquante">
+    <div class="bm-lbl">La bulle qui manque</div>
+    <div class="bm-scene">
+      <div class="bm-bulle">Le Kamehameha ?!<br>La technique de cette vieille tortue !</div>
+      <span class="bm-tampon">Jamais dit</span>
+    </div>
+    <p class="bm-txt">Si la rivalité entre la Tortue et la Grue avait été prévue, c'est ce que Tao Pai Pai aurait pu dire au tome 6, en encaissant le Kamehameha. Il ne le dit pas. Il se plaint de ses vêtements.</p>
+  </div>
+
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Avant / après le tissage</div>
+      <div class="duo">
+        <div><b>Tome 6</b>Kamé Sennin : un vieil ermite.<br>Tao Pai Pai : un tueur à gages.</div>
+        <div class="apres"><b>Tome 9</b>Kamé Sennin : la Tortue.<br>Tao Pai Pai : le frère de Tsuru Sennin, la Grue.</div>
+      </div>
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:12px"><svg class="badge" viewBox="0 0 64 64" aria-hidden="true"><use href="#tortue"/></svg><svg class="badge" viewBox="0 0 64 64" aria-hidden="true"><use href="#grue"/></svg></div>
+    </div>
+  </aside>
+  <p data-step="3">Ces deux pages, mises côte à côte, forment un diptyque dévastateur. La première ne manifeste pas la connexion ; la seconde montre la connexion explicitement formulée, trois tomes plus tard. L'avant et l'après du retcon, par la même technique, vue des deux côtés.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Le test du silence</div>
+      <ol class="chaine">
+        <li>Une connexion explicite rend le récit plus riche et plus immersif</li>
+        <li>Un auteur qui l'avait prévue aurait pu l'exploiter</li>
+        <li>Le silence prive ici la scène d'une connexion possible</li>
+        <li><strong>Donc le silence est un indice</strong> : la connexion pourrait ne pas avoir encore existé</li>
+      </ol>
+    </div>
+  </aside>
+  <p>On objectera qu'un silence ne prouve rien : Toriyama aurait pu garder la connexion pour plus tard. Mais il faut alors expliquer pourquoi un auteur se priverait volontairement d'une balise qui renforce son récit. Faire dire à Tao Pai Pai « la technique de cette vieille tortue », c'est rendre l'univers plus cohérent, plus vivant, plus immersif — et cela n'aurait rien gâché de la révélation future. Taire cette connexion n'aurait rien protégé : cela aurait seulement appauvri la scène. Un auteur qui tient un fil ne fragilise pas exprès la qualité de ce qu'il écrit en omettant les balises qui tissent son récit. Le silence n'est donc pas neutre : quand la connexion aurait enrichi la scène sans rien coûter, son absence est un indice qu'elle n'existait pas encore.</p>
+
+  <img class="img-full" data-step="2" src="images/fig01c_taopaipai_indifferent_dodon_charge.png" alt="Tao Pai Pai, insensible au Kamehameha : « Ça lui a rien fait !! » « T'as ruiné mes fringues... sale gosse... »"/>
+  <p class="img-caption">La technique ultime du tome 2 ne fait même pas ciller l'adversaire du tome 6</p>
+
+  <img class="img-full" src="images/fig20b_dodonpa_blast.png" alt="Tome 6 — le Dodonpa de Tao Pai Pai fonce sur Goku"/>
+
+  <img class="img-full" src="images/fig01d_dodon_ray_vol_dragonballs.png" alt="Le Dodonpa terrasse Goku — Tao Pai Pai : « Mission accomplie... Voilà donc ces fameuses Dragon Balls... Hé hé hé... »"/>
+
+  <aside class="side">
+    <div class="quote">
+      <svg viewBox="0 0 64 64" aria-hidden="true" style="width:40px;top:-18px"><use href="#grue"/></svg>
+      <q>C'est la technique de Tao Pai Pai !!</q>
+      <div class="who">Goku, tome 9</div>
+      <p style="color:rgba(255,255,255,.8)">Trois tomes plus tard, la mémoire revient, juste quand le récit en a besoin.</p>
+    </div>
+  </aside>
+  <div class="manga-grid cols2" data-step="3">
+    <img src="images/fig02b_kamehameha_vs_dodonpa_doute.png" alt="Kamé Sennin : « Un Kamé Hamé Ha acquis à la hâte ne fera jamais le poids contre le Dodonpa !! »"/>
+    <img src="images/fig02c_tenshinhan_reconnaissance_goku.png" alt="« Ce gamin n'a rien d'ordinaire... Il a repoussé le coup de poing supersonique de son adversaire... »"/>
+  </div>
+  <p class="img-caption">Même Kamé Sennin doute — jusqu'à ce que le nom de Tao Pai Pai refasse surface</p>
+
+  </section>
+
+  <!-- ══ 2. LA GRANDE CONVERSION ══ -->
+  <h2 class="dark">2. La grande conversion : du gag manga au récit sérieux</h2>
+
+  <p>Dragon Ball ne bascule pas du comique au sérieux en un seul moment. La transition est progressive, et c'est précisément cette progressivité qui permet aux retcons de tissage de s'opérer sans que le lecteur ne voie la couture.</p>
+  <section class="marges">
+  <aside class="side">
+    <div class="know">
+      <div class="lbl">Le saviez-vous ?</div>
+      <div class="big" style="font-size:22px">Sherlock Holmes, ressuscité</div>
+      <p>En 1893, Conan Doyle tue son détective aux chutes de Reichenbach, pour s'en débarrasser. Les lecteurs protestent. En 1903, Holmes revient dans « La Maison vide » : il n'était pas mort.</p>
+      <p style="margin-top:6px">Un auteur, un feuilleton, la pression du public : bien avant le Jump, la sérialisation écrivait déjà avec ses lecteurs.</p>
+    </div>
+  </aside>
+  <p>Le point de bascule le plus visible est l'entraînement chez Kamé Sennin. Dans une seule page, les deux registres coexistent : le cartouche narrateur annonce solennellement « des exercices extrêmement durs », pendant que Lunch, passée en version blonde, poursuit Krilin un couteau de cuisine à la main : « Qu'est-ce que tu me veux, salopard ?! ». Le gag n'a pas disparu, mais le <em>moteur</em> de l'histoire a changé. On ne cherche plus des boules magiques pour un vœu comique. On s'entraîne pour devenir plus fort. La curiosité du lecteur a muté : il veut voir les progrès.</p>
+
+  <img class="img-full" src="images/fig03_entrainement_requin.png" alt="L'entraînement — Lunch blonde poursuit Krilin au couteau sous le cartouche solennel : les deux registres dans la même page"/>
+  <p class="img-caption">Les deux registres, dans la même page</p>
+
+  <p>Et la phrase que Kamé Sennin prononce sur Krilin, dans cette même scène, est un bijou involontaire : « Sacré Krilin, il s'approche des limites de l'être humain ! » Remarque banale dans ce contexte — un maître impressionné par son élève. Mais quand on sait que Goku, lui, n'est <em>pas</em> un être humain (dix tomes plus tard), cette phrase se charge d'un sens qu'elle n'avait pas. Le plafond de Krilin sera réel ; celui de Goku, non. Cette asymétrie deviendra le sujet central de Dragon Ball Z. Mais ici, en 1985, c'est juste le compliment d'un vieux maître.</p>
+  <p>C'est ce que nous appelons une <strong>fausse prophétie</strong> — un terme sur lequel nous reviendrons. Une phrase qui n'annonce rien au moment de l'écriture, mais qu'un retcon futur transforme en signe avant-coureur.</p>
+
+  </section>
+
+  <!-- ══ 3. LE TISSAGE PROGRESSIF — KINTO'UN ══ -->
+  <section class="marges" data-fil="kinto">
+  <aside class="rail" aria-label="Le fil du Kinto'un" data-etapes='[[1,"Le cadeau"],[5,"La multiplication"],[8,"La boucle"],[12,"L&#39;erreur (§6)",1]]'>
+    <div class="fil">
+      <div class="fil-t">Le fil du Kinto'un</div>
+      <div class="fil-s">Où en est le nuage, tome par tome.</div>
+      <div class="track"><svg class="puff" viewBox="0 0 120 64" aria-hidden="true"><use href="#kinto"/></svg></div>
+      <div class="fil-end">tome 17 ↓</div>
+    </div>
+  </aside>
+  <h2 id="s3" class="c2">3. Le tissage progressif — cas d'école : le Kinto'un</h2><p class="v2-status">Tissage progressif attesté dans le texte ; genèse probable.</p>
+  <img class="img-full" src="images/illu-ouverture-tisserand.jpg?v=2" alt="Un métier à tisser dans un atelier : la tapisserie montre la tour Karin, le petit Goku à queue de singe, le Kinto'un et le Nyoibō, et les fils pendent encore, inachevés." style="margin:6px 0 28px">
+  <div class="mfil" aria-hidden="true"><span>T1</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i class="later" data-s="4"></i><span>§6</span></div>
+
+  <aside class="side">
+    <div class="fiche">
+      <div class="art"><svg viewBox="0 0 120 64" role="img" aria-label="Un petit nuage jaune"><use href="#kinto"/></svg></div>
+      <div class="bd">
+        <div class="nm">KINTO'UN</div>
+        <div class="kj">筋斗雲 · le nuage-culbute</div>
+        <dl><dt>Origine</dt><dd>Saiyūki</dd><dt>Apparition</dt><dd>Tome 1</dd><dt>Condition</dt><dd>Un cœur pur</dd><dt>Tissé sur</dt><dd>7 tomes</dd></dl>
+      </div>
+    </div>
+  </aside>
+  <p data-step="1">Le Kinto'un est l'exemple le plus documentable de tissage progressif dans Dragon Ball, parce que sa transformation s'opère en étapes distinctes, chacune séparée par plusieurs tomes, et chacune traçable à la page près.</p>
+
+  <aside class="side">
+    <div class="know">
+      <div class="lbl">Le saviez-vous ?</div>
+      <div class="big">108 000 li</div>
+      <p>Dans le <em>Voyage vers l'Ouest</em>, le nuage de Sun Wukong franchit cette distance d'une seule culbute, soit environ 54 000 km. Toriyama emprunte le nuage, pas encore le mythe.</p>
+    </div>
+  </aside>
+  <img class="img-full" data-step="1" src="images/fig03b_bulma_question_nuage_tortue.png" alt="Bulma : « Comment ça se fait que le Maître des Tortues possède un nuage ? Ça n'a rien à voir avec une tortue ! » Kamé Sennin : « Tu es bien sectaire... »"/>
+  <p class="img-caption">La question que Bulma pose sans le savoir — et que tout le chapitre va mettre des tomes à résoudre</p>
+
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Les deux cercles de lecture</div>
+      <h4>« Reçu du Tout-Puissant »</h4>
+      <svg class="schema" viewBox="0 0 240 120" role="img" aria-label="Deux cercles : première lecture et relecture">
+        <circle cx="66" cy="60" r="52" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+        <circle cx="174" cy="60" r="52" fill="#fff8e1" stroke="#b45309" stroke-width="2"/>
+        <g text-anchor="middle" font-size="11" fill="#44403c" font-family="Source Serif 4, Georgia, serif">
+          <text x="66" y="52" font-family="Oswald, sans-serif" font-size="13" fill="#1d4ed8">1re lecture</text>
+          <text x="66" y="72">une formule</text><text x="66" y="86">de conte</text>
+          <text x="174" y="52" font-family="Oswald, sans-serif" font-size="13" fill="#b45309">Relecture</text>
+          <text x="174" y="72">l'indice</text><text x="174" y="86">d'une chaîne</text>
+        </g>
+      </svg>
+      <p>La même phrase change de poids selon le cercle d'où on la lit.</p>
+    </div>
+  </aside>
+  <img class="img-full" data-step="1" src="images/fig04a_kinton_don_tout_puissant.png" alt="Goku : « C'est un don que j'ai reçu du Tout-Puissant, c'est un nuage fabuleux ! »"/>
+  <p class="img-caption">Tome 1 — le cadeau comique, avant que le Tout-Puissant n'existe comme personnage</p>
+
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Bilan du tissage</div>
+      <div class="meter"><span>Étapes</span><b>3 / 3</b></div><div class="bar"><div style="width:100%"></div></div>
+      <div class="meter"><span>Contradictions</span><b>0</b></div><div class="bar"><div style="width:2%;background:var(--c1)"></div></div>
+      <div class="meter"><span>Tomes traversés</span><b>1 → 8</b></div><div class="bar"><div style="width:47%;background:var(--cloud)"></div></div>
+      <span class="stamp">Tissage parfait</span>
+    </div>
+  </aside>
+  <div class="hierarchy">
+    <div class="h-row" data-step="1">
+      <div class="h-num c2">1</div>
+      <div class="h-body"><strong>Le cadeau comique (tome 1)</strong><p>Kamé Sennin donne un petit nuage à Goku. C'est un clin d'œil au <em>Saiyūki</em> — le nuage volant de Sun Wukong. Kamé Sennin précise qu'il l'a « reçu du Tout-Puissant » — une expression vague, du registre du conte, qui n'a pas plus de poids que « un vieux monsieur me l'a donné ». Le Tout-Puissant, à ce stade, n'existe pas comme personnage.</p></div>
+    </div>
+    <div class="h-row" data-step="2">
+      <div class="h-num c2">2</div>
+      <div class="h-body"><strong>La multiplication (tome 5, p. 116)</strong><p>Karin lâche une information passante : « Il y en avait plein, quand j'étais jeune. » Et, surtout : « Un Kinto'un ne peut pas disparaître ! » Le nuage unique devient un exemplaire parmi d'autres. Les Kinto'un sont un phénomène — rare, mais naturel. C'est un enrichissement discret qui ne contredit rien.</p></div>
+    </div>
+    <div class="h-row" data-step="3">
+      <div class="h-num c2">3</div>
+      <div class="h-body"><strong>La boucle (tome 8)</strong><p>Au sommet de la tour Karine, le parc à nuages. « Découpes-en un de la grandeur que tu veux. » Karin ajoute : « C'est moi qui lui avais donné, il y a bien longtemps de cela. » Et Goku fait la connexion : « Mais alors, le Kinto'un que m'avait offert grand-père Kamé Sennin... »</p></div>
+    </div>
+  </div>
+
+  <aside class="side">
+    <div class="slot">
+      <svg viewBox="0 0 120 64" aria-hidden="true"><use href="#kinto"/></svg>
+      <p><strong>Ton illustration ici</strong></p>
+      <p>Ex. : Gyumao, immense, qui lève les yeux vers un tout petit nuage. Format conseillé : 540 × 540 px.</p>
+    </div>
+  </aside>
+  <img class="img-full" src="images/fig04b_boeuf_roi_reconnait_kinton.png" alt="Le Bœuf Roi (Gyumao) reconnaît le Kinto'un et révèle que son propre maître était le vieux Kamé Sennin"/>
+  <p class="img-caption">Une lignée qui se noue des tomes avant qu'on en comprenne le motif</p>
+
+  <img class="img-full" src="images/fig04c_goku_appelle_kinton_tour.png" alt="« Kinto-un ?! » « Kinto-un, viens !! »"/>
+
+  <div class="manga-grid cols2">
+    <img src="images/manga/fig04_karin_multiplication.jpg" alt="Vol. 5 p.116 — Karin : « Il y en avait plein, quand j'étais jeune. »"/>
+    <img src="images/manga/fig05_parc_a_nuages.png" alt="« Vas-y, découpes-en un de la grandeur que tu veux et pars avec lui. » « C'est un Kinto-un giga gigantesque !! » Karin : « Oui, c'est moi qui lui avais donné, il y a bien longtemps de cela. » Goku : « Mais alors, le Kinto-un que m'avait offert grand-père Kamé Sennin... »"/>
+  </div>
+
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Schéma</div>
+      <h4>La chaîne de transmission</h4>
+      <svg class="schema" viewBox="0 0 230 220" role="img" aria-label="Karin donne le nuage à Kamé Sennin, qui le donne à Goku">
+        <defs><marker id="fleche" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b45309"/></marker></defs>
+        <g font-family="Oswald, sans-serif" font-size="15" fill="#1c1917">
+          <rect x="10" y="8" width="210" height="44" rx="10" fill="#f5ede0"/><text x="22" y="36">Karin</text>
+          <rect x="10" y="88" width="210" height="44" rx="10" fill="#f5ede0"/><text x="22" y="116">Kamé Sennin</text>
+          <rect x="10" y="168" width="210" height="44" rx="10" fill="#fff8e1" stroke="#f4b400" stroke-width="2"/><text x="22" y="196">Goku</text>
+        </g>
+        <g font-family="Share Tech Mono, monospace" font-size="11" fill="#78716c" text-anchor="end">
+          <text x="208" y="36">tome 8</text><text x="208" y="116">« jadis »</text><text x="208" y="196">tome 1</text>
+        </g>
+        <path d="M115 54v30M115 134v30" stroke="#b45309" stroke-width="2" marker-end="url(#fleche)"/>
+        <use href="#kinto" x="132" y="58" width="40" height="22"/><use href="#kinto" x="132" y="138" width="40" height="22"/>
+      </svg>
+      <p>Révélée à l'envers : on voit d'abord le dernier don, puis le premier.</p>
+    </div>
+  </aside>
+  <p data-step="3">La boucle se referme. L'expression vague du tome 1 — « reçu du Tout-Puissant » — peut maintenant être lue comme un indice de cette chaîne. Karin a donné un nuage à Kamé Sennin qui l'a donné à Gohan qui l'a donné à Goku. Une lignée se dessine à travers le nuage. Chaque intermédiaire a jugé le suivant digne de le posséder.</p>
+  <aside class="side">
+    <div class="quote">
+      <svg viewBox="0 0 120 64" aria-hidden="true"><use href="#kinto"/></svg>
+      <q>Un Kinto'un ne peut pas disparaître !</q>
+      <div class="who">Karin, tome 5</div>
+      <a href="#s6">… et pourtant. Voir §6, Tambourine →</a>
+    </div>
+  </aside>
+  <p data-step="4">Notons ce qui rend ce tissage parfait : aucune des trois étapes ne contredit les précédentes. L'étape 2 enrichit l'étape 1 sans la nier. L'étape 3 boucle avec l'étape 1 en passant par l'étape 2. Le résultat est un univers qui semble avoir toujours été cohérent — la marque du tissage réussi.</p>
+
+  <img class="img-full" src="images/infographic_kinton_tissage.png" alt="Retcon de tissage : un cadeau devient cosmologie — de la simple offrande du tome 1 (1984) au parking à nuages révélé au sommet de la tour Karine au tome 8 (1987)"/>
+  <p class="img-caption">Retcon de tissage : un cadeau devient cosmologie</p>
+  </section>
+
+  <div class="infographic-embed">
+    <div class="embed-label">Infographie interactive — Le Métier à Tisser</div>
+    <iframe src="Infographie/retcon_tissage.html" title="Le Métier à Tisser — le tissage progressif du Kinto'un"></iframe>
+  </div>
+
+  <!-- ══ 4. LE TISSAGE PROGRESSIF — NYOIBŌ ══ -->
+  <section class="marges">
+  <aside class="rail" data-mode="liste" aria-label="Le fil du Nyoibō" data-etapes='[["Un bâton de conte","tome 1"],["La tour Karin","tome 6"],["« Dieu des arts martiaux »","tome 7 : Karin au sommet"],["Le pilier sacré","tome 14"]]'>
+    <div class="fil">
+      <div class="fil-t">Le fil du Nyoibō</div>
+      <div class="fil-s">Du bâton de conte au pilier du monde.</div>
+      <div class="track"></div>
+    </div>
+  </aside>
+  <h2 id="s4" class="c2">4. Le tissage progressif — cas d'école : le Nyoibō</h2><p class="v2-status">Très probable : réemploi cosmologique.</p>
+  <div class="mfil" aria-hidden="true"><span>T1</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i><span>T14</span></div>
+
+  <p>Si le Kinto'un est l'exemple du tissage parfait, le Nyoibō en est la version radicale — celle où le retcon est <em>très probable</em>, et pourtant invisible au premier cercle de lecture.</p>
+  <aside class="side">
+    <div class="fiche rouge">
+      <div class="art"><svg viewBox="0 0 64 64" style="width:70px;transform:rotate(-35deg)" role="img" aria-label="Un bâton rouge et or"><use href="#baton"/></svg></div>
+      <div class="bd">
+        <div class="nm">NYOIBŌ</div>
+        <div class="kj">如意棒 · le bâton qui obéit</div>
+        <dl><dt>Origine</dt><dd>Saiyūki</dd><dt>Hérité de</dt><dd>Grand-père Gohan</dd><dt>Tome 1</dt><dd>un gag qui s'allonge</dd><dt>Tome 14</dt><dd>le pilier du monde</dd></dl>
+      </div>
+    </div>
+  </aside>
+  <p data-step="1">Au tome 1, le Nyoibō est un bâton extensible hérité du grand-père Gohan. Référence directe au <em>Saiyūki</em>. Il s'allonge, il frappe, c'est un gag. Rien d'autre.</p>
+  <aside class="side">
+    <div class="know">
+      <div class="lbl">Le saviez-vous ?</div>
+      <div class="big" style="font-size:30px">13 500 jin</div>
+      <p>Le poids du bâton de Sun Wukong dans le <em>Voyage vers l'Ouest</em>, environ huit tonnes. Chez Toriyama, au tome 1, il tient dans le dos d'un enfant.</p>
+    </div>
+  </aside>
+  <p data-step="2">Au tome 6, apparaît la tour Karine (p. 164) — un édifice qui « se dresse jusqu'aux cieux ». Bora, le gardien au pied de la tour, prévient : « Nous nous transmettons cette légende de génération en génération... peut-être une superstition. » Au sommet, Karin, le chat immortel.</p>
+
+  <img class="img-full" src="images/fig06_tour_karin_premiere_apparition.png" alt="Vol. 6 p.164 — La tour Karine, première apparition"/>
+
+  <img class="img-full" src="images/fig06e_bora_avertissement_legende.png" alt="Bora : « Nous nous transmettons cette légende depuis la nuit des temps mais ce n'est peut-être qu'une superstition... » « Génial... je devrais peut-être y monter pour devenir plus fort. »"/>
+  <p class="img-caption">La légende, racontée avant même qu'elle ne serve à quoi que ce soit</p>
+
+  <img class="img-full" src="images/fig06a_goku_grimpe_tour_karin.png" alt="Goku gravit la tour Karin pour boire l'eau bénite légendaire et pouvoir vaincre Tao Pai Pai"/>
+
+  <p>Au pied de la tour, Bora le gardien reconnaît le bâton de Goku avant même que quiconque ait gravi une seule marche — et sa réaction en dit long sur ce que le Nyoibō représentait déjà, en coulisse, pour un lecteur qui n'y voyait qu'un gag.</p>
+
+  <img class="img-full" src="images/fig06b_bora_reconnait_nyoibo.png" alt="Bora : « Il n'y a qu'une seule personne qui possède le Nyoi Bo... Comment s'appelait ton grand-père ?! »"/>
+  <img class="img-full" src="images/fig06c_bora_gohan_expert.png" alt="Bora : « Son Gohan était un expert en arts martiaux, il maîtrisait toutes les techniques de combat à la perfection... C'est bien ce que je pensais... »"/>
+  <img class="img-full" src="images/fig06d_bora_muten_roshi_disciples.png" alt="Bora : « J'ai entendu dire qu'il y a très longtemps, Gyumao et son Gohan étaient les deux disciples de Muten Roshi, le grand maître des arts martiaux... »"/>
+  <p class="img-caption">La même lignée, le même maître — Kamé Sennin a formé Gyumao et grand-père Gohan bien avant Goku</p>
+
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">La hiérarchie, avant / après</div>
+      <div class="duo">
+        <div><b>Tome 7</b><div class="pile"><div class="haut">Karin <small>sommet</small></div><div>La tour</div><div>La Terre</div></div></div>
+        <div class="apres"><b>Arc Piccolo</b><div class="pile"><div class="haut">Tout-Puissant</div><div>Karin <small><s>Dieu</s></small></div><div>La tour</div><div>La Terre</div></div></div>
+      </div>
+      <p style="margin-top:8px">Un titre divin, puis quelqu'un au-dessus. Le plan n'existait pas.</p>
+    </div>
+  </aside>
+  <p data-step="3">L'important ici, c'est ce qui n'est <em>pas</em> dit. La tour est un cul-de-sac vertical. Il n'y a rien au-dessus. Karin est le sommet. Et Karin porte le titre de « Dieu des arts martiaux » (tome 7, p. 20) — un titre divin, pas celui d'un gardien intermédiaire. Aucune mention d'un palais au-dessus, d'un Tout-Puissant réel, d'une connexion entre le bâton et la tour.</p>
+
+  <img class="img-full" src="images/manga/fig07b_taopaipai_apprend_karin.png" alt="Tao Pai Pai : « Dis-moi, celui qui t'a entraîné, ce ne serait pas un sage du nom de Karin ? Le sanctuaire Karin... est-ce que ce serait... Alors comme ça, c'est là que se trouve le sage Karin, qu'on appelle le Dieu des arts martiaux... »"/>
+  <p class="img-caption">Même le tueur le plus redoutable de l'arc n'avait jamais entendu parler de Karin — la preuve que ce sanctuaire vient d'apparaître dans l'univers</p>
+
+  <img class="img-full" src="images/fig07_karin_dieu_arts_martiaux.jpg" alt="Vol. 7 p.20 — Karin, « Le Dieu des arts martiaux »"/>
+
+  <aside class="side">
+    <div class="quote">
+      <svg viewBox="0 0 64 64" aria-hidden="true" style="width:34px;top:-20px;transform:rotate(30deg)"><use href="#baton"/></svg>
+      <q>À l'origine, c'est un bâton qui relie notre monde au sanctuaire.</q>
+      <div class="who">Karin</div>
+      <p style="color:rgba(255,255,255,.8)">Il se souvient, il ne découvre pas : la fiction d'un plan est sauve.</p>
+    </div>
+  </aside>
+  <p data-step="4">Puis vient l'arc Piccolo Daimaō, et le besoin narratif de créer un palier au-dessus de Karin. Toriyama invente le Tout-Puissant. Et c'est à ce moment que Karin — en direct, devant nous — « se souvient » que le bâton de Goku a un autre usage : « À l'origine, c'est un bâton qui relie notre monde au sanctuaire. » Et Goku : « Mon Nyoibō ?! »</p>
+
+  <img class="img-full" src="images/fig08_karin_baton_relie_sanctuaire.jpg" alt="Karin — « À l'origine, c'est un bâton qui relie notre monde au sanctuaire. »"/>
+
+  <p>Le bâton magique est devenu le pilier sacré. L'accessoire du <em>Saiyūki</em> est devenu un élément fondamental de la cosmologie. Et le lecteur du premier cercle ne voit rien, parce que le « comme si » de Karin est parfait — il <em>se souvient</em>, il ne <em>découvre</em> pas, donc la fiction d'un plan de l'auteur est maintenue.</p>
+  <p>Le titre « Dieu des arts martiaux » renforce cette lecture : Karin occupait alors le sommet de la hiérarchie montrée au lecteur. Il ne rend pas impossible l'existence d'une divinité supérieure, mais l'arrivée du sanctuaire reconfigure profondément cette hiérarchie.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Lexique</div>
+      <h4>Retcon par absorption</h4>
+      <svg class="schema" viewBox="0 0 240 90" role="img" aria-label="Un petit cercle englobé par un plus grand">
+        <circle cx="70" cy="45" r="22" fill="#f5ede0" stroke="#78716c" stroke-width="2"/>
+        <text x="70" y="49" text-anchor="middle" font-family="Oswald, sans-serif" font-size="11" fill="#44403c">Karin</text>
+        <path d="M100 45h26" stroke="#c2410c" stroke-width="2" marker-end="url(#fleche2)"/>
+        <defs><marker id="fleche2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c2410c"/></marker></defs>
+        <circle cx="185" cy="45" r="40" fill="#fff8e1" stroke="#f4b400" stroke-width="2"/>
+        <circle cx="185" cy="58" r="17" fill="#f5ede0" stroke="#78716c" stroke-width="2"/>
+        <text x="185" y="62" text-anchor="middle" font-family="Oswald, sans-serif" font-size="10" fill="#44403c">Karin</text>
+        <text x="185" y="30" text-anchor="middle" font-family="Oswald, sans-serif" font-size="11" fill="#b45309">Tout-Puissant</text>
+      </svg>
+      <p>L'ancien statut est dépassé, pas contredit. Rien n'est démenti, tout est englobé.</p>
+    </div>
+  </aside>
+  <p>C'est un retcon par absorption : l'ancien statut est dépassé, pas contredit. Karin n'est pas rétrogradé explicitement. Son titre disparaît simplement, absorbé par l'existence d'un être supérieur.</p>
+
+  <img class="img-full" src="images/infographic_nyoibo_tissage.png" alt="Retcon de tissage : un gag devient mythologie — du bâton qui s'allonge tout seul au tome 1 (1984) au pilier sacré reliant la tour Karine au Palais de Dieu au tome 14 (1988)"/>
+  <p class="img-caption">Retcon de tissage : un gag devient mythologie</p>
+  </section>
+
+  <!-- ══ 5. LES FAUSSES PROPHÉTIES ══ -->
+  <h2 class="c3">5. Les fausses prophéties</h2><div class="v2-note"><strong>Nature ou effet ?</strong><p>La fausse prophétie n'est pas une catégorie de retcon au même titre que le retcon fonctionnel ou structurel. C'est un effet de relecture : un élément ancien prend, après coup, l'apparence d'un indice annonciateur.</p></div>
+
+  <p>Parmi les effets les plus saisissants du retcon, il y a la fausse prophétie — cette phrase innocente, écrite sans arrière-pensée, qu'un retcon futur transforme rétroactivement en signe avant-coureur.</p>
+  <p>La plus célèbre : Oolong, dans un moment de perplexité devant les pouvoirs inexplicables de Goku, lâche : « Un extraterrestre, peut-être ? » C'est un gag. Le cochon métamorphe cherche une explication comique à une bizarrerie de conte. Toriyama ne pense pas aux extraterrestres — il fait du Saiyūki. Mais dix tomes plus tard, quand Raditz débarque et que la vérité éclate, cette phrase se charge rétroactivement d'un poids prophétique qu'elle n'a jamais eu.</p>
+
+  <img class="img-full" src="images/fig09_oolong_extraterrestre.png" alt="Oolong : « En fin de compte, je me demande qui c'est, ce garçon... Un extraterrestre, peut-être ? » Bulma : « Il vaudrait peut-être mieux ne pas lui dire que c'est lui qui a tué son grand-père... »"/>
+  <p class="img-caption">La phrase gag — et, dans la même case, le fil du grand-père qui va se refermer dix-sept tomes plus tard</p>
+
+  <p>La double fausse prophétie Piccolo/Goku est encore plus frappante. À la fin de Dragon Ball, Piccolo Jr. déclare : « Aucun humain ne peut se battre contre moi. » Et Goku, avec sa queue de singe, répond à un autre moment : « Je suis peut-être pas humain, moi, puisque j'ai une queue. » Deux personnages qui ne sont pas humains, face à face, et aucun des deux ne le sait. L'auteur non plus.</p>
+
+  <img class="img-full" src="images/manga/fig10_piccolo_goku_non_humain.png" alt="Piccolo : « Aucun humain ne peut se battre contre le Grand Roi Piccolo sur un pied d'égalité... C'est du délire... je nage en plein cauchemar... » Goku : « Hé hé hé... je suis peut-être pas humain, moi, puisque j'ai une queue... »"/>
+
+  <p>Ces phrases fonctionnent dans les deux cercles de lecture, mais de manière radicalement différente. Au premier cercle, elles ont l'air de preuves que Toriyama avait tout prévu. Au deuxième cercle, elles sont la preuve exacte du contraire — ce sont des coïncidences textuelles que le retcon réactive après coup. Le tisserand n'a rien caché. C'est le tissu qui produit le motif.</p>
+  <p>Et puis il y a le cas indécidable : le cartouche de l'auteur pendant la transformation en Ōzaru. « L'auteur lui-même n'en revient pas !!! Je n'en savais rien ! » Aveu sincère déguisé en gag ? Ou pur bris comique du quatrième mur ? On ne peut pas trancher. Mais notre méthode n'a pas besoin de cet aveu — la déduction suffit.</p>
+
+  <img class="img-full" src="images/fig09c_transformation_auteur_surprise.png" alt="« À la vue de la pleine lune, Goku s'est transformé en un singe géant monstrueux !! L'auteur lui-même n'en revient pas !!! Je n'en savais rien ! Rien du tout, je vous dis ! »"/>
+  <p class="img-caption">L'aveu (ou le gag) qui résume, à lui seul, toute la méthode de cet article</p>
+
+  <div class="manga-grid cols2">
+    <img src="images/manga/fig09b_loup_garou_grandpere.png" alt="Bulma : « Les loups-garous, ça n'existe pas. » Goku : « Mon grand-père est mort, écrasé par ce monstre !! »"/>
+    <img src="images/manga/fig09d_point_faible_confirme.png" alt="« Son point faible, c'est bien la queue ?! »"/>
+  </div>
+  <p class="img-caption">Le mystère du grand-père, posé sans réponse — et le point faible de la queue, qui refait surface sur le monstre</p>
+
+  <img class="img-full" src="images/fig09e_ciseaux_coupe_queue.png" alt="« Transforme-toi en ciseaux et coupe-lui la queue, il perdra peut-être connaissance !! »"/>
+
+  <p>Ce grand-père écrasé par « ce monstre », ce point faible retrouvé sur un Ōzaru inconnu : deux fils posés ici sans réponse, et que le tome 17 refermera d'un seul coup.</p>
+
+  <!-- ══ 6. RETCONS FONCTIONNELS ET FILS ABANDONNÉS ══ -->
+  <section class="marges">
+  <aside class="rail" data-mode="liste" aria-label="Le bestiaire des retcons" data-etapes='[["Le Senzu","retcon fonctionnel"],["Shenron","l&#39;omnipotence bridée"],["Baba","le fil abandonné"],["Le Kinto&#39;un","l&#39;erreur arithmétique"]]'>
+    <div class="fil">
+      <div class="fil-t">Le bestiaire des retcons</div>
+      <div class="fil-s">Quatre façons de rater une couture.</div>
+      <div class="track"></div>
+    </div>
+  </aside>
+  <h2 class="dark" id="s6">6. Les retcons fonctionnels et fils abandonnés</h2><p class="v2-status">Cas à distinguer : extension de fonction, restriction ou oubli.</p>
+  <div class="mfil" aria-hidden="true"><span>Senzu</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i><span>Kinto'un</span></div>
+
+  <aside class="side">
+    <div class="know">
+      <div class="lbl">Le saviez-vous ?</div>
+      <div class="big" style="font-size:22px">« Somehow, Palpatine returned. »</div>
+      <p><em>L'Ascension de Skywalker</em> (2019) ramène l'empereur, mort depuis <em>Le Retour du Jedi</em>, avec pour toute explication un « d'une manière ou d'une autre ». La réplique est devenue un mème.</p>
+      <p style="margin-top:6px">Même saga que Vador, verdict opposé : là où « je suis ton père » enrichit tout, Palpatine ne tient que par la béquille.</p>
+    </div>
+  </aside>
+  <p>Tous les retcons ne sont pas des réussites. Certains sont des ajustements mécaniques, d'autres des oublis purs. Les classifier est aussi important que célébrer les réussites.</p>
+
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Le Senzu, avant / après</div>
+      <div class="duo">
+        <div><b>Tome 6, p. 203</b>Un haricot qui rassasie dix jours.</div>
+        <div class="apres"><b>Combat suivant</b>Un haricot qui guérit tout, instantanément.</div>
+      </div>
+      <div class="meter" style="margin-top:10px"><span>Explications données</span><b>0</b></div>
+    </div>
+  </aside>
+  <div class="example" data-step="1">
+    <div class="ex-num">Cas d'école</div>
+    <div class="ex-title">Le Senzu — retcon fonctionnel</div>
+    <p>Sa première apparition (tome 6, p. 203) le présente comme un haricot magique qui rassasie pendant dix jours. Karin le tend à Goku, qui proteste : « Un haricot ? Tu te moques de moi ?! » La fonction est claire : le Senzu nourrit. Rien d'autre.</p>
+
+    <div class="manga-grid cols2">
+      <img src="images/manga/fig11_senzu_haricot.png" alt="« Qu'est-ce que c'est que ça ?! Un haricot ? Tu te moques de moi ?! » Karin : « Un haricot magique si tu préfères : tu en manges un et ça te rassasie pendant une dizaine de jours... C'est un Senzu. »"/>
+      <img src="images/manga/fig12_krilin_question_senzu.jpg" alt="Krilin — « Les Senzu, c'est pas que pour la faim ? »"/>
+    </div>
+
+    <p>Mais dès le combat suivant, quand Goku revient blessé, le Senzu le guérit instantanément. Karin : « Ton corps est parfaitement rétabli, n'est-ce pas ? »</p>
+
+    <img class="img-full" src="images/fig11b_senzu_guerison_instantanee.png" alt="Karin : « Ton corps est parfaitement rétabli, n'est-ce pas ? » Goku : « Hi hi hi, comment te sens-tu ? Génial ! Géniaaal !! Mais c'est vrai !! »"/>
+
+    <p>Pas d'explication du changement. Le haricot rassasiant est devenu un haricot guérisseur, silencieusement, entre deux pages.</p>
+    <p>Et les personnages le remarquent. Plus tard, Krilin demande : « Les Senzu, c'est pas que pour la faim ? » — la question du lecteur dans la bouche d'un personnage. La lampshade est posée, mais la réponse n'est jamais donnée.</p>
+    <div class="concl"><strong>Verdict :</strong> le même objet change de règles selon les besoins de l'auteur — la définition même du retcon fonctionnel.</div>
+  </div>
+
+  <aside class="side">
+    <div class="slot">
+      <svg viewBox="0 0 64 64" style="width:44px" aria-hidden="true"><use href="#boule"/></svg>
+      <p><strong>Ton illustration ici</strong></p>
+      <p>Ex. : un dragon tout-puissant… avec des pansements « patch 1 », « patch 2 ». Format conseillé : 540 × 540 px.</p>
+    </div>
+  </aside>
+  <div class="example" data-step="2">
+    <div class="ex-num">Cas d'école</div>
+    <div class="ex-title">Shenron — l'omnipotence bridée</div>
+    <p>Au tome 8 (p. 106), le dragon sacré apparaît et annonce : « Il n'est point de vœu que je ne puisse exaucer. » Omnipotent. Sans limite. Six mots qui auraient dû empêcher toute tension narrative future — si un dragon peut tout faire, tout est résolu d'avance. Progressivement, les limitations apparaissent. Le dragon est bridé, patch par patch, pour maintenir la tension dramatique.</p>
+
+    <img class="img-full" src="images/fig13a_revival_dialogue.png" alt="« Le grand-père de Goku est mort lui aussi, ce serait injuste que mon père seulement... » « Génial !! On va bientôt pouvoir faire revenir ton père à la vie !! »"/>
+    <img class="img-full" src="images/fig13_shenron_omnipotent.png" alt="Vol. 8 p.106 — Shenron : « C'est chose aisée. Il n'est point de vœu que je ne puisse exaucer. » « Mon père s'est fait tuer, rendez-lui la vie !! Je... je vous en supplie... »"/>
+    <p class="img-caption">Même le grand-père de Goku, mort et jamais ressuscité, sert de point de comparaison dans cette même scène</p>
+  </div>
+
+  <aside class="side">
+    <div class="know">
+      <div class="lbl">Le chiffre</div>
+      <div class="big">0</div>
+      <p>fois où le pouvoir de Baba, lire l'avenir, sert ensuite à anticiper un ennemi. Pas de contradiction : une évacuation silencieuse.</p>
+    </div>
+  </aside>
+  <div class="example" data-step="3">
+    <div class="ex-num">Cas d'école</div>
+    <div class="ex-title">Baba la voyante — le fil abandonné</div>
+    <p>Au tome 6 (p. 57), elle est présentée comme capable de « lire l'avenir dans sa boule de cristal ». Un pouvoir absolu de précognition, jamais contredit — simplement jamais réutilisé. Les ennemis auraient pu être anticipés, les pièges déjoués. Mais Baba disparaît du récit, et son pouvoir avec elle. Pas de retcon, pas de contradiction : une évacuation silencieuse.</p>
+
+    <img class="img-full" src="images/fig14_baba_lit_avenir.png" alt="« Hé hé hé, évidemment. » « Pas sûr, ma sœur peut lire l'avenir dans sa boule de cristal. Tu savais qu'on allait venir aujourd'hui, hein ? »"/>
+  </div>
+
+  <aside class="side">
+    <div class="quote">
+      <svg viewBox="0 0 120 64" aria-hidden="true"><use href="#kinto"/></svg>
+      <q><s style="text-decoration-thickness:2px">Un Kinto'un ne peut pas disparaître !</s></q>
+      <div class="who">Karin, tome 5 · Tambourine, quelques tomes plus tard</div>
+      <p style="color:rgba(255,255,255,.8)">La règle énoncée au §3 est contredite par l'action. Un oubli, pas un tissage.</p>
+    </div>
+  </aside>
+  <p data-step="4">Et le Kinto'un, si magnifiquement tissé par ailleurs, n'échappe pas à l'<strong>erreur arithmétique</strong>. Au tome 5, Karin déclare : « Un Kinto'un ne peut pas disparaître ! » Quelques tomes plus tard, Tambourine pulvérise celui de Goku. La règle explicite est contredite par l'action. Ce n'est pas un changement de registre, pas un enrichissement — c'est un oubli.</p>
+
+  <img class="img-full" src="images/fig05c_kinton_pulverise_tambourine.png" alt="« Il a même tué Kinto-un !! » « Quel salaud... » « Il s'est vraiment fait pulvériser... » « Bah alors... mon Kinto-un... »"/>
+
+  </section>
+
+  <!-- ══ 7. KAMI-SAMA ══ -->
+  <section class="marges">
+  <aside class="rail" data-mode="liste" aria-label="La machine à réparer" data-etapes='[["L&#39;origine","un enchaînement de besoins"],["La Lune","restaurée"],["La promesse à Chichi","un gag devient un enjeu"],["Le dédoublement","Dieu et Piccolo, une seule personne"],["Le prix","« pour certaines raisons »"]]'>
+    <div class="fil">
+      <div class="fil-t">La machine à réparer</div>
+      <div class="fil-s">Ce que Kami-sama remet d'aplomb.</div>
+      <div class="track"></div>
+    </div>
+  </aside>
+  <h2 id="s7" class="c1">7. La machine à réparer : Kami-sama</h2><p class="v2-status">Très probable pour la hiérarchie cosmologique ; les changements de registre ne sont pas tous des retcons.</p>
+  <div class="mfil" aria-hidden="true"><span>Origine</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i><i data-s="5"></i><span>Prix</span></div>
+
+  <p>Si un seul personnage incarne le rôle du retcon dans Dragon Ball, c'est Kami-sama, le Tout-Puissant. Sa création apparaît comme une extension rétroactive très probable : le sanctuaire et sa hiérarchie ne sont pas explicitement établis auparavant. Mais sa <em>fonction</em> va bien au-delà : Kami-sama est la machine à réparer le passage du registre comique au registre sérieux.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Schéma</div>
+      <h4>La chaîne des besoins</h4>
+      <ol class="chaine">
+        <li>Des âmes sans repos</li>
+        <li>Il faut un pouvoir supérieur à Piccolo</li>
+        <li>Il faut un palier au-dessus de Karin</li>
+        <li>Il faut une raison d'y monter</li>
+        <li>Le bâton relie la tour au sanctuaire</li>
+      </ol>
+    </div>
+  </aside>
+  <p data-step="1">Comment Toriyama en arrive-t-il à le créer ? Par un enchaînement de besoins narratifs. Piccolo Daimaō est mort, mais ses victimes ont des « âmes qui ne trouvent pas le repos ». Pour les libérer, il faut un pouvoir supérieur à Piccolo. Pour qu'un pouvoir supérieur existe, il faut un palier au-dessus de Karin. Pour atteindre ce palier, il faut une raison d'y monter. Et Karin — en direct, devant nous — « se souvient » : le bâton de Goku relie la tour au sanctuaire.</p>
+
+  <img class="img-full" src="images/fig15_karin_ames_sans_repos.jpg" alt="Karin — « Les âmes de ceux qui ont été tués par des démons ne trouvent pas le repos... »"/>
+
+  <p>Mais une fois Kami-sama créé, Toriyama s'en sert pour bien plus que relancer l'arc. Il en fait la <strong>machine à réparer le registre comique</strong>. En l'espace de quelques chapitres, Kami-sama résout tous les problèmes laissés en suspens par le passage du gag au sérieux.</p>
+  <aside class="side">
+    <div class="ticket">
+      <div class="t">ATELIER KAMI-SAMA<br><span style="font-family:'Share Tech Mono',monospace;font-size:11px;font-weight:400;color:var(--ink3)">réparations du registre comique</span></div>
+      <div class="l"><span>Lune pulvérisée</span><b>restaurée</b></div>
+      <div class="l"><span>Queue de singe</span><b>arrachée</b></div>
+      <div class="l"><span>Bâton de conte</span><b>pilier sacré</b></div>
+      <div class="l"><span>Promesse d'enfant</span><b>tenue</b></div>
+      <div class="tot">Contradictions : 0 · Gags convertis : 4</div>
+    </div>
+  </aside>
+  <p data-step="2">La Lune, détruite par un Kamehameha de Kamé Sennin dans un excès comique, puis revenue sans explication ? Kami-sama « voulait restaurer la Lune ». La queue de singe de Goku, qui risquait de le transformer en Ōzaru à chaque pleine lune ? Kami-sama l'arrache, parce que « c'est gênant ». Le Nyoibō, simple accessoire de conte ? Kami-sama révèle qu'il est le pilier sacré reliant la tour au sanctuaire.</p>
+
+  <img class="img-full" src="images/manga/Capture%20d'%C3%A9cran%202026-11-23%20205010.png" alt="Goku de retour : « Il a dit que c'était gênant si je gardais ma queue. » — « Non, le Tout-Puissant me l'a arrachée. »" loading="lazy"/>
+
+  <p class="rappel">Vous vous souvenez de la queue du bain, au tout début ? Celle que Bulma tirait sans effet, puis qui est devenue un point faible pour corser un combat ? La voici dans sa troisième vie : un problème encombrant, que Kami-sama règle d'un geste parce que « c'est gênant ». Et ce n'est pas fini. <a href="#s9">Rendez-vous au §9.</a></p>
+
+  <p data-step="3">Et la promesse de mariage avec Chichi — un gag d'enfant, au tout début du manga, quand Goku ne savait même pas ce que « se marier » voulait dire — devient un engagement réel au Tenka'ichi Budōkai. Le gag est converti en enjeu sérieux, sans contradiction.</p>
+
+  <img class="img-full" src="images/fig17_chichi_tournoi.jpg" alt="Chichi au tournoi — « Qui t'es, toi ? » / « IDIOT !! »"/>
+
+  <p>C'est <em>le même geste</em> à chaque fois : prendre un élément du registre comique et lui donner du poids dans le registre sérieux. Et c'est pour ça que ça ne se voit pas — parce que chaque conversion est individuelle et naturelle. Le lecteur ne perçoit pas le système. Il voit des histoires qui s'approfondissent, pas un auteur qui recycle méthodiquement ses gags en mythologie.</p>
+  <aside class="side">
+    <div class="fiche rouge">
+      <div class="bd">
+        <div class="lbl">Fiche personnage</div>
+        <div class="nm">KAMI-SAMA</div>
+        <div class="kj">le Tout-Puissant · inventé pendant l'arc Piccolo</div>
+        <dl><dt>L'autre moitié</dt><dd>Piccolo</dd><dt>A créé</dt><dd>les Dragon Balls</dd><dt>Si l'un meurt</dt><dd>l'autre aussi, et plus de Dragon Balls</dd></dl>
+      </div>
+    </div>
+  </aside>
+  <p data-step="4">Mais l'idée la plus audacieuse de Kami-sama, c'est le dédoublement. Toriyama n'avait aucune obligation de relier le Tout-Puissant à Piccolo. Et pourtant, Karin tease : « C'est surtout un visage qu'il connaît déjà... » — le Tout-Puissant et Piccolo étaient <em>la même personne</em>, scindée en deux. Le bien et le mal séparés.</p>
+
+  <img class="img-full" src="images/fig18_karin_visage_connu.jpg" alt="Karin — « C'est surtout un visage qu'il connaît déjà... »"/>
+
+  <p>C'est un retcon de tissage total — rien dans l'arc Piccolo Daimaō ne suggérait cette connexion — mais c'est aussi un coup de génie narratif, parce qu'il fait trois choses en même temps : relier l'arc précédent au nouveau (tissage), donner une origine aux Dragon Balls (elles sont créées par le Tout-Puissant), et créer un enjeu dramatique permanent (si Piccolo meurt, Dieu meurt, et les Dragon Balls disparaissent).</p>
+  <aside class="side">
+    <div class="quote">
+      <q>Pour certaines raisons, nous ne pouvons pas nous battre contre lui.</q>
+      <div class="who">Kami-sama</div>
+      <p style="color:rgba(255,255,255,.8)">Le contre-exemple parfait : 0 condition sur 3 du retcon réussi.</p>
+      <a href="#s9">Voir §9, Raditz →</a>
+    </div>
+  </aside>
+  <p data-step="5">Le prix à payer, c'est l'incohérence que ça génère. Si Kami-sama est plus fort que Piccolo — et les pages montrent qu'il l'est, de très loin, avec Mr. Popo en échelon intermédiaire — pourquoi ne l'a-t-il pas neutralisé quand Piccolo massacrait le monde entier ? « Pour certaines raisons, nous ne pouvons pas nous battre contre lui » — et ces « certaines raisons » sentent l'improvisation.</p>
+
+  <img class="img-full" src="images/fig19_kamisama_certaines_raisons.jpg" alt="Kami-sama — « Mister Popo et moi, nous ne pouvons pas nous battre contre lui pour certaines raisons. »"/>
+
+  </section>
+
+  <!-- ══ 8. LE PRIX DE L'ESCALADE ══ -->
+  <section class="marges">
+  <aside class="rail" data-mode="liste" aria-label="Le prix de l'escalade" data-etapes='[["Le vocabulaire s&#39;invente","vol, ki, auras, transformations"],["L&#39;amnésie de registre","la Lune contre le ring"],["Le plafond humain explose","Tenshinhan, Krilin, Yamcha"],["Le sanctuaire gonflé","Mr. Popo, Kami-sama"],["Spectacle en aval","incohérence en amont"]]'>
+    <div class="fil">
+      <div class="fil-t">Le prix de l'escalade</div>
+      <div class="fil-s">Comment le plafond d'hier devient ridicule.</div>
+      <div class="track"></div>
+    </div>
+  </aside>
+  <h2 class="dark">8. Le prix de l'escalade</h2><p class="v2-status">Analyse narrative : l'escalade n'est pas en elle-même une preuve de retcon.</p>
+  <div class="mfil" aria-hidden="true"><span>Vocabulaire</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i><i data-s="5"></i><span>Prix</span></div>
+
+  <p>Derrière les retcons de tissage, derrière les conversions de registre, il y a un moteur mécanique qui alimente tout : l'escalade de puissance. Et ce moteur est consubstantiel au format même du shōnen hebdomadaire de combat.</p>
+  <p>Le principe est simple. L'auteur écrit à la semaine. Chaque arc doit renouveler l'intérêt. Et le code visuel du shōnen, c'est que la menace suivante doit être <em>plus grande</em>. Chaque nouvel ennemi est plus fort que le précédent. Mécaniquement, ça signifie que le « plus fort du monde » d'il y a 50 chapitres est devenu faible — non pas dans la fiction, mais dans le <em>vocabulaire de puissance</em> dont l'auteur dispose.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Inventé en marchant</div>
+      <h4>Au tome 2, rien de tout ça n'existe</h4>
+      <ul class="coche">
+        <li>le vol</li><li>le ki visible</li><li>les auras</li><li>les transformations</li>
+      </ul>
+      <p style="margin-top:8px">Chaque invention rend le plafond précédent ridicule.</p>
+    </div>
+  </aside>
+  <p data-step="1">Car le vocabulaire de la puissance s'invente en marchant. Quand Toriyama dessine Kamé Sennin au tome 2, c'est le sommet du monde. Le Kamehameha est la technique ultime. Personne ne vole. Les combats sont au sol, au corps-à-corps. Le vocabulaire des combats n'a pas encore acquis sa forme ultérieure : vol généralisé, auras et transformations de puissance systématisées. L'Ōzaru et les métamorphoses comiques existent déjà. Il les invente tome après tome, en réponse aux besoins de l'escalade. Et chaque invention rend le plafond précédent ridicule.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">L'amnésie de registre</div>
+      <h4>Ce qui a été détruit</h4>
+      <div class="jauge">
+        <div class="r"><span>Kamehameha de Kamé Sennin</span><b>la Lune</b></div>
+        <div class="b"><div style="width:100%;background:var(--c2)"></div></div>
+        <div class="r"><span>Kikoho de Tenshinhan</span><b>un ring</b></div>
+        <div class="b"><div style="width:3%;background:var(--c1)"></div></div>
+      </div>
+      <p style="margin-top:10px">Et Kamé Sennin commente le Kikoho : « rien à voir avec le Kamehameha ! »</p>
+      <span class="stamp" style="color:var(--c1);border-color:var(--c1)">Le registre a changé</span>
+    </div>
+  </aside>
+  <p data-step="2">Le cas le plus frappant est celui de la Lune. Au tournoi précédent, Kamé Sennin détruit la Lune avec un Kamehameha — un astre entier, pulvérisé. Quelques tomes plus tard, au tournoi suivant, le Kikoho de Tenshinhan détruit le ring de combat, et Kamé Sennin commente : « Sa puissance destructrice est colossale... rien à voir avec le Kamehameha ! »</p>
+
+  <img class="img-full" src="images/fig20_kikoho_ring.png" alt="Kamé Sennin : « Comme prévu, sa puissance destructrice est colossale... rien à voir avec le Kamé Hamé Ha ! » « Et Goku ?! » « Il n'est pas là !! Il a disparu avec le ring !! Mais qu'est-ce que... la surface de combat a sombré dans le néant en une fraction de seconde !! »"/>
+
+  <p>Logiquement, un Kamehameha qui détruit la Lune devrait être infiniment plus puissant qu'un Kikoho qui détruit un ring de quelques mètres carrés. Mais la logique ne s'applique pas entre deux registres. Quand Kamé Sennin détruit la Lune, c'est un gag spectaculaire. Quand Tenshinhan détruit le ring, c'est une mise en scène dramatique. Le Kikoho est <em>présenté</em> comme plus impressionnant, parce que le vocabulaire dramatique a changé. Ce n'est pas la puissance objective qui a monté, c'est le registre narratif qui a basculé.</p>
+  <p>C'est ce que nous appelons l'<strong>amnésie de registre</strong> : les exploits du registre comique ne « comptent » plus dans le registre sérieux, parce qu'ils n'ont jamais été pensés comme des données de puissance. Ils étaient des gags.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Le plafond humain</div>
+      <h4>Qui a pu rencontrer Dieu ?</h4>
+      <ul class="coche"><li>Mutaito</li><li>Kamé Sennin</li><li>Tsuru Sennin</li></ul>
+      <ul class="coche oui" style="margin-top:0"><li>Goku, « le premier humain »</li></ul>
+      <p style="margin-top:8px">…puis Tenshinhan, Krilin et Yamcha dépassent tout le monde, sans raison spéciale.</p>
+    </div>
+  </aside>
+  <p data-step="3">L'escalade crée aussi des incohérences dans les hiérarchies de personnages. Baba la voyante confirme solennellement que Goku est « le premier humain à avoir le droit de rencontrer Dieu » — personne avant lui, jamais, dans toute l'histoire, n'a atteint ce niveau. Le plafond humain, pendant des siècles, c'était Mutaito, Kamé Sennin, Tsuru Sennin. Aucun d'eux n'a pu accéder au sanctuaire.</p>
+
+  <img class="img-full" src="images/fig21_baba_premier_humain.jpg" alt="Baba — « C'est la première fois qu'un humain aura le droit de rencontrer Dieu. »"/>
+
+  <p>Et pourtant, en l'espace de quelques années narratives, Tenshinhan, Krilin, Yamcha — des humains qui s'entraînent avec les mêmes méthodes terrestres — explosent ce plafond sans aucune raison spéciale. Tenshinhan dit à Kamé Sennin de renoncer au combat pour ne pas être humilié. L'élève d'un élève est devenu infiniment plus fort que le maître des maîtres.</p>
+
+  <img class="img-full" src="images/fig22_tenshinhan_kame_sennin.jpg" alt="Tenshinhan à Kamé Sennin — « S'il vous plaît, renoncez à ce combat... »"/>
+
+  <p>La raison est extra-narrative : Toriyama a besoin de compagnons crédibles pour Goku. Si seul Goku progresse, les autres deviennent des spectateurs et le manga perd son casting. Donc tout le monde progresse. Mais la justification interne n'existe pas.</p>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">L'échelle du sanctuaire</div>
+      <div class="pile">
+        <div class="haut">Kami-sama <small>encore au-dessus</small></div>
+        <div>Mr. Popo <small>« ta force est minable »</small></div>
+        <div>Goku <small>vainqueur de Piccolo Daimaō</small></div>
+        <div>Piccolo Daimaō <small>a massacré le monde</small></div>
+      </div>
+      <p style="margin-top:10px"><strong>Question sans réponse :</strong> pourquoi le sanctuaire a-t-il laissé faire ?</p>
+    </div>
+  </aside>
+  <p data-step="4">Et puis il y a Mr. Popo. Quand Goku arrive au sanctuaire, Mr. Popo l'écrase totalement. « Tu es faible. Ta force spirituelle est minable, tes techniques sont nulles. » Ce Goku — celui qui vient de battre Piccolo Daimaō — est « minable » aux yeux du serviteur de Dieu. Kami-sama, au-dessus de Mr. Popo, est plus puissant encore.</p>
+
+  <img class="img-full" src="images/fig23_mr_popo_force_minable.jpg" alt="Mr. Popo — « Tu es faible. Ta force spirituelle est minable. »"/>
+
+  <p>Toriyama a besoin que le sanctuaire soit impressionnant, que Goku ait encore des paliers à franchir. Mais pour ça, il doit gonfler Mr. Popo et Kami-sama à un niveau qui rend leur inaction passée absurde. Si Mr. Popo est plus fort que Piccolo, et qu'il n'est pas lié à lui par le pacte de mort — pourquoi a-t-il laissé le monde se faire massacrer depuis le sanctuaire ?</p>
+  <p data-step="5">Il n'y a pas de réponse. L'escalade crée le spectacle en aval et l'incohérence en amont. C'est le prix de la sérialisation hebdomadaire — et c'est un prix que tous les auteurs de shōnen paient.</p>
+
+  </section>
+
+  <!-- ══ 9. LE RETCON SAIYAN ══ -->
+  <section class="marges">
+  <aside class="rail" data-mode="liste" aria-label="Les trois conditions du retcon parfait" data-etapes='[["Le coup de théâtre","Raditz, tome 17"],["Le choc synchrone","personne ne savait"],["Le camouflage","l&#39;amnésie + le faux souvenir"],["La mise en scène","le spectacle empêche l&#39;analyse"],["Retcon parfait","3 conditions sur 3"]]'>
+    <div class="fil">
+      <div class="fil-t">Le retcon parfait</div>
+      <div class="fil-s">Trois conditions, presque jamais réunies.</div>
+      <div class="track"></div>
+    </div>
+  </aside>
+  <div class="mfil" aria-hidden="true"><span>Raditz</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i><i data-s="5"></i><span>3/3</span></div>
+  <h2 class="c1" id="s9">9. Le retcon Saiyan — le coup de théâtre qui réécrit tout</h2><p class="v2-status">Degré de certitude : confirmé pour l'origine extraterrestre de Goku.</p><details class="v2-note"><summary>Archives — les mots de l'auteur</summary><p>Dans son entretien du <em>Daizenshuu 4 : World Guide</em> (Shūeisha, 1995), Toriyama explique qu'il n'avait pas conçu Goku comme un extraterrestre lorsqu'il avait imaginé sa queue et l'Ōzaru. Il indique également ne pas avoir prévu l'origine namek de Piccolo.</p><p><a href="https://dragonballfr.com/wiki/interviews/daizenshuu-4-akira-toriyama-super-interview">Lire la traduction française non officielle de l'entretien</a>. Cette déclaration confirme la genèse rétroactive de ces origines, mais ne date pas précisément chaque détail ajouté.</p></details>
+
+  <aside class="side">
+    <div class="fiche rouge">
+      <div class="art"><svg viewBox="0 0 64 64" style="width:74px" role="img" aria-label="Une boule de cristal"><use href="#boule"/></svg></div>
+      <div class="bd">
+        <div class="nm">RADITZ</div>
+        <div class="kj">le messager du retcon</div>
+        <dl><dt>Origine</dt><dd>Planète Vegeta</dd><dt>Apparition</dt><dd>Tome 17</dd><dt>Lien</dt><dd>Frère de Goku</dd><dt>Mission</dt><dd>Récupérer Kakarotto</dd></dl>
+      </div>
+    </div>
+  </aside>
+  <p data-step="1">Et puis Raditz pose le pied sur Terre.</p>
+
+  <img class="img-full" src="images/fig24a_rassemblement_avant_raditz.png" alt="« Je sais pas où il est !! Il m'a pris la tête, alors je ne lui ai pas dit qu'on se rassemblait tous aujourd'hui !! » Kamé Sennin : « Au fait, Bulma, Yamcha n'est pas avec toi ? »"/>
+  <p class="img-caption">Un jour comme un autre — quelques minutes avant que tout bascule</p>
+  <p>Tome 17. En l'espace de quelques pages, tout ce que le lecteur croyait savoir sur Goku — un garçon bizarre trouvé dans la montagne par un vieil ermite — est balayé et reconstruit.</p>
+
+  <aside class="side">
+    <div class="know">
+      <div class="lbl">Le chiffre</div>
+      <div class="big">16 tomes</div>
+      <p>de silence entre la queue du tome 1 et la révélation du tome 17. Tout était visible, personne n'avait vu.</p>
+    </div>
+  </aside>
+  <blockquote>« Kakarotto... tu as même oublié tout ça ?! » « Tu es né sur la planète Vegeta !! Tu es un Saiyan !! »</blockquote>
+
+  <p>Le coup de théâtre est total. Goku n'est pas un garçon à queue de singe. C'est un guerrier extraterrestre envoyé sur Terre quand il était bébé pour exterminer toute vie. Sa queue, sa force, ses transformations monstrueuses en Ōzaru — tout était là depuis le tome 1. Tout était <em>visible</em>. Et pourtant, personne n'avait vu.</p>
+
+  <p class="rappel">Et la queue du bain ? <a href="#queue">Celle du tout début</a> : un gag, puis un point faible, puis un problème que Kami-sama arrache. La voici dans sa dernière vie, la plus spectaculaire : la marque de toute une race de guerriers. Le même fil, tissé quatre fois.</p>
+
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Avant / après</div>
+      <h4>Qui est Goku ?</h4>
+      <div class="duo">
+        <div><b>Tomes 1 à 16</b>Un garçon à queue, trouvé dans la montagne par un vieil ermite.</div>
+        <div class="apres"><b>Tome 17</b>Un guerrier saiyan, envoyé bébé pour exterminer la Terre.</div>
+      </div>
+    </div>
+  </aside>
+  <img class="img-full" src="images/fig24d_raditz_reconnait_kakarotto.png" alt="« Qui c'est, ce type ? » Raditz : « Tu ressembles à ton père comme deux gouttes d'eau... Hé hé hé... tu as bien grandi... mais je t'ai reconnu au premier coup d'œil, Kakarotto... »"/>
+
+  <div class="manga-grid cols2">
+    <img src="images/fig24h_raditz_planete_vegeta_saiyan.png" alt="Raditz : « Tu es né sur la planète Vegeta !! Et tu es un Saiyan, le peuple de combattants le plus fier de l'univers !! Je vais tout te raconter. D'abord, tu n'es pas né sur cette planète ! Tu n'es pas humain !! »"/>
+    <img src="images/fig24e_raditz_choc_tete.png" alt="Raditz : « Mais qu'est-ce que ça veut dire ?! Dis-moi ! Tu ne te serais pas cogné la tête très fort, un jour ?! Kakarotto... tu as même oublié tout ça ?! »"/>
+  </div>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Contre-exemple</div>
+      <h4>« Pour certaines raisons » (§7)</h4>
+      <p>Kami-sama refuse d'affronter Piccolo, et la formule sent l'improvisation. Pas de camouflage, pas de spectacle : la couture se voit.</p>
+      <ul class="coche" style="margin-top:6px"><li>choc synchrone</li><li>camouflage</li><li>mise en scène</li></ul>
+    </div>
+  </aside>
+  <p>Ce qui rend le retcon Saiyan si puissant, c'est qu'il remplit simultanément les trois conditions du retcon parfait — et ce sont des conditions qui ne se trouvent presque jamais réunies.</p>
+
+  <div class="hierarchy">
+    <div class="h-row" data-step="2">
+      <div class="h-num c1">1</div>
+      <div class="h-body"><strong>Le choc synchrone</strong><p>Regardez les visages des personnages quand Raditz parle. Krilin, Kamé Sennin, Bulma — ils sont ébahis. Ils apprennent ce que le lecteur apprend, au même instant. Ce choc partagé est essentiel. Dans un roman où le narrateur sait tout, le retcon sent le trucage. Ici, personne ne savait. L'information est neuve pour tout le monde, y compris pour Goku lui-même.</p></div>
+    </div>
+    <div class="h-row" data-step="3">
+      <div class="h-num c1">2</div>
+      <div class="h-body"><strong>Le dispositif de camouflage</strong><p>Pourquoi Goku ne sait-il pas qu'il est un Saiyan ? Parce qu'il s'est cogné la tête en tombant d'une falaise quand il était bébé. L'amnésie justifie seize tomes de silence. Et Kamé Sennin, en maître du tisserand qu'il est, complète le dispositif en produisant un <strong>faux souvenir</strong> : le vieux Gohan lui aurait confié avoir trouvé un bébé au comportement violent, qui s'est calmé après une chute. Une information jamais mentionnée en seize tomes — qui apparaît au moment précis où le retcon en a besoin.</p></div>
+    </div>
+    <div class="h-row" data-step="4">
+      <div class="h-num c1">3</div>
+      <div class="h-body"><strong>La mise en scène écrasante</strong><p>L'arrivée de Raditz est un choc sensoriel. La menace est immédiate, le pouvoir est incommensurable, la mort de Goku est au bout. Le spectacle empêche l'analyse. On ne se demande pas « attends, est-ce que ça colle avec le tome 3 ? » — on est happé. Et quand le calme revient, les coutures ont déjà pris.</p></div>
+    </div>
+  </div>
+
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Le faux souvenir, décortiqué</div>
+      <dl style="display:grid;grid-template-columns:auto 1fr;gap:5px 10px;font-size:13.5px;margin-top:6px">
+        <dt style="color:var(--ink3)">Qui le raconte</dt><dd><b>Kamé Sennin</b></dd>
+        <dt style="color:var(--ink3)">Source</dt><dd><b>feu Gohan</b>, invérifiable</dd>
+        <dt style="color:var(--ink3)">Déjà évoqué ?</dt><dd><b>0 fois</b> en 16 tomes</dd>
+        <dt style="color:var(--ink3)">Arrive quand</dt><dd><b>pile au bon moment</b></dd>
+      </dl>
+    </div>
+  </aside>
+  <div class="manga-grid cols2" data-step="3">
+    <img src="images/fig24f_goku_confus_cicatrice.png" alt="« Est-ce que tu aurais reçu un choc à la tête quand tu étais petit ?! » « Je m'appelle pas Kakamachin-truc ou je sais pas quoi ! » « Aah ! Ça explique tout !! » « J'ai encore la cicatrice, d'ailleurs... Oui ! Je m'en souviens pas mais c'est vrai, je me suis cogné quand j'étais bébé... »"/>
+    <img src="images/fig24g_kame_sennin_faux_souvenir.png" alt="Kamé Sennin : « Un jour, il est tombé du haut d'une falaise par accident et il s'est fortement heurté la tête... Goku... il y a très longtemps, feu ton grand-père Son Gohan m'avait dit qu'il avait recueilli un petit garçon avec une queue, mais qu'il était d'un tempérament violent et qu'il ne savait pas quoi faire pour l'amadouer... »"/>
+  </div>
+  <p class="img-caption">La cicatrice que Goku découvre en la cherchant — et le souvenir que le récit introduit par la voix de Kamé Sennin</p>
+
+  <aside class="side">
+    <div class="slot">
+      <svg viewBox="0 0 64 64" style="width:48px" aria-hidden="true"><use href="#boule"/></svg>
+      <p><strong>Ton illustration ici</strong></p>
+      <p>Ex. : la rangée de visages choqués… et le lecteur, au bout du rang, avec la même tête. Format conseillé : 540 × 540 px.</p>
+    </div>
+  </aside>
+  <img class="img-full" data-step="5" src="images/fig24_visages_choques.png" alt="Krilin, Kamé Sennin, Yamcha — les visages choqués, muets face à la révélation"/>
+
+  <p data-step="5">Ce souvenir introduit rétroactivement est la pierre angulaire du camouflage. Il ne s'agit pas d'un mensonge du personnage, mais d'une information nouvelle sur son passé. Il transforme le retcon en « révélation » — quelque chose que Gohan savait, que Kamé Sennin savait, mais dont personne n'avait parlé. Le lecteur du premier cercle acquiesce : « Bien sûr, c'est logique, ils gardaient le secret pour protéger Goku. » Le lecteur du deuxième cercle, lui, voit la main du tisserand : cette histoire n'existait pas il y a cinquante pages.</p>
+
+  </section>
+
+  <div class="infographic-embed">
+    <div class="embed-label">Infographie interactive — Anatomie d'un retcon</div>
+    <iframe src="Infographie/retcon_anatomie.html" title="Anatomie d'un retcon — la queue de Goku et le Dr Gero" loading="lazy"></iframe>
+  </div>
+
+  <section class="marges">
+  <aside class="rail" data-mode="liste" aria-label="Ce qui était déjà là" data-etapes='[["La queue","tome 1"],["Le singe géant","tome 2 : « un extraterrestre ? »"],["Tout se relit","tome 17"]]'>
+    <div class="fil">
+      <div class="fil-t">Ce qui était déjà là</div>
+      <div class="fil-s">Les indices que le tome 17 rallume.</div>
+      <div class="track"></div>
+    </div>
+  </aside>
+  <div class="mfil" aria-hidden="true"><span>T1</span><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><span>T17</span></div>
+  <aside class="side">
+    <div class="card">
+      <div class="lbl">Prophéties exaucées</div>
+      <h4>Les phrases qui se réalisent d'un coup</h4>
+      <ul class="coche oui">
+        <li>Oolong : « un extraterrestre, peut-être ? »</li>
+        <li>Kamé Sennin : Krilin « s'approche des limites de l'être humain »</li>
+        <li>Goku : « je suis peut-être pas humain, puisque j'ai une queue »</li>
+      </ul>
+    </div>
+  </aside>
+  <p data-step="2"><strong>Le retcon qui réactive le passé.</strong> Ce que fait Toriyama après l'arrivée de Raditz est tout aussi remarquable. Vegeta, plus tard, donne un « petit cours sur les singes géants » — et soudain, tout le passé de Dragon Ball se <em>réactive</em>. Les flashbacks arrivent. La mort de Gohan, écrasé par l'Ōzaru de Goku bébé, est confirmée. Kami-sama qui arrachait la queue de Goku « parce que c'est gênant » prend un sens nouveau : il savait, au moins inconsciemment, ce que cette queue représentait. La phrase d'Oolong — « un extraterrestre, peut-être ? » — se réalise. Toutes les fausses prophéties de ce qui précède convergent en un point focal unique.</p>
+
+  <aside class="side">
+    <div class="know">
+      <div class="lbl">Le saviez-vous ?</div>
+      <div class="big" style="font-size:22px">Le Soldat de l'Hiver</div>
+      <p>Bucky, l'acolyte de Captain America, est mort dans les comics depuis les années 1960. En 2005, Marvel le fait revenir : il avait survécu, transformé en assassin.</p>
+      <p style="margin-top:6px">Le même geste que Raditz : un passé connu de tous, réécrit d'un coup, et qui devient plus riche qu'avant.</p>
+    </div>
+  </aside>
+  <p>Et Raditz ne se contente pas de révéler l'identité de Goku — il déroule, en une poignée de cases, toute une civilisation qui n'existait pas une page plus tôt.</p>
+
+  <aside class="side">
+    <div class="fiche rouge">
+      <div class="bd">
+        <div class="lbl">Fiche peuple</div>
+        <div class="nm">LES SAIYANS</div>
+        <div class="kj">une civilisation créée en une scène</div>
+        <dl><dt>Planète</dt><dd>Vegeta, détruite</dd><dt>Métier</dt><dd>Revendre des planètes</dd><dt>Survivants</dt><dd>4, Goku compris</dd><dt>Existait avant ?</dt><dd>Pas une page plus tôt</dd></dl>
+      </div>
+    </div>
+  </aside>
+  <img class="img-full" data-step="3" src="images/fig24i_raditz_mission_exterminer.png" alt="Raditz : « C'est très simple. Kakarotto a été envoyé ici pour débarrasser cette planète de sa population encombrante ! Nous, les Saiyans, on est un peuple guerrier. On repère des planètes à l'environnement viable, on élimine leurs habitants et on les revend à bon prix à d'autres populations qui recherchent des planètes convenables. »"/>
+
+  <img class="img-full" src="images/fig24j_raditz_planete_vegeta_explosion.png" alt="Raditz : « Presque tous les Saiyans ont disparu en poussière dans le vide sidéral... Les Saiyans ont toujours été un petit peuple et pour tout arranger, la planète Vegeta est entrée en collision avec une météorite géante et elle a explosé... »"/>
+
+  <img class="img-full" src="images/fig24b_raditz_survivants_saiyans.png" alt="Raditz : « L'un d'eux et moi, on attaquait une autre planète au moment de l'explosion, ça nous a sauvés. Quant au dernier, il avait été envoyé sur une planète, comme toi. Heureusement, d'ailleurs... Il ne reste plus que quatre Saiyans, toi compris ! »"/>
+
+  <img class="img-full" src="images/fig24c_raditz_recrute_goku.png" alt="Raditz : « Alors j'ai pensé à toi. Ta puissance n'est pas encore au top mais si tu te joins à nous, on arrivera à se débrouiller... Et là, on a déniché une planète qu'on pourrait revendre un bon petit paquet ! Sauf qu'à trois, ça fait un peu juste, on risque de peiner à la soumettre... »"/>
+  <p class="img-caption">Un peuple, une planète détruite, trois survivants ailleurs dans la galaxie — une mythologie entière, posée en une seule scène</p>
+  <p>Le passé n'est pas aboli. Il est <em>relu</em>. C'est la puissance spécifique du retcon structurel : il ne supprime pas les seize premiers tomes, il les transforme en prélude.</p>
+  <p>Et c'est ici que notre voyage dans les dix-sept premiers tomes de Dragon Ball s'arrête — au seuil exact d'un monde nouveau. Le gag manga est devenu un récit épique. Le garçon à queue de singe est devenu un guerrier extraterrestre. Et chaque page que nous avons analysée — le Kinto'un, le Nyoibō, les fausses prophéties, le Senzu, Kami-sama, l'escalade — se reconfigure instantanément sous la lumière de cette révélation.</p>
+  <p>Le retcon Saiyan est la preuve vivante de la thèse de cet article. Il montre qu'un coup de théâtre peut fonctionner sans avoir été planifié dès l'origine. L'absence de préméditation initiale n'empêche ni la cohérence rétrospective ni la force de la surprise. Et c'est le tissu — seize tomes de fils tissés sans arrière-pensée — qui donne au retcon sa matière première.</p>
+  <aside class="side">
+    <div class="quote">
+      <svg viewBox="0 0 120 64" aria-hidden="true"><use href="#kinto"/></svg>
+      <q>Le tisserand n'avait pas de dessin. Mais le tissu, lui, avait un motif.</q>
+      <div class="who">La thèse de l'article</div>
+      <a href="#epilogue">→ Épilogue : les deux cercles</a>
+    </div>
+  </aside>
+  <p data-step="3">Le tisserand n'avait pas de dessin. Mais le tissu, lui, avait un motif.</p>
+  </section>
+
+  <!-- ══ ÉPILOGUE ══ -->
+  <h2 class="dark" id="epilogue">Épilogue : les deux cercles</h2>
+
+  <p>Si vous êtes arrivé jusqu'ici, vous avez fait le passage. Vous avez vu les fils, les nœuds, les reprises. Vous savez que le Nyoibō n'a pas toujours été un pilier sacré — qu'il l'est <em>devenu</em>, sous la main d'un auteur qui improvisait à la semaine et qui, en cherchant une solution à un problème immédiat, a trouvé une connexion magnifique avec un objet oublié du tome 1.</p>
+  <p>Et maintenant, relisez le tome 1.</p>
+  <p>Le premier cercle est toujours là. Intact. Le bâton est encore magique, le nuage est encore merveilleux, le garçon à queue de singe est encore plein de mystère. Rien n'est abîmé. Rien n'est diminué.</p>
+  <p>Mais quelque chose s'est ajouté. En regardant Goku tenir son Nyoibō au premier chapitre, vous voyez maintenant le pilier sacré en devenir. En regardant Oolong dire « un extraterrestre, peut-être ? », vous voyez le retcon en embuscade. En regardant Kamé Sennin donner le Kinto'un, vous voyez le fil qui commence — un fil dont le vieux maître ne sait pas encore où il mène.</p>
+  <p>Vous êtes dans les deux cercles à la fois. Et c'est plus riche, pas plus pauvre.</p>
+  <p>Le retcon n'est pas le symptôme d'une écriture défaillante. C'est le <em>processus même</em> par lequel un univers sériel se construit. Le comprendre, c'est accéder à un deuxième plaisir de lecture — celui de voir le tisserand au travail. Et le trouver encore plus admirable.</p>
+
+  <img class="img-full" src="images/infographic_demonter_comprendre.png" alt="La mobylette démontée pièce par pièce, le manga décortiqué page par page — démonter n'est pas détruire, comprendre c'est aimer deux fois"/>
+  <p class="img-caption">Démonter n'est pas détruire. Comprendre, c'est aimer deux fois.</p>
+  <p>Parce que l'exploit n'est pas d'avoir tout prévu. L'exploit, c'est de n'avoir rien prévu — et d'avoir construit quand même quelque chose qui ressemble, à s'y méprendre, à un plan.</p>
+
+  <div class="teaser">Dans un prochain article, nous examinerons ce qui vient après le retcon Saiyan : les retcons de l'ère Z, du retcon Namek au retcon Freezer, en passant par les retcons silencieux — ces petits ajustements de compétence et de règle que l'auteur glisse entre les combats. Et nous poserons la question qui fâche : quand est-ce qu'un retcon <strong>échoue</strong> ?</div>
+
+  <details class="v2-note" id="sources-v2"><summary>Sources, classification et limites de l'enquête</summary><p><strong>Source primaire :</strong> Akira Toriyama, entretien du 24 juillet 1995, <em>Dragon Ball Daizenshuu 4: World Guide</em>, Shūeisha, 1995. <a href="https://dragonballfr.com/wiki/interviews/daizenshuu-4-akira-toriyama-super-interview">Traduction française non officielle</a> · <a href="https://www.kanzenshuu.com/wiki/Dragon_Ball_Daizenshuu_4">Notice bibliographique Kanzenshuu</a>.</p><p><strong>Corpus :</strong> les 17 premiers tomes du manga ; les références de pages figurent dans les légendes lorsqu'elles sont disponibles. La pagination dépend de l'édition.</p><ul><li>Nature : fonctionnelle (règles et usages), structurelle (identité et architecture du monde).</li><li>Mécanisme : tissage, absorption et réemploi.</li><li>Effet : fausse prophétie, surprise, enrichissement rétrospectif.</li><li>Certitude : confirmé, très probable, probable, indécidable.</li></ul><p>La cohérence du résultat et le degré de certitude de sa genèse sont deux questions distinctes. Les autres hypothèses de l'article restent à documenter individuellement.</p></details><!-- cta-discord -->
+<section class="dbz-cta">
+<style>.dbz-cta{box-sizing:border-box;width:calc(100% - 32px);max-width:760px;margin:56px auto 40px;padding:26px 24px;border-radius:16px;background:linear-gradient(160deg,#12357a,#0a1f4d);color:#fff;text-align:center;font-family:'Source Serif 4',Georgia,serif;box-shadow:0 12px 30px rgba(10,31,77,.25);border-bottom:4px solid #f5821f}.dbz-cta h3{font-family:'Oswald',sans-serif;font-size:24px;line-height:1.2;margin:0 0 8px;color:#ffc531;border:0}.dbz-cta p{margin:0 auto 18px;max-width:52ch;color:#dbe4ff;font-size:16px;line-height:1.55}.dbz-cta a.dbz-btn{display:inline-block;padding:11px 24px;border-radius:999px;background:#5865F2;color:#fff;text-decoration:none;font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:.02em}.dbz-cta a.dbz-btn:hover{background:#f5821f;color:#fff}</style>
+<h3>Une réaction, une objection, une théorie ?</h3>
+<p>Venez en débattre avec la communauté Dragonballogie sur Discord : analyses, fan art, atelier d'écriture.</p>
+<a class="dbz-btn" href="https://discord.gg/JxMAuBbpQ" target="_blank" rel="noopener">Rejoindre le Discord</a>
+</section>
+<footer class="foot">« Qu'est-ce qu'un retcon ? » · Dragonballologie · La Revue</footer>
+
+</main>
+<script>
+/* ajuste la hauteur des infographies à leur contenu */
+document.querySelectorAll('.infographic-embed iframe').forEach(function(f){
+  function ajuste(){ try{ var h=f.contentDocument.documentElement.scrollHeight; if(h>200) f.style.height=(h+4)+'px'; }catch(e){} }
+  f.addEventListener('load',function(){ ajuste(); setTimeout(ajuste,800); });
+});
+</script>
+<script>
+/* ══ Marges illustrées : fil qui suit la lecture + notes qui ne se chevauchent pas ══
+   Fil « frise » : data-etapes = [[tome, "libellé", 1 si à venir], ...]  (tomes 1 → 17)
+   Fil « liste » : data-mode="liste", data-etapes = [["titre", "sous-titre"], ...]
+   Chaque élément du texte portant data-step="n" allume l'étape n quand il passe au milieu de l'écran. */
+(function(){
+  var LARGE = window.matchMedia('(min-width:1340px)');
+
+  document.querySelectorAll('.marges').forEach(function(sec){
+    var rail = sec.querySelector('.rail'), barre = sec.querySelector('.mfil');
+    if(!rail) return;
+    var etapes = JSON.parse(rail.dataset.etapes), liste = rail.dataset.mode === 'liste';
+    var track = rail.querySelector('.track'), puff = rail.querySelector('.puff'), html = '';
+    var T0 = 1, T1 = 17, y = function(t){ return ((t - T0) / (T1 - T0) * 100) + '%'; };
+    if(liste){
+      html = etapes.map(function(e, k){
+        return '<div class="item' + (k === etapes.length - 1 ? ' final' : '') + '" data-k="' + (k + 1) + '"><i>' + (k + 1) + '</i><div><span>' + e[0] + '</span>' + (e[1] ? '<b>' + e[1] + '</b>' : '') + '</div></div>';
+      }).join('');
+    } else {
+      for(var t = T0; t <= T1; t++) html += '<i class="tick" style="top:' + y(t) + '"></i>';
+      etapes.forEach(function(e, k){
+        html += '<div class="node' + (e[2] ? ' later' : '') + '" data-k="' + (k + 1) + '" style="top:' + y(e[0]) + '"><i></i><div><b>tome ' + e[0] + '</b><span>' + e[1] + '</span></div></div>';
+      });
+    }
+    track.insertAdjacentHTML('beforeend', html);
+    var nodes = track.querySelectorAll('[data-k]'), segs = barre ? barre.querySelectorAll('i') : [];
+    function etape(k){
+      nodes.forEach(function(n){ var d = +n.dataset.k; n.classList.toggle('on', d === k || (d < k && !n.classList.contains('later'))); });
+      segs.forEach(function(s){ s.classList.toggle('on', +s.dataset.s <= k); });
+      if(puff && !liste) puff.style.top = y(etapes[k - 1][0]);
+    }
+    var pas = Array.prototype.map.call(sec.querySelectorAll('[data-step]'), function(el){ return +el.dataset.step; });
+    etape(pas.length ? Math.min.apply(null, pas) : 1);
+    var pasEls = Array.prototype.slice.call(sec.querySelectorAll('[data-step]'));
+    var courant = 0;
+    function suivre(){
+      var milieu = window.innerHeight * 0.5, k = pasEls.length ? +pasEls[0].dataset.step : 1;
+      pasEls.forEach(function(el){ if(el.getBoundingClientRect().top < milieu) k = +el.dataset.step; });
+      if(k !== courant){ courant = k; etape(k); }
+    }
+    window.addEventListener('scroll', suivre, {passive:true});
+    window.addEventListener('resize', suivre);
+    suivre();
+  });
+
+  var notes = Array.prototype.slice.call(document.querySelectorAll('.marges .side'));
+  function placer(){
+    var bas = -1e9;
+    notes.forEach(function(n){
+      /* grand écran : la note précède son ancre (alignée en face) ; petit écran : elle la suit */
+      var ancre = n._ancre || (n._ancre = n.nextElementSibling);
+      if(LARGE.matches){ if(n.nextElementSibling !== ancre) ancre.before(n); }
+      else if(ancre.nextElementSibling !== n) ancre.after(n);
+      n.style.transform = '';
+      if(!LARGE.matches) return;
+      var haut = n.getBoundingClientRect().top + window.scrollY;
+      var decal = Math.max(0, bas + 24 - haut);
+      if(decal) n.style.transform = 'translateY(' + decal + 'px)';
+      bas = haut + decal + n.offsetHeight;
+    });
+  }
+  var ro = new ResizeObserver(placer); ro.observe(document.body);
+  window.addEventListener('load', placer);
+  placer();
+})();
+</script>
+<script>
+/* ── Sommaire « Le voyage » + encadrés repliables sur mobile ── */
+(function(){
+  var ACCROCHES = {
+    'queue':'Le tout premier retcon, en deux scènes',
+    '1':'La méthode pour trancher : révélation ou retcon ?',
+    '2':'Du gag au sérieux, une transition en douceur',
+    '3':"Un cadeau d'enfant devient cosmologie",
+    '4':'Un bâton de conte devient pilier du monde',
+    '5':'Quand une phrase innocente devient présage',
+    '6':'Les coutures utiles… et les fils abandonnés',
+    '7':'Kami-sama recycle les gags en mythologie',
+    '8':"Pourquoi le plus fort d'hier devient ridicule",
+    '9':'Le coup de théâtre qui réécrit tout',
+    'epilogue':'Relire le tome 1 avec d\'autres yeux'
+  };
+  var nav = document.getElementById('voyage');
+  var main = nav && nav.closest('main') || document.body;
+  var hs = Array.prototype.slice.call(main.querySelectorAll('h2'));
+  if(nav && hs.length){
+    /* mots par partie : on parcourt le texte dans l'ordre et on change de partie à chaque titre */
+    var MOTS = hs.map(function(){ return 0; }), cur = -1;
+    var tw = document.createTreeWalker(main, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+    while(tw.nextNode()){
+      var n = tw.currentNode;
+      if(n.nodeType === 1){ var j = hs.indexOf(n); if(j >= 0) cur = j; if(n.tagName === 'SCRIPT' || n.tagName === 'STYLE') { /* ignoré */ } continue; }
+      if(cur >= 0 && n.parentNode && !/^(SCRIPT|STYLE)$/.test(n.parentNode.tagName)) MOTS[cur] += n.nodeValue.split(/\s+/).filter(Boolean).length;
+    }
+    var total = 0, items = '';
+    hs.forEach(function(h, i){
+      var titre = h.textContent.trim();
+      var m = titre.match(/^(\d+)\.\s*(.*)$/);
+      var num = m ? m[1] : (h.id === 'epilogue' ? 'É' : '★');
+      var cle = m ? m[1] : h.id;
+      if(!h.id) h.id = 'partie-' + (m ? m[1] : i);
+      var min = Math.max(1, Math.round((MOTS[i] || 0) / 230)); total += min;
+      items += '<li><a href="#' + h.id + '"><span class="v-num">' + num + '</span><span class="v-txt"><b>' + (m ? m[2] : titre) + '</b>' + (ACCROCHES[cle] ? '<small>' + ACCROCHES[cle] + '</small>' : '') + '</span><span class="v-min">' + min + ' min</span></a></li>';
+    });
+    nav.innerHTML = '<div class="v-tete"><span>Le voyage</span><b>' + hs.length + ' étapes · environ ' + total + ' min de lecture</b></div><ol>' + items + '</ol>';
+  }
+  /* encadrés de marge : repliés sur petit écran, ouverts sur grand écran */
+  var LARGE = window.matchMedia('(min-width:1340px)');
+  function texte(n){ return n ? n.textContent.replace(/\s+/g,' ').trim() : ''; }
+  Array.prototype.slice.call(document.querySelectorAll('aside.side')).forEach(function(as){
+    var bloc = as.firstElementChild; if(!bloc || as.querySelector('details.pli')) return;
+    var k = bloc.className || '';
+    if(/\b(quote|slot)\b/.test(k)) return;
+    var lbl = texte(as.querySelector('.lbl')), h4 = texte(as.querySelector('h4')), nm = texte(as.querySelector('.nm')), ic = '📌', lib;
+    if(/\bknow\b/.test(k)){ ic = '💡'; lib = lbl || 'Le saviez-vous ?'; var big = texte(as.querySelector('.big')); if(big) lib += ' — ' + big; }
+    else if(/\bfiche\b/.test(k)){ ic = '🪪'; lib = (lbl || 'Fiche') + (nm ? ' : ' + nm : ''); }
+    else if(/\bticket\b/.test(k)){ ic = '🧾'; lib = texte(as.querySelector('.t')).split(' réparations')[0] || 'Ticket'; }
+    else { lib = lbl || h4 || 'En savoir plus'; if(lbl && h4) lib += ' : ' + h4; }
+    if(lib.length > 70) lib = lib.slice(0, 67) + '…';
+    var d = document.createElement('details'); d.className = 'pli';
+    var s = document.createElement('summary'); s.innerHTML = '<span class="pli-ic">' + ic + '</span><span></span>'; s.lastChild.textContent = lib;
+    d.appendChild(s);
+    while(as.firstChild) d.appendChild(as.firstChild);
+    as.appendChild(d);
+  });
+  function synchro(){ Array.prototype.forEach.call(document.querySelectorAll('details.pli'), function(d){ d.open = LARGE.matches; }); }
+  if(LARGE.addEventListener) LARGE.addEventListener('change', synchro); else LARGE.addListener(synchro);
+  synchro();
+})();
+</script>
+</body>
+</html>
